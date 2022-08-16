@@ -6,21 +6,33 @@ public class BlockLogic : MonoBehaviour
 {
     float timer = 0f;
     bool movable = true;
+    public GameObject rig;
 
-    private bool ValidateMove(Vector2 pos)
+
+    private bool ValidateMove()
     {
-        if(pos.x > 9)
+        foreach (Transform subBlock in rig.transform)
         {
-            return false;
+            if(subBlock.transform.position.x > GameLogic.width ||
+                subBlock.transform.position.x < 1 ||
+                subBlock.transform.position.y < 0)
+            {
+                return false;
+            }
         }
-        if (pos.x < 2)
-        {
-            return false;
-        }
-        else if (pos.y < 1)
-        {
-            return false;
-        }
+
+        //if(pos.x > 9)
+        //{
+        //    return false;
+        //}
+        //if (pos.x < 2)
+        //{
+        //    return false;
+        //}
+        //else if (pos.y < 1)
+        //{
+        //    return false;
+        //}
         return true;
     }
     // Start is called before the first frame update
@@ -40,8 +52,9 @@ public class BlockLogic : MonoBehaviour
             {
                 gameObject.transform.position -= new Vector3(0, 1, 0);
                 timer = 0;
-                if (!(ValidateMove(gameObject.transform.position)))
+                if (!(ValidateMove()))
                 {
+                    movable = false;
                     gameObject.transform.position += new Vector3(0, 1, 0);
 
                 }
@@ -55,7 +68,7 @@ public class BlockLogic : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 gameObject.transform.position -= new Vector3(1, 0, 0);
-                if (!(ValidateMove(gameObject.transform.position)))
+                if (!(ValidateMove()))
                 {
                     gameObject.transform.position += new Vector3(1, 0, 0);
 
@@ -64,7 +77,7 @@ public class BlockLogic : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 gameObject.transform.position += new Vector3(1, 0, 0);
-                if (!(ValidateMove(gameObject.transform.position)))
+                if (!(ValidateMove()))
                 {
                     gameObject.transform.position -= new Vector3(1, 0, 0);
 
