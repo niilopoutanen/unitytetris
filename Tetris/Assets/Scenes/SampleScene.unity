@@ -215,7 +215,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1972563073772905188, guid: 3cc596169ee672a428d2fe6097dc9c8d, type: 3}
       propertyPath: m_Name
-      value: Square
+      value: PlayArea
       objectReference: {fileID: 0}
     - target: {fileID: 2213799773925859419, guid: 3cc596169ee672a428d2fe6097dc9c8d, type: 3}
       propertyPath: m_SortingOrder
