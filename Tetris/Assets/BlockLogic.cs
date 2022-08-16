@@ -15,24 +15,11 @@ public class BlockLogic : MonoBehaviour
         {
             if(subBlock.transform.position.x > GameLogic.width ||
                 subBlock.transform.position.x < 1 ||
-                subBlock.transform.position.y < 0)
+                subBlock.transform.position.y < 1)
             {
                 return false;
             }
         }
-
-        //if(pos.x > 9)
-        //{
-        //    return false;
-        //}
-        //if (pos.x < 2)
-        //{
-        //    return false;
-        //}
-        //else if (pos.y < 1)
-        //{
-        //    return false;
-        //}
         return true;
     }
     // Start is called before the first frame update
