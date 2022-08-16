@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class BlockLogic : MonoBehaviour
 {
+    float timer = 0f;
+
+    private bool ValidateMove()
+    {
+        return false;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -13,21 +19,28 @@ public class BlockLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += 1 * Time.deltaTime;
+
+        if (Input.GetKey(KeyCode.DownArrow) && timer > GameLogic.quickdropspeed)
+        {
+            gameObject.transform.position += new Vector3(0, -1, 0);
+            timer = 0;
+        }
+        else if (timer > GameLogic.dropspeed)
+        {
+            gameObject.transform.position += new Vector3(0, -1, 0);
+            timer = 0;
+        }
+
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            this.transform.position += new Vector3(-1, 0, 0);
+            gameObject.transform.position += new Vector3(-1, 0, 0);
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            this.transform.position += new Vector3(1, 0, 0);
+            gameObject.transform.position += new Vector3(1, 0, 0);
         }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            this.transform.position += new Vector3(0, 1, 0);
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            this.transform.position += new Vector3(0, -1, 0);
-        }
+
+
     }
 }
