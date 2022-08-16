@@ -7,9 +7,21 @@ public class BlockLogic : MonoBehaviour
     float timer = 0f;
     bool movable = true;
 
-    private bool ValidateMove()
+    private bool ValidateMove(Vector2 pos)
     {
-        return false;
+        if(pos.x > 9)
+        {
+            return false;
+        }
+        if (pos.x < 2)
+        {
+            return false;
+        }
+        else if (pos.y < 1)
+        {
+            return false;
+        }
+        return true;
     }
     // Start is called before the first frame update
     void Start()
@@ -26,8 +38,13 @@ public class BlockLogic : MonoBehaviour
 
             if (Input.GetKey(KeyCode.DownArrow) && timer > GameLogic.quickdropspeed)
             {
-                gameObject.transform.position += new Vector3(0, -1, 0);
+                gameObject.transform.position -= new Vector3(0, 1, 0);
                 timer = 0;
+                if (!(ValidateMove(gameObject.transform.position)))
+                {
+                    gameObject.transform.position += new Vector3(0, 1, 0);
+
+                }
             }
             else if (timer > GameLogic.dropspeed)
             {
@@ -37,11 +54,21 @@ public class BlockLogic : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                gameObject.transform.position += new Vector3(-1, 0, 0);
+                gameObject.transform.position -= new Vector3(1, 0, 0);
+                if (!(ValidateMove(gameObject.transform.position)))
+                {
+                    gameObject.transform.position += new Vector3(1, 0, 0);
+
+                }
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 gameObject.transform.position += new Vector3(1, 0, 0);
+                if (!(ValidateMove(gameObject.transform.position)))
+                {
+                    gameObject.transform.position -= new Vector3(1, 0, 0);
+
+                }
             }
 
             //pyöritys

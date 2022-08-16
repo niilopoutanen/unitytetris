@@ -6,7 +6,7 @@ public class GameLogic : MonoBehaviour
 {
     public static float dropspeed = 0.9f;
     public static float quickdropspeed = 0.05f;
-    public static int width = 10 height = 20;
+    //public static int width = 10, height = 20;
 
     // Start is called before the first frame update
     void Start()
