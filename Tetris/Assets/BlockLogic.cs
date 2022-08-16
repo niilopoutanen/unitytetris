@@ -88,7 +88,12 @@ public class BlockLogic : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                gameObject.transform.Rotate(0, 0, -90);
+                rig.transform.eulerAngles -= new Vector3(0, 0, 90);
+                if (!(ValidateMove()))
+                {
+                    rig.transform.eulerAngles += new Vector3(0, 0, 90);
+    
+                }
             }
 
         }
