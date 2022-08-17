@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class GameLogic : MonoBehaviour
 {
     public static int width = 10;
     public static int height = 20;
     public static Transform[,] grid = new Transform[width, height];
+    private Text Score;
+    public int ScoreValue;
 
     public static Vector2 RoundVector(Vector2 vec)
     {
@@ -16,12 +20,15 @@ public class GameLogic : MonoBehaviour
     {
         return ((int)pos.x >= 0 && (int)pos.x < width && (int)pos.y >= 0);
     }
+
+
     public static void DeleteRow(int y)
     {
         for (int x = 0; x < width; ++x)
         {
             Destroy(grid[x, y].gameObject);
             grid[x, y] = null;
+            
         }
     }
     public static void DecreaseRow(int y)
@@ -64,7 +71,7 @@ public class GameLogic : MonoBehaviour
             {
                 DeleteRow(y);
                 DecreaseTop(y + 1);
-                y = y--;
+                --y;
             }
         }
     }

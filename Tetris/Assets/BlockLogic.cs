@@ -8,14 +8,14 @@ public class BlockLogic : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            Vector2 v = GameLogic.RoundVector(child.position);
+            Vector2 vector = GameLogic.RoundVector(child.position);
 
-            if (!GameLogic.InsideGrid(v))
+            if (!GameLogic.InsideGrid(vector))
             {
                 return false;
             }
 
-            if (GameLogic.grid[(int)v.x, (int)v.y] != null && GameLogic.grid[(int)v.x, (int)v.y].parent != transform)
+            if (GameLogic.grid[(int)vector.x, (int)vector.y] != null && GameLogic.grid[(int)vector.x, (int)vector.y].parent != transform)
             {
                 return false;
             }
@@ -24,9 +24,9 @@ public class BlockLogic : MonoBehaviour
     }
     void UpdateGrid()
     {
-        for (int y = 0; y < GameLogic.height; ++y)
+        for (int y = 0; y < GameLogic.height; y++)
         {
-            for (int x = 0; x < GameLogic.width; ++x)
+            for (int x = 0; x < GameLogic.width; x++)
             {
                 if (GameLogic.grid[x, y] != null)
                 {
