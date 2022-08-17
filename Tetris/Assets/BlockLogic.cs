@@ -29,7 +29,7 @@ public class BlockLogic : MonoBehaviour
     }
     void UpdateGrid()
     {
-        logic = gameObject.GetComponent<GameLogic>();
+                logic = gameObject.GetComponent<GameLogic>();
 
         for (int y = 0; y < GameLogic.Height; y++)
         {
