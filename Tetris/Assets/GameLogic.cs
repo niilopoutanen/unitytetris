@@ -6,56 +6,60 @@ using UnityEngine.UI;
 
 public class GameLogic : MonoBehaviour
 {
-    public static int width = 10;
-    public static int height = 20;
-    public static Transform[,] grid = new Transform[width, height];
+    private static int width = 10;
+    private static int height = 20;
+    private static Transform[,] grid = new Transform[Width, Height];
     private Text Score;
     public int ScoreValue;
 
-    public static Vector2 RoundVector(Vector2 vec)
+    public static Transform[,] Grid { get => grid; set => grid = value; }
+    public static int Height { get => height; set => height = value; }
+    public static int Width { get => width; set => width = value; }
+
+    public Vector2 RoundVector(Vector2 vec)
     {
         return new Vector2(Mathf.Round(vec.x), Mathf.Round(vec.y));
     }
-    public static bool InsideGrid(Vector2 pos)
+    public bool InsideGrid(Vector2 pos)
     {
-        return ((int)pos.x >= 0 && (int)pos.x < width && (int)pos.y >= 0);
+        return ((int)pos.x >= 0 && (int)pos.x < Width && (int)pos.y >= 0);
     }
 
-
-    public static void DeleteRow(int y)
+    public void DeleteRow(int y)
     {
-        for (int x = 0; x < width; ++x)
+        for (int x = 0; x < Width; ++x)
         {
-            Destroy(grid[x, y].gameObject);
-            grid[x, y] = null;
-            
+            Destroy(Grid[x, y].gameObject);
+            Grid[x, y] = null;
+            ScoreValue++;
+            Score.text = ScoreValue.ToString();
         }
     }
-    public static void DecreaseRow(int y)
+    public void DecreaseRow(int y)
     {
-        for (int x = 0; x < width; ++x)
+        for (int x = 0; x < Width; ++x)
         {
-            if (grid[x, y] != null)
+            if (Grid[x, y] != null)
             {
-                grid[x, y - 1] = grid[x, y];
-                grid[x, y] = null;
+                Grid[x, y - 1] = Grid[x, y];
+                Grid[x, y] = null;
 
-                grid[x, y - 1].position += new Vector3(0, -1, 0);
+                Grid[x, y - 1].position += new Vector3(0, -1, 0);
             }
         }
     }
-    public static void DecreaseTop(int y)
+    public void DecreaseTop(int y)
     {
-        for (int i = y; i < height; ++i)
+        for (int i = y; i < Height; ++i)
         {
             DecreaseRow(i);
         }
     }
-    public static bool IsFull(int y)
+    public bool IsFull(int y)
     {
-        for (int x = 0; x < width; ++x)
+        for (int x = 0; x < Width; ++x)
         {
-            if (grid[x, y] == null)
+            if (Grid[x, y] == null)
             {
                 return false;
             }
@@ -63,9 +67,9 @@ public class GameLogic : MonoBehaviour
 
         return true;
     }
-    public static void DeleteRows()
+    public void DeleteRows()
     {
-        for (int y = 0; y < height; ++y)
+        for (int y = 0; y < Height; ++y)
         {
             if (IsFull(y))
             {

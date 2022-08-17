@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class BlockLogic : MonoBehaviour
 {
+    public GameLogic logic;
+
     bool ValidPos()
     {
         foreach (Transform child in transform)
         {
-            Vector2 vector = GameLogic.RoundVector(child.position);
+            Vector2 vector = logic.RoundVector(child.position);
 
-            if (!GameLogic.InsideGrid(vector))
+            if (!logic.InsideGrid(vector))
             {
                 return false;
             }
 
-            if (GameLogic.grid[(int)vector.x, (int)vector.y] != null && GameLogic.grid[(int)vector.x, (int)vector.y].parent != transform)
+            if (GameLogic.Grid[(int)vector.x, (int)vector.y] != null && GameLogic.Grid[(int)vector.x, (int)vector.y].parent != transform)
             {
                 return false;
             }
@@ -24,15 +26,15 @@ public class BlockLogic : MonoBehaviour
     }
     void UpdateGrid()
     {
-        for (int y = 0; y < GameLogic.height; y++)
+        for (int y = 0; y < GameLogic.Height; y++)
         {
-            for (int x = 0; x < GameLogic.width; x++)
+            for (int x = 0; x < GameLogic.Width; x++)
             {
-                if (GameLogic.grid[x, y] != null)
+                if (GameLogic.Grid[x, y] != null)
                 {
-                    if (GameLogic.grid[x, y].parent == transform)
+                    if (GameLogic.Grid[x, y].parent == transform)
                     {
-                        GameLogic.grid[x, y] = null;
+                        GameLogic.Grid[x, y] = null;
                     }
                 }
             }
@@ -41,18 +43,20 @@ public class BlockLogic : MonoBehaviour
 
         foreach (Transform child in transform)
         {
-            Vector2 v = GameLogic.RoundVector(child.position);
-            GameLogic.grid[(int)v.x, (int)v.y] = child;
+            Vector2 v = logic.RoundVector(child.position);
+            GameLogic.Grid[(int)v.x, (int)v.y] = child;
         }
     }
     // Start is called before the first frame update
     void Start()
     {
+
         if (!ValidPos())
         {
             Destroy(gameObject);
         }
     }
+
 
     float Fall = 0;
     // Update is called once per frame
@@ -113,7 +117,7 @@ public class BlockLogic : MonoBehaviour
             {
                 transform.position += new Vector3(0, 1, 0);
 
-                GameLogic.DeleteRows();
+                logic.DeleteRows();
 
                 FindObjectOfType<Spawner>().SpawnNext();
 
