@@ -9,7 +9,6 @@ public class GameLogic : MonoBehaviour
     private static int width = 10;
     private static int height = 20;
     private static Transform[,] grid = new Transform[Width, Height];
-    private Text Score;
     public int ScoreValue;
 
     public static Transform[,] Grid { get => grid; set => grid = value; }
@@ -27,14 +26,15 @@ public class GameLogic : MonoBehaviour
 
     public void DeleteRow(int y)
     {
+
         for (int x = 0; x < Width; ++x)
         {
             Destroy(Grid[x, y].gameObject);
             Grid[x, y] = null;
             ScoreValue++;
-            Score.text = ScoreValue.ToString();
         }
     }
+
     public void DecreaseRow(int y)
     {
         for (int x = 0; x < Width; ++x)

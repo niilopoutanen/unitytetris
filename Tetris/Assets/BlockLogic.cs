@@ -6,8 +6,11 @@ public class BlockLogic : MonoBehaviour
 {
     public GameLogic logic;
 
+
     bool ValidPos()
     {
+        logic = gameObject.GetComponent<GameLogic>();
+
         foreach (Transform child in transform)
         {
             Vector2 vector = logic.RoundVector(child.position);
@@ -26,6 +29,8 @@ public class BlockLogic : MonoBehaviour
     }
     void UpdateGrid()
     {
+        logic = gameObject.GetComponent<GameLogic>();
+
         for (int y = 0; y < GameLogic.Height; y++)
         {
             for (int x = 0; x < GameLogic.Width; x++)

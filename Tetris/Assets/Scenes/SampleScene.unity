@@ -217,6 +217,8 @@ GameObject:
   - component: {fileID: 782370031}
   - component: {fileID: 782370033}
   - component: {fileID: 782370032}
+  - component: {fileID: 782370035}
+  - component: {fileID: 782370034}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -240,8 +242,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 373, y: 15}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 405.62, y: -16.64}
+  m_SizeDelta: {x: 225.24, y: 93.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &782370032
 MonoBehaviour:
@@ -265,10 +267,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -276,9 +278,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score:
-
-'
+  m_Text: 'Score:'
 --- !u!222 &782370033
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -287,6 +287,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782370030}
   m_CullTransparentMesh: 1
+--- !u!114 &782370034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782370030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 975867ccc8af5ed4282c1c4cf50668e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreValue: 0
+--- !u!114 &782370035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782370030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61d195a1810a49f4e8ae2a14432107a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Score: {fileID: 782370032}
 --- !u!1 &1001110129
 GameObject:
   m_ObjectHideFlags: 0
