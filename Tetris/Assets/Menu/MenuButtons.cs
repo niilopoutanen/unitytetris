@@ -10,7 +10,7 @@ public class MenuButtons : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
-    public void Exit()
+    public void QuitGame()
     {
         Application.Quit();
     }
