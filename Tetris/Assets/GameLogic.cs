@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class GameLogic : MonoBehaviour
@@ -80,7 +81,28 @@ public class GameLogic : MonoBehaviour
         }
     }
 
+    public bool GameOver(Vector2 vec)
+    {
+        if(vec.y <18)
+        {
+            return false;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
+    public bool HasBlock(int y)
+    {
+        for (int x = 0; x < Width; ++x)
+        {
+            if(Grid[x, y] == null)
+            {
+
+            }
+        }
+    }
 
     // Start is called before the first frame update
     void Start()

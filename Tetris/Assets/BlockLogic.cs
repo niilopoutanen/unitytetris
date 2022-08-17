@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BlockLogic : MonoBehaviour
 {
     public GameLogic logic;
-
-
+    public bool gameover = false;
     bool ValidPos()
     {
         logic = gameObject.GetComponent<GameLogic>();
@@ -19,7 +19,11 @@ public class BlockLogic : MonoBehaviour
             {
                 return false;
             }
-
+            if (logic.GameOver(vector))
+            {
+                gameover = true;
+                SceneManager.LoadScene("Menu");
+            }
             if (GameLogic.Grid[(int)vector.x, (int)vector.y] != null && GameLogic.Grid[(int)vector.x, (int)vector.y].parent != transform)
             {
                 return false;
@@ -29,7 +33,7 @@ public class BlockLogic : MonoBehaviour
     }
     void UpdateGrid()
     {
-                logic = gameObject.GetComponent<GameLogic>();
+        logic = gameObject.GetComponent<GameLogic>();
 
         for (int y = 0; y < GameLogic.Height; y++)
         {
@@ -67,69 +71,101 @@ public class BlockLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //vasemmalle
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if(gameover == false)
         {
-            transform.position += new Vector3(-1, 0, 0);
-
-            if (ValidPos())
-                UpdateGrid();
-            else
-                transform.position += new Vector3(1, 0, 0);
-        }
-        //oikealle
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            transform.position += new Vector3(1, 0, 0);
-
-            if (ValidPos())
-            {
-                UpdateGrid();
-            }
-            else
+            //vasemmalle
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 transform.position += new Vector3(-1, 0, 0);
 
+                if (ValidPos())
+                    UpdateGrid();
+                else
+                    transform.position += new Vector3(1, 0, 0);
+            }
+            //oikealle
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                transform.position += new Vector3(1, 0, 0);
+
+                if (ValidPos())
+                {
+                    UpdateGrid();
+                }
+                else
+                {
+                    transform.position += new Vector3(-1, 0, 0);
+
+                }
+            }
+            //Pyöritä
+            else if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                transform.Rotate(0, 0, -90);
+
+                if (ValidPos())
+                {
+                    UpdateGrid();
+                }
+                else
+                {
+                    transform.Rotate(0, 0, 90);
+                }
+            }
+
+            //Nopeammin alas
+            else if (Input.GetKeyDown(KeyCode.DownArrow) || Time.time - Fall >= 1)
+            {
+                transform.position += new Vector3(0, -1, 0);
+
+                if (ValidPos())
+                {
+                    UpdateGrid();
+                }
+
+                //Tarkistaa onko rivi täynnä ja spawnaa uuden palan
+                else
+                {
+                    transform.position += new Vector3(0, 1, 0);
+
+                    logic.DeleteRows();
+
+                    FindObjectOfType<Spawner>().SpawnNext();
+
+                    enabled = false;
+                }
+
+                Fall = Time.time;
+            }
+            else if (Input.GetKeyDown(KeyCode.Space) || Time.time - Fall >= 1)
+            {
+                while (true)
+                {
+                    transform.position += new Vector3(0, -1, 0);
+
+                    if (ValidPos())
+                    {
+                        UpdateGrid();
+                    }
+
+                    //Tarkistaa onko rivi täynnä ja spawnaa uuden palan
+                    else
+                    {
+                        transform.position += new Vector3(0, 1, 0);
+
+                        logic.DeleteRows();
+
+                        FindObjectOfType<Spawner>().SpawnNext();
+
+                        enabled = false;
+                        break;
+                    }
+
+                    Fall = Time.time;
+                }
             }
         }
-        //Pyöritä
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            transform.Rotate(0, 0, -90);
 
-            if (ValidPos())
-            {
-                UpdateGrid();
-            }
-            else
-            {
-                transform.Rotate(0, 0, 90);
-            }
-        }
 
-        //Nopeammin alas
-        else if (Input.GetKeyDown(KeyCode.DownArrow) ||Time.time - Fall >= 1)
-        {
-            transform.position += new Vector3(0, -1, 0);
-
-            if (ValidPos())
-            {
-                UpdateGrid();
-            }
-
-            //Tarkistaa onko rivi täynnä ja spawnaa uuden palan
-            else
-            {
-                transform.position += new Vector3(0, 1, 0);
-
-                logic.DeleteRows();
-
-                FindObjectOfType<Spawner>().SpawnNext();
-
-                enabled = false;
-            }
-
-            Fall = Time.time;
-        }
     }
 }
