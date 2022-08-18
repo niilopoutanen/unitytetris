@@ -97,11 +97,12 @@ public class GameLogic : MonoBehaviour
     {
         for (int x = 0; x < Width; ++x)
         {
-            if(Grid[x, y] == null)
+            if(Grid[x, y] != null)
             {
-
+                return true;
             }
         }
+        return false;
     }
 
     // Start is called before the first frame update

@@ -19,11 +19,7 @@ public class BlockLogic : MonoBehaviour
             {
                 return false;
             }
-            if (logic.GameOver(vector))
-            {
-                gameover = true;
-                SceneManager.LoadScene("Menu");
-            }
+
             if (GameLogic.Grid[(int)vector.x, (int)vector.y] != null && GameLogic.Grid[(int)vector.x, (int)vector.y].parent != transform)
             {
                 return false;
@@ -129,6 +125,11 @@ public class BlockLogic : MonoBehaviour
                     transform.position += new Vector3(0, 1, 0);
 
                     logic.DeleteRows();
+                    if (logic.HasBlock(17))
+                    {
+                        gameover = true;
+                        SceneManager.LoadScene("Menu");
+                    }
 
                     FindObjectOfType<Spawner>().SpawnNext();
 
@@ -154,7 +155,11 @@ public class BlockLogic : MonoBehaviour
                         transform.position += new Vector3(0, 1, 0);
 
                         logic.DeleteRows();
-
+                        if (logic.HasBlock(17))
+                        {
+                                gameover = true;
+                            SceneManager.LoadScene("Menu");
+                        }
                         FindObjectOfType<Spawner>().SpawnNext();
 
                         enabled = false;
