@@ -12,6 +12,7 @@ public class GameLogic : MonoBehaviour
     private static int height = 20;
     private static Transform[,] grid = new Transform[Width, Height];
     private static int scoreValue;
+    public static float gamespeed = 1.0f;
     public Canvas Canvas;
     public Text ScoreText;
     [SerializeField] private AudioSource positive;
@@ -19,7 +20,6 @@ public class GameLogic : MonoBehaviour
     public static Transform[,] Grid { get => grid; set => grid = value; }
     public static int Height { get => height; set => height = value; }
     public static int Width { get => width; set => width = value; }
-    private int ScoreValue { get => scoreValue; set => scoreValue = value; }
 
     public Vector2 RoundVector(Vector2 vec)
     {
@@ -74,13 +74,20 @@ public class GameLogic : MonoBehaviour
 
         return true;
     }
+    public float IncreaseSpeed()
+    {
+        float speed = gamespeed;
+        speed = speed / 1.1f;
+        gamespeed = speed;
+        return speed;
+    }
     public void DeleteRows()
     {
         for (int y = 0; y < Height; ++y)
         {
             if (IsFull(y))
             {
-
+                IncreaseSpeed();
                 Canvas = GameObject.Find("UICanvas").GetComponent<Canvas>();
                 ScoreText = Canvas.GetComponentInChildren<Text>();
                 DeleteRow(y);
