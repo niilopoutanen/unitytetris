@@ -9,7 +9,6 @@ public class UIClass : MonoBehaviour
 
     public void ChangeText()
     {
-        GameLogic.ScoreValue
         Score.text = "testi";
     }
     void Start()

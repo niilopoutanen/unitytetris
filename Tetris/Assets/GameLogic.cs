@@ -17,7 +17,7 @@ public class GameLogic : MonoBehaviour
     public static Transform[,] Grid { get => grid; set => grid = value; }
     public static int Height { get => height; set => height = value; }
     public static int Width { get => width; set => width = value; }
-    public int ScoreValue { get => scoreValue; set => scoreValue = value; }
+    private int ScoreValue { get => scoreValue; set => scoreValue = value; }
 
     public Vector2 RoundVector(Vector2 vec)
     {
@@ -74,6 +74,7 @@ public class GameLogic : MonoBehaviour
     }
     public void DeleteRows()
     {
+        int getscore = ScoreValue;
         for (int y = 0; y < Height; ++y)
         {
             if (IsFull(y))
@@ -83,10 +84,11 @@ public class GameLogic : MonoBehaviour
                 DeleteRow(y);
                 DecreaseTop(y + 1);
                 y--;
-                ScoreValue++;
-                ScoreText.text = "Score: " + ScoreValue.ToString();
+                getscore++;
+                ScoreText.text = "Score: " + getscore.ToString();
             }
         }
+        ScoreValue = getscore;
     }
 
     public bool GameOver(Vector2 vec)
