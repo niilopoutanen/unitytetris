@@ -8,6 +8,8 @@ public class UIClass : MonoBehaviour
     [SerializeField] private AudioSource positive;
 
 
+    public Text Score;
+
     public void Play()
     {
         positive.Play();

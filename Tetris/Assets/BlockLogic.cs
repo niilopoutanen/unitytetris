@@ -60,7 +60,6 @@ public class BlockLogic : MonoBehaviour
             GameLogic.Grid[(int)v.x, (int)v.y] = child;
         }
     }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -127,7 +126,7 @@ public class BlockLogic : MonoBehaviour
             }
 
             //Nopeammin alas
-            else if (Input.GetKeyDown(KeyCode.DownArrow) || Time.time - Fall >= GameLogic.gamespeed || Input.GetKeyDown(KeyCode.S))
+            else if (Input.GetKeyDown(KeyCode.DownArrow) || Time.time - Fall >= 1 || Input.GetKeyDown(KeyCode.S))
             {
                 transform.position += new Vector3(0, -1, 0);
 
@@ -142,7 +141,6 @@ public class BlockLogic : MonoBehaviour
                     transform.position += new Vector3(0, 1, 0);
 
                     logic.DeleteRows();
-
                     if (logic.HasBlock(17))
                     {
                         gameover = true;
@@ -156,7 +154,7 @@ public class BlockLogic : MonoBehaviour
 
                 Fall = Time.time;
             }
-            else if (Input.GetKeyDown(KeyCode.Space) || Time.time - Fall >= GameLogic.gamespeed)
+            else if (Input.GetKeyDown(KeyCode.Space) || Time.time - Fall >= 1)
             {
                 while (true)
                 {
