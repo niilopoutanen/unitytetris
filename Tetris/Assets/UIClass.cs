@@ -5,11 +5,14 @@ using UnityEngine.UI;
 public class UIClass : MonoBehaviour
 {
 
+    [SerializeField] private AudioSource positive;
+
+
     public Text Score;
 
-    public void ChangeText()
+    public void Play()
     {
-        Score.text = "testi";
+        positive.Play();
     }
     void Start()
     {

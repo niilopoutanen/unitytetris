@@ -14,6 +14,8 @@ public class GameLogic : MonoBehaviour
     private static int scoreValue;
     public Canvas Canvas;
     public Text ScoreText;
+    [SerializeField] private AudioSource positive;
+
     public static Transform[,] Grid { get => grid; set => grid = value; }
     public static int Height { get => height; set => height = value; }
     public static int Width { get => width; set => width = value; }
@@ -78,6 +80,7 @@ public class GameLogic : MonoBehaviour
         {
             if (IsFull(y))
             {
+
                 Canvas = GameObject.Find("UICanvas").GetComponent<Canvas>();
                 ScoreText = Canvas.GetComponentInChildren<Text>();
                 DeleteRow(y);
@@ -85,6 +88,8 @@ public class GameLogic : MonoBehaviour
                 y--;
                 scoreValue++;
                 ScoreText.text = "Score: " + scoreValue.ToString();
+                FindObjectOfType<UIClass>().Play();
+
             }
         }
     }
