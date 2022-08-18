@@ -128,7 +128,7 @@ public class BlockLogic : MonoBehaviour
                     if (logic.HasBlock(17))
                     {
                         gameover = true;
-                        SceneManager.LoadScene("Menu");
+                        SceneManager.LoadScene("Game Over");
                     }
 
                     FindObjectOfType<Spawner>().SpawnNext();
@@ -158,7 +158,7 @@ public class BlockLogic : MonoBehaviour
                         if (logic.HasBlock(17))
                         {
                                 gameover = true;
-                            SceneManager.LoadScene("Menu");
+                            SceneManager.LoadScene("Game Over");
                         }
                         FindObjectOfType<Spawner>().SpawnNext();
 
