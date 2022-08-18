@@ -365,7 +365,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score:'
+  m_Text: 'Score: 0'
 --- !u!222 &782370033
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -402,7 +402,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positive: {fileID: 782370036}
-  Score: {fileID: 782370032}
 --- !u!82 &782370036
 AudioSource:
   m_ObjectHideFlags: 0
@@ -787,7 +786,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positive: {fileID: 0}
-  Score: {fileID: 0}
 --- !u!1 &1668455565
 GameObject:
   m_ObjectHideFlags: 0
