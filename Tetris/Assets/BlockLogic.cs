@@ -7,6 +7,7 @@ public class BlockLogic : MonoBehaviour
 {
     public GameLogic logic;
     public bool gameover = false;
+    [SerializeField] private AudioSource interact;
     bool ValidPos()
     {
         logic = gameObject.GetComponent<GameLogic>();
@@ -26,6 +27,13 @@ public class BlockLogic : MonoBehaviour
             }
         }
         return true;
+    }
+    void PlaySound(string sound)
+    {
+        if (sound == "interact")
+        {
+            interact.Play();
+        }
     }
     void UpdateGrid()
     {
@@ -75,9 +83,15 @@ public class BlockLogic : MonoBehaviour
                 transform.position += new Vector3(-1, 0, 0);
 
                 if (ValidPos())
+                {
+                    PlaySound("interact");
                     UpdateGrid();
+                }
+
                 else
+                {
                     transform.position += new Vector3(1, 0, 0);
+                }
             }
             //oikealle
             else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
@@ -86,6 +100,7 @@ public class BlockLogic : MonoBehaviour
 
                 if (ValidPos())
                 {
+                    PlaySound("interact");
                     UpdateGrid();
                 }
                 else
@@ -101,6 +116,7 @@ public class BlockLogic : MonoBehaviour
 
                 if (ValidPos())
                 {
+                    PlaySound("interact");
                     UpdateGrid();
                 }
                 else
@@ -146,6 +162,7 @@ public class BlockLogic : MonoBehaviour
 
                     if (ValidPos())
                     {
+                        PlaySound("interact");
                         UpdateGrid();
                     }
 
@@ -168,6 +185,10 @@ public class BlockLogic : MonoBehaviour
 
                     Fall = Time.time;
                 }
+            }
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                PlaySound("interact");
             }
         }
 
