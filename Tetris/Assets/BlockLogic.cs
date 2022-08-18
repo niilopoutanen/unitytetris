@@ -70,7 +70,7 @@ public class BlockLogic : MonoBehaviour
         if(gameover == false)
         {
             //vasemmalle
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
             {
                 transform.position += new Vector3(-1, 0, 0);
 
@@ -80,7 +80,7 @@ public class BlockLogic : MonoBehaviour
                     transform.position += new Vector3(1, 0, 0);
             }
             //oikealle
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
             {
                 transform.position += new Vector3(1, 0, 0);
 
@@ -95,7 +95,7 @@ public class BlockLogic : MonoBehaviour
                 }
             }
             //Pyöritä
-            else if (Input.GetKeyDown(KeyCode.UpArrow))
+            else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
                 transform.Rotate(0, 0, -90);
 
@@ -110,7 +110,7 @@ public class BlockLogic : MonoBehaviour
             }
 
             //Nopeammin alas
-            else if (Input.GetKeyDown(KeyCode.DownArrow) || Time.time - Fall >= 1)
+            else if (Input.GetKeyDown(KeyCode.DownArrow) || Time.time - Fall >= 1 || Input.GetKeyDown(KeyCode.S))
             {
                 transform.position += new Vector3(0, -1, 0);
 
