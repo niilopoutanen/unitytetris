@@ -11,7 +11,7 @@ public class GameLogic : MonoBehaviour
     private static int width = 10;
     private static int height = 20;
     private static Transform[,] grid = new Transform[Width, Height];
-    private int scoreValue;
+    private static int scoreValue;
     public Canvas Canvas;
     public Text ScoreText;
     public static Transform[,] Grid { get => grid; set => grid = value; }
@@ -74,7 +74,6 @@ public class GameLogic : MonoBehaviour
     }
     public void DeleteRows()
     {
-        int getscore = ScoreValue;
         for (int y = 0; y < Height; ++y)
         {
             if (IsFull(y))
@@ -84,11 +83,10 @@ public class GameLogic : MonoBehaviour
                 DeleteRow(y);
                 DecreaseTop(y + 1);
                 y--;
-                getscore++;
-                ScoreText.text = "Score: " + getscore.ToString();
+                scoreValue++;
+                ScoreText.text = "Score: " + scoreValue.ToString();
             }
         }
-        ScoreValue = getscore;
     }
 
     public bool GameOver(Vector2 vec)
