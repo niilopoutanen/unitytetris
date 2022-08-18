@@ -6,17 +6,23 @@ public class Spawner : MonoBehaviour
 {
 
     public GameObject[] objects;
-
+    public int NextIndex;
     public void SpawnNext()
     {
-        int rand = Random.Range(0, objects.Length);
+        NextIndex = Random.Range(0, objects.Length);
 
-        Instantiate(objects[rand], transform.position, Quaternion.identity);
+        Instantiate(objects[NextIndex], transform.position, Quaternion.identity);
+    }
+
+    public int GetNext()
+    {
+        return NextIndex;
     }
     // Start is called before the first frame update
     void Start()
     {
         SpawnNext();
+        NextIndex = Random.Range(0, objects.Length);
     }
 
     // Update is called once per frame

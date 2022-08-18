@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 
 public class GameLogic : MonoBehaviour
@@ -10,11 +11,13 @@ public class GameLogic : MonoBehaviour
     private static int width = 10;
     private static int height = 20;
     private static Transform[,] grid = new Transform[Width, Height];
-    public int ScoreValue;
-
+    private int scoreValue;
+    public Canvas Canvas;
+    public Text ScoreText;
     public static Transform[,] Grid { get => grid; set => grid = value; }
     public static int Height { get => height; set => height = value; }
     public static int Width { get => width; set => width = value; }
+    public int ScoreValue { get => scoreValue; set => scoreValue = value; }
 
     public Vector2 RoundVector(Vector2 vec)
     {
@@ -32,8 +35,9 @@ public class GameLogic : MonoBehaviour
         {
             Destroy(Grid[x, y].gameObject);
             Grid[x, y] = null;
-            ScoreValue++;
+
         }
+
     }
 
     public void DecreaseRow(int y)
@@ -74,9 +78,13 @@ public class GameLogic : MonoBehaviour
         {
             if (IsFull(y))
             {
+                Canvas = GameObject.Find("UICanvas").GetComponent<Canvas>();
+                ScoreText = Canvas.GetComponentInChildren<Text>();
                 DeleteRow(y);
                 DecreaseTop(y + 1);
-                --y;
+                y--;
+                ScoreValue++;
+                ScoreText.text = "Score: " + ScoreValue.ToString();
             }
         }
     }

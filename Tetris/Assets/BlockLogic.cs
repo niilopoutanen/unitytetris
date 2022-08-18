@@ -157,7 +157,7 @@ public class BlockLogic : MonoBehaviour
                         logic.DeleteRows();
                         if (logic.HasBlock(17))
                         {
-                                gameover = true;
+                            gameover = true;
                             SceneManager.LoadScene("Game Over");
                         }
                         FindObjectOfType<Spawner>().SpawnNext();
