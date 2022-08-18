@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
 
-    [SerializeField] public Animator Text;
     public void ToMainMenu()
     {
         SceneManager.LoadScene("Menu");
@@ -15,7 +14,7 @@ public class GameOver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Text.Play("FadeIn");
+
     }
 
     // Update is called once per frame
