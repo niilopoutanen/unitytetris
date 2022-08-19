@@ -81,7 +81,7 @@ public class BlockLogic : MonoBehaviour
         if(gameover == false)
         {
             if(paused == false)
-                    {
+            {
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     Time.timeScale = 0f;
@@ -208,8 +208,8 @@ public class BlockLogic : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    FindObjectOfType<UIClass>().ResumeGame();
-
+                    FindObjectOfType<UIClass>().PauseMenu(false);
+                    paused = false;
                 }
             }
         }

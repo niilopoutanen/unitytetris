@@ -6,24 +6,24 @@ public class UIClass : MonoBehaviour
 {
 
     [SerializeField] private AudioSource positive;
-    public GameObject pausemenu;
+    public GameObject pauseCanvas;
 
     public void PauseMenu(bool isPaused)
     {
         if (isPaused == true)
         {
-            pausemenu.SetActive(true);
+            pauseCanvas.SetActive(true);
         }
         else if (isPaused == false)
         {
-            pausemenu.SetActive(false);
+            pauseCanvas.SetActive(false);
+            Time.timeScale = 1f;
+            BlockLogic.paused = false;
         }
     }
     public void ResumeGame()
     {
-        Time.timeScale = 1f;
         PauseMenu(false);
-        BlockLogic.paused = false;
     }
 
     public void Play()
@@ -33,7 +33,7 @@ public class UIClass : MonoBehaviour
 
     void Start()
     {
-        pausemenu.SetActive(false);
+        pauseCanvas.SetActive(false);
     }
 
     // Update is called once per frame
