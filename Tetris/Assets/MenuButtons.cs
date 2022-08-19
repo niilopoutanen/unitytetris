@@ -14,6 +14,10 @@ public class MenuButtons : MonoBehaviour
     {
         Application.Quit();
     }
+    public void ToMainMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
     // Start is called before the first frame update
     void Start()
     {

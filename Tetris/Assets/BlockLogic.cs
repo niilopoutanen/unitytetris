@@ -7,7 +7,7 @@ public class BlockLogic : MonoBehaviour
 {
     public GameLogic logic;
     public bool gameover = false;
-    public bool paused = false;
+    public static bool paused = false;
     [SerializeField] private AudioSource interact;
 
     bool ValidPos()
@@ -208,18 +208,9 @@ public class BlockLogic : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    Time.timeScale = 1f;
-                    FindObjectOfType<UIClass>().PauseMenu(false);
-                    paused = false;
+                    FindObjectOfType<UIClass>().ResumeGame();
 
                 }
-                else if (FindObjectOfType<UIClass>().ResumeGame() == true)
-                {
-                    Time.timeScale = 1f;
-                    FindObjectOfType<UIClass>().PauseMenu(false);
-                    paused = false;
-                }
-
             }
         }
     }

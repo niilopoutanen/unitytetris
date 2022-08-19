@@ -6,7 +6,7 @@ public class UIClass : MonoBehaviour
 {
 
     [SerializeField] private AudioSource positive;
-    [SerializeField] private GameObject pausemenu;
+    public GameObject pausemenu;
     private bool paused = false;
 
     public void PauseMenu(bool isPaused)
@@ -23,13 +23,20 @@ public class UIClass : MonoBehaviour
             paused = false;
         }
     }
-    public bool ResumeGame()
+    public void ResumeGame()
     {
-        return true;
+        Time.timeScale = 1f;
+        PauseMenu(false);
+        BlockLogic.paused = false;
     }
+
     public void Play()
     {
         positive.Play();
+    }
+    public bool ReturnPaused()
+    {
+        return paused;
     }
     void Start()
     {
