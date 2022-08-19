@@ -20,6 +20,7 @@ public class GameLogic : MonoBehaviour
     public static Transform[,] Grid { get => grid; set => grid = value; }
     public static int Height { get => height; set => height = value; }
     public static int Width { get => width; set => width = value; }
+    public static int ScoreValue { get => scoreValue; set => scoreValue = value; }
 
     public Vector2 RoundVector(Vector2 vec)
     {
@@ -93,8 +94,8 @@ public class GameLogic : MonoBehaviour
                 DeleteRow(y);
                 DecreaseTop(y + 1);
                 y--;
-                scoreValue++;
-                ScoreText.text = "Score: " + scoreValue.ToString();
+                ScoreValue++;
+                ScoreText.text = "Score: " + ScoreValue.ToString();
                 FindObjectOfType<UIClass>().Play();
 
             }
