@@ -7,7 +7,9 @@ public class BlockLogic : MonoBehaviour
 {
     public GameLogic logic;
     public bool gameover = false;
+    public bool paused = false;
     [SerializeField] private AudioSource interact;
+
     bool ValidPos()
     {
         logic = gameObject.GetComponent<GameLogic>();
@@ -78,93 +80,70 @@ public class BlockLogic : MonoBehaviour
     {
         if(gameover == false)
         {
-            //vasemmalle
-            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+            if(paused == false)
             {
-                transform.position += new Vector3(-1, 0, 0);
-
-                if (ValidPos())
+                if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    PlaySound("interact");
-                    UpdateGrid();
-                }
+                    Time.timeScale = 0f;
+                    FindObjectOfType<UIClass>().PauseMenu(true);
+                    paused = true;
 
-                else
-                {
-                    transform.position += new Vector3(1, 0, 0);
                 }
-            }
-            //oikealle
-            else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
-            {
-                transform.position += new Vector3(1, 0, 0);
-
-                if (ValidPos())
-                {
-                    PlaySound("interact");
-                    UpdateGrid();
-                }
-                else
+                //vasemmalle
+                if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
                 {
                     transform.position += new Vector3(-1, 0, 0);
 
-                }
-            }
-            //Pyöritä
-            else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
-            {
-                transform.Rotate(0, 0, -90);
-
-                if (ValidPos())
-                {
-                    PlaySound("interact");
-                    UpdateGrid();
-                }
-                else
-                {
-                    transform.Rotate(0, 0, 90);
-                }
-            }
-
-            //Nopeammin alas
-            else if (Input.GetKeyDown(KeyCode.DownArrow) || Time.time - Fall >= GameLogic.gamespeed || Input.GetKeyDown(KeyCode.S))
-            {
-                transform.position += new Vector3(0, -1, 0);
-
-                if (ValidPos())
-                {
-                    UpdateGrid();
-                }
-
-                //Tarkistaa onko rivi täynnä ja spawnaa uuden palan
-                else
-                {
-                    transform.position += new Vector3(0, 1, 0);
-
-                    logic.DeleteRows();
-
-                    if (logic.HasBlock(17))
+                    if (ValidPos())
                     {
-                        gameover = true;
-                        SceneManager.LoadScene("Game Over");
+                        PlaySound("interact");
+                        UpdateGrid();
                     }
 
-                    FindObjectOfType<Spawner>().SpawnNext();
+                    else
+                    {
+                        transform.position += new Vector3(1, 0, 0);
+                    }
+                }
+                //oikealle
+                else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+                {
+                    transform.position += new Vector3(1, 0, 0);
 
-                    enabled = false;
+                    if (ValidPos())
+                    {
+                        PlaySound("interact");
+                        UpdateGrid();
+                    }
+                    else
+                    {
+                        transform.position += new Vector3(-1, 0, 0);
+
+                    }
+                }
+                //Pyöritä
+                else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+                {
+                    transform.Rotate(0, 0, -90);
+
+                    if (ValidPos())
+                    {
+                        PlaySound("interact");
+                        UpdateGrid();
+                    }
+                    else
+                    {
+                        transform.Rotate(0, 0, 90);
+                    }
                 }
 
-                Fall = Time.time;
-            }
-            else if (Input.GetKeyDown(KeyCode.Space) || Time.time - Fall >= GameLogic.gamespeed)
-            {
-                while (true)
+                //Nopeammin alas
+                else if (Input.GetKeyDown(KeyCode.DownArrow) || Time.time - Fall >= GameLogic.gamespeed || Input.GetKeyDown(KeyCode.S))
                 {
                     transform.position += new Vector3(0, -1, 0);
 
                     if (ValidPos())
                     {
-                        PlaySound("interact");
                         UpdateGrid();
                     }
 
@@ -174,26 +153,68 @@ public class BlockLogic : MonoBehaviour
                         transform.position += new Vector3(0, 1, 0);
 
                         logic.DeleteRows();
+
                         if (logic.HasBlock(17))
                         {
                             gameover = true;
                             SceneManager.LoadScene("Game Over");
                         }
+
                         FindObjectOfType<Spawner>().SpawnNext();
 
                         enabled = false;
-                        break;
                     }
 
                     Fall = Time.time;
                 }
+                else if (Input.GetKeyDown(KeyCode.Space) || Time.time - Fall >= GameLogic.gamespeed)
+                {
+                    while (true)
+                    {
+                        transform.position += new Vector3(0, -1, 0);
+
+                        if (ValidPos())
+                        {
+                            PlaySound("interact");
+                            UpdateGrid();
+                        }
+
+                        //Tarkistaa onko rivi täynnä ja spawnaa uuden palan
+                        else
+                        {
+                            transform.position += new Vector3(0, 1, 0);
+
+                            logic.DeleteRows();
+                            if (logic.HasBlock(17))
+                            {
+                                gameover = true;
+                                SceneManager.LoadScene("Game Over");
+                            }
+                            FindObjectOfType<Spawner>().SpawnNext();
+
+                            enabled = false;
+                            break;
+                        }
+
+                        Fall = Time.time;
+                    }
+                }
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    PlaySound("interact");
+                }
             }
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+            else if (paused == true)
             {
-                PlaySound("interact");
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    Time.timeScale = 1f;
+                    FindObjectOfType<UIClass>().PauseMenu(false);
+                    paused = false;
+
+                }
+
             }
         }
-
-
     }
 }
