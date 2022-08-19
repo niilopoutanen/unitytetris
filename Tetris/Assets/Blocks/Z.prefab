@@ -52,6 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   logic: {fileID: 5077579544571106765}
   gameover: 0
+  paused: 0
   interact: {fileID: 5443866778896956478}
 --- !u!114 &5077579544571106765
 MonoBehaviour:
