@@ -81,7 +81,7 @@ public class BlockLogic : MonoBehaviour
         if(gameover == false)
         {
             if(paused == false)
-            {
+                    {
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     Time.timeScale = 0f;
@@ -90,7 +90,7 @@ public class BlockLogic : MonoBehaviour
 
                 }
                 //vasemmalle
-                if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+                else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
                 {
                     transform.position += new Vector3(-1, 0, 0);
 
