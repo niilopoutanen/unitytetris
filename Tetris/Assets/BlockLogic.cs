@@ -213,6 +213,12 @@ public class BlockLogic : MonoBehaviour
                     paused = false;
 
                 }
+                else if (FindObjectOfType<UIClass>().ResumeGame() == true)
+                {
+                    Time.timeScale = 1f;
+                    FindObjectOfType<UIClass>().PauseMenu(false);
+                    paused = false;
+                }
 
             }
         }

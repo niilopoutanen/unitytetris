@@ -23,7 +23,10 @@ public class UIClass : MonoBehaviour
             paused = false;
         }
     }
-
+    public bool ResumeGame()
+    {
+        return true;
+    }
     public void Play()
     {
         positive.Play();
