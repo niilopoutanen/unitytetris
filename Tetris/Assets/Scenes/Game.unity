@@ -627,6 +627,7 @@ GameObject:
   - component: {fileID: 603273803}
   - component: {fileID: 603273802}
   - component: {fileID: 603273801}
+  - component: {fileID: 603273804}
   m_Layer: 5
   m_Name: PauseMenuCanvas
   m_TagString: Untagged
@@ -716,6 +717,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_TargetDisplay: 0
+--- !u!114 &603273804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603273799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61d195a1810a49f4e8ae2a14432107a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positive: {fileID: 0}
+  pauseCanvas: {fileID: 603273799}
 --- !u!1 &642544048
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,7 +742,6 @@ GameObject:
   - component: {fileID: 642544049}
   - component: {fileID: 642544051}
   - component: {fileID: 642544050}
-  - component: {fileID: 642544052}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -794,20 +808,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 642544048}
   m_CullTransparentMesh: 1
---- !u!114 &642544052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642544048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61d195a1810a49f4e8ae2a14432107a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  positive: {fileID: 1396375456}
-  pausemenu: {fileID: 642544048}
 --- !u!1 &813720527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,7 +1640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positive: {fileID: 1396375456}
-  pausemenu: {fileID: 642544048}
+  pauseCanvas: {fileID: 603273799}
 --- !u!1001 &1457341664
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1865,7 +1865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positive: {fileID: 0}
-  pausemenu: {fileID: 642544048}
+  pauseCanvas: {fileID: 603273799}
 --- !u!114 &1504576565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2236,7 +2236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positive: {fileID: 0}
-  pausemenu: {fileID: 642544048}
+  pauseCanvas: {fileID: 603273799}
 --- !u!1 &1661352628
 GameObject:
   m_ObjectHideFlags: 0
@@ -2630,7 +2630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positive: {fileID: 0}
-  pausemenu: {fileID: 642544048}
+  pauseCanvas: {fileID: 603273799}
 --- !u!114 &1882811040
 MonoBehaviour:
   m_ObjectHideFlags: 0
