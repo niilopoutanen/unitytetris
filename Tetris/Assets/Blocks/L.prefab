@@ -67,6 +67,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Canvas: {fileID: 0}
   ScoreText: {fileID: 0}
+  positive: {fileID: 0}
 --- !u!82 &8247808545576941303
 AudioSource:
   m_ObjectHideFlags: 0
@@ -356,7 +357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4205204057815421280, guid: 3cc596169ee672a428d2fe6097dc9c8d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4205204057815421280, guid: 3cc596169ee672a428d2fe6097dc9c8d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -434,7 +435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4205204057815421280, guid: 3cc596169ee672a428d2fe6097dc9c8d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4205204057815421280, guid: 3cc596169ee672a428d2fe6097dc9c8d, type: 3}
       propertyPath: m_LocalPosition.z

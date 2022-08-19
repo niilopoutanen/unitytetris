@@ -67,6 +67,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Canvas: {fileID: 0}
   ScoreText: {fileID: 0}
+  positive: {fileID: 0}
 --- !u!82 &5063255931738001972
 AudioSource:
   m_ObjectHideFlags: 0
