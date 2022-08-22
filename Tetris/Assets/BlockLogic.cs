@@ -84,6 +84,7 @@ public class BlockLogic : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
+
                     Time.timeScale = 0f;
                     FindObjectOfType<UIClass>().PauseMenu(true);
                     paused = true;
