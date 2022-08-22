@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 
-
 public class GameLogic : MonoBehaviour
 {
     private static int width = 10;
@@ -105,13 +104,19 @@ public class GameLogic : MonoBehaviour
     public bool GameOver(Vector2 vec)
     {
         if(vec.y <18)
+
         {
+
+            FindObjectOfType<SaveSystem>().SaveScores(4, "testi");
+
             return false;
+
         }
         else
         {
             return false;
         }
+
     }
 
     public bool HasBlock(int y)
