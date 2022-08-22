@@ -19,7 +19,7 @@ public class UIClass : MonoBehaviour
             pauseCanvas.SetActive(false);
             Time.timeScale = 1f;
             BlockLogic.paused = false;
-            GameLogic.gamespeed = 0f;
+            GameLogic.gamespeed = 1f;
         }
     }
     public void ResumeGame()
