@@ -2575,7 +2575,6 @@ GameObject:
   - component: {fileID: 1882811042}
   - component: {fileID: 1882811041}
   - component: {fileID: 1882811040}
-  - component: {fileID: 1882811039}
   - component: {fileID: 1882811038}
   m_Layer: 5
   m_Name: QuitGame
@@ -2617,20 +2616,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2d9857b901da3438e53441bdf18bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1882811039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1882811036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61d195a1810a49f4e8ae2a14432107a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  positive: {fileID: 0}
-  pauseCanvas: {fileID: 603273799}
 --- !u!114 &1882811040
 MonoBehaviour:
   m_ObjectHideFlags: 0

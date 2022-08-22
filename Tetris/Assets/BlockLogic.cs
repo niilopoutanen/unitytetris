@@ -66,6 +66,7 @@ public class BlockLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FindObjectOfType<UIClass>().PauseMenu(false);
 
         if (!ValidPos())
         {

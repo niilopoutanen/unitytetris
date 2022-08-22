@@ -33,7 +33,7 @@ public class UIClass : MonoBehaviour
 
     void Start()
     {
-        pauseCanvas.SetActive(false);
+        //pauseCanvas.SetActive(false);
     }
 
     // Update is called once per frame
