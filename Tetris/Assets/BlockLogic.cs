@@ -67,6 +67,7 @@ public class BlockLogic : MonoBehaviour
     void Start()
     {
         FindObjectOfType<UIClass>().PauseMenu(false);
+        //FindObjectOfType<SaveSystem>().SaveScores(4, "testi");
 
         if (!ValidPos())
         {
@@ -91,8 +92,36 @@ public class BlockLogic : MonoBehaviour
 
                 }
                 //vasemmalle
+
                 else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
                 {
+                    if (Input.GetKey(KeyCode.LeftShift) == true)
+                    {
+                        transform.position += new Vector3(-1, 0, 0);
+
+                        if (ValidPos())
+                        {
+                            PlaySound("interact");
+                            UpdateGrid();
+                        }
+
+                        else
+                        {
+                            transform.position += new Vector3(1, 0, 0);
+                        }
+                        transform.position += new Vector3(-1, 0, 0);
+
+                        if (ValidPos())
+                        {
+                            PlaySound("interact");
+                            UpdateGrid();
+                        }
+
+                        else
+                        {
+                            transform.position += new Vector3(1, 0, 0);
+                        }
+                    }
                     transform.position += new Vector3(-1, 0, 0);
 
                     if (ValidPos())
@@ -109,7 +138,34 @@ public class BlockLogic : MonoBehaviour
                 //oikealle
                 else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
                 {
-                    transform.position += new Vector3(1, 0, 0);
+                    if (Input.GetKey(KeyCode.LeftShift) == true)
+                    {
+                        transform.position += new Vector3(1, 0, 0);
+
+                        if (ValidPos())
+                        {
+                            PlaySound("interact");
+                            UpdateGrid();
+                        }
+                        else
+                        {
+                            transform.position += new Vector3(-1, 0, 0);
+
+                        }
+                        transform.position += new Vector3(1, 0, 0);
+
+                        if (ValidPos())
+                        {
+                            PlaySound("interact");
+                            UpdateGrid();
+                        }
+                        else
+                        {
+                            transform.position += new Vector3(-1, 0, 0);
+
+                        }
+                    }
+                        transform.position += new Vector3(1, 0, 0);
 
                     if (ValidPos())
                     {
@@ -141,6 +197,7 @@ public class BlockLogic : MonoBehaviour
                 //Nopeammin alas
                 else if (Input.GetKeyDown(KeyCode.DownArrow) || Time.time - Fall >= GameLogic.gamespeed || Input.GetKeyDown(KeyCode.S))
                 {
+
                     transform.position += new Vector3(0, -1, 0);
 
                     if (ValidPos())
@@ -159,6 +216,8 @@ public class BlockLogic : MonoBehaviour
                         {
                             gameover = true;
                             SceneManager.LoadScene("Game Over");
+                            FindObjectOfType<GameLogic>().GetEndTime();
+
                         }
 
                         FindObjectOfType<Spawner>().SpawnNext();

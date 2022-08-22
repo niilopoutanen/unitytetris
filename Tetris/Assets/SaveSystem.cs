@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class SaveSystem : MonoBehaviour
+public class SaveSystem
 {
     string testipolku = "C:\\Users\\Niilo Poutanen\\AppData\\LocalLow\\Niilo Poutanen\\Tetris\\testi.txt";
     string polku = Application.persistentDataPath + "\testi.txt";

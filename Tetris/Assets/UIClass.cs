@@ -19,6 +19,7 @@ public class UIClass : MonoBehaviour
             pauseCanvas.SetActive(false);
             Time.timeScale = 1f;
             BlockLogic.paused = false;
+            GameLogic.gamespeed = 0f;
         }
     }
     public void ResumeGame()
@@ -30,7 +31,10 @@ public class UIClass : MonoBehaviour
     {
         positive.Play();
     }
+    public void UpdatePlayTime()
+    {
 
+    }
     void Start()
     {
         //pauseCanvas.SetActive(false);

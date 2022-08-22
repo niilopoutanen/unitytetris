@@ -13,6 +13,7 @@ public class MenuButtons : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("Game");
+        GameLogic.ScoreValue = 0;
     }
     public void QuitGame()
     {

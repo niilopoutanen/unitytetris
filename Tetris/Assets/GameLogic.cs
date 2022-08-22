@@ -15,12 +15,19 @@ public class GameLogic : MonoBehaviour
     public Canvas Canvas;
     public Text ScoreText;
     [SerializeField] private AudioSource positive;
-
+    private float timeOnStart;
+    private float timeOnEnd;
+    public float PlayTime;
     public static Transform[,] Grid { get => grid; set => grid = value; }
     public static int Height { get => height; set => height = value; }
     public static int Width { get => width; set => width = value; }
     public static int ScoreValue { get => scoreValue; set => scoreValue = value; }
-
+    public float GetEndTime()
+    {
+        float time = timeOnStart - timeOnEnd;
+        PlayTime = time;
+        return time;
+    }
     public Vector2 RoundVector(Vector2 vec)
     {
         return new Vector2(Mathf.Round(vec.x), Mathf.Round(vec.y));
@@ -104,11 +111,7 @@ public class GameLogic : MonoBehaviour
     public bool GameOver(Vector2 vec)
     {
         if(vec.y <18)
-
         {
-
-            FindObjectOfType<SaveSystem>().SaveScores(4, "testi");
-
             return false;
 
         }
@@ -134,7 +137,9 @@ public class GameLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timeOnStart = Time.time;
         
+
     }
 
     // Update is called once per frame
