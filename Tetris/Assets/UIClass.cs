@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class UIClass : MonoBehaviour
 {
 
@@ -14,11 +13,6 @@ public class UIClass : MonoBehaviour
         if (isPaused == true)
         {
             pauseCanvas.SetActive(true);
-            foreach (Transform t in pauseCanvas.transform)
-            {
-                t.gameObject.SetActive(true);
-                
-            }
         }
         else if (isPaused == false)
         {
