@@ -1,6 +1,6 @@
 # Unity Tetris
-<!-- [Logo](https://github.com/niilopoutanen/UnityTetris/blob/main/Tetris/Assets/Textures/SmallLogo.png) -->
-<img src="https://github.com/niilopoutanen/UnityTetris/blob/main/Tetris/Assets/Textures/SmallLogo.png" width=300 float>
+
+<img src="https://github.com/niilopoutanen/UnityTetris/blob/main/Tetris/Assets/Textures/SmallLogo.png?raw=true" width=300>
 
 ## Tetris made with unity and C#
 
