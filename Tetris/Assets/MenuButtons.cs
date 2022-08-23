@@ -5,10 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class MenuButtons : MonoBehaviour
 {
-
+    public void ToGithub()
+    {
+        string link = "https://github.com/niilopoutanen/UnityTetris";
+        Application.OpenURL(link);
+    }
     public void StartGame()
     {
         SceneManager.LoadScene("Game");
+        GameLogic.ScoreValue = 0;
+        GameLogic.gamespeed = 1f;
+        GameLogic.timeOnStart = Time.time;
     }
     public void QuitGame()
     {

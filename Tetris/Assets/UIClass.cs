@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ public class UIClass : MonoBehaviour
 
     [SerializeField] private AudioSource positive;
     public GameObject pauseCanvas;
-
+    public Text SurvivedTime;
     public void PauseMenu(bool isPaused)
     {
         if (isPaused == true)
@@ -30,15 +31,21 @@ public class UIClass : MonoBehaviour
     {
         positive.Play();
     }
-
+    public void UpdatePlayTime()
+    {
+        FindObjectOfType<GameLogic>().GetEndTime();
+        float Endtime = GameLogic.PlayTime;
+        string[] splitted = Endtime.ToString().Split('.');
+        SurvivedTime.text = "Survival time: " + splitted[0] + " seconds";
+    }
     void Start()
     {
-        pauseCanvas.SetActive(false);
+        //pauseCanvas.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        UpdatePlayTime();
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 
-
 public class GameLogic : MonoBehaviour
 {
     private static int width = 10;
@@ -16,12 +15,19 @@ public class GameLogic : MonoBehaviour
     public Canvas Canvas;
     public Text ScoreText;
     [SerializeField] private AudioSource positive;
-
+    public static float timeOnStart;
+    private float timeOnEnd;
+    public static float PlayTime;
     public static Transform[,] Grid { get => grid; set => grid = value; }
     public static int Height { get => height; set => height = value; }
     public static int Width { get => width; set => width = value; }
     public static int ScoreValue { get => scoreValue; set => scoreValue = value; }
-
+    public float GetEndTime()
+    {
+        timeOnEnd = Time.time;
+        float time = timeOnStart + timeOnEnd;
+        return time;
+    }
     public Vector2 RoundVector(Vector2 vec)
     {
         return new Vector2(Mathf.Round(vec.x), Mathf.Round(vec.y));
@@ -107,11 +113,13 @@ public class GameLogic : MonoBehaviour
         if(vec.y <18)
         {
             return false;
+
         }
         else
         {
             return false;
         }
+
     }
 
     public bool HasBlock(int y)
@@ -120,6 +128,7 @@ public class GameLogic : MonoBehaviour
         {
             if(Grid[x, y] != null)
             {
+                timeOnEnd = Time.time;
                 return true;
             }
         }
@@ -135,6 +144,6 @@ public class GameLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        PlayTime = Time.time - timeOnStart;
     }
 }
