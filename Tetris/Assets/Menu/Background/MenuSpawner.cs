@@ -6,7 +6,7 @@ public class MenuSpawner : MonoBehaviour
 {
     private float time = 0.0f;
     public float interpolationPeriod = 0.5f;
-
+    public int DestroyDelay;
 
     public GameObject[] objects;
     public Transform randomTransform;
@@ -19,6 +19,11 @@ public class MenuSpawner : MonoBehaviour
         int rand = Random.Range(0, objects.Length);
 
         Instantiate(objects[rand], randomTransform.position, Quaternion.identity);
+    }
+
+    private void Destroy()
+    {
+        
     }
     // Start is called before the first frame update
     void Start()
