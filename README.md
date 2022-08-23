@@ -1,4 +1,6 @@
 # Unity Tetris
+<!-- ![Getting Started](Tetris/Assets/Textures/SmallLogo.png =250x) -->
+<img src="Tetris/Assets/Textures/SmallLogo.png" width=300 float>
 
 ## Tetris made with unity and C#
 
