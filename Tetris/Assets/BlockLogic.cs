@@ -217,7 +217,6 @@ public class BlockLogic : MonoBehaviour
                             gameover = true;
                             SceneManager.LoadScene("Game Over");
                             FindObjectOfType<GameLogic>().GetEndTime();
-
                         }
 
                         FindObjectOfType<Spawner>().SpawnNext();

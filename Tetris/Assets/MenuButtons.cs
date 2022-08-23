@@ -15,6 +15,7 @@ public class MenuButtons : MonoBehaviour
         SceneManager.LoadScene("Game");
         GameLogic.ScoreValue = 0;
         GameLogic.gamespeed = 1f;
+        GameLogic.timeOnStart = 0;
     }
     public void QuitGame()
     {

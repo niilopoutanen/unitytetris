@@ -7,7 +7,7 @@ public class UIClass : MonoBehaviour
 
     [SerializeField] private AudioSource positive;
     public GameObject pauseCanvas;
-
+    public Text SurvivedTime;
     public void PauseMenu(bool isPaused)
     {
         if (isPaused == true)
@@ -32,7 +32,9 @@ public class UIClass : MonoBehaviour
     }
     public void UpdatePlayTime()
     {
-
+        FindObjectOfType<GameLogic>().GetEndTime();
+        float Endtime = GameLogic.PlayTime;
+        SurvivedTime.text = Endtime.ToString();
     }
     void Start()
     {
@@ -42,6 +44,6 @@ public class UIClass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        UpdatePlayTime();
     }
 }

@@ -15,7 +15,7 @@ public class GameLogic : MonoBehaviour
     public Canvas Canvas;
     public Text ScoreText;
     [SerializeField] private AudioSource positive;
-    private float timeOnStart;
+    public static float timeOnStart;
     private float timeOnEnd;
     public static float PlayTime;
     public static Transform[,] Grid { get => grid; set => grid = value; }
@@ -24,7 +24,8 @@ public class GameLogic : MonoBehaviour
     public static int ScoreValue { get => scoreValue; set => scoreValue = value; }
     public float GetEndTime()
     {
-        float time = timeOnStart - timeOnEnd;
+        timeOnEnd = Time.time;
+        float time = timeOnStart + timeOnEnd;
         PlayTime = time;
         return time;
     }
@@ -128,6 +129,7 @@ public class GameLogic : MonoBehaviour
         {
             if(Grid[x, y] != null)
             {
+                timeOnEnd = Time.time;
                 return true;
             }
         }
@@ -136,9 +138,7 @@ public class GameLogic : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        timeOnStart = Time.time;
-        
+    {        
 
     }
 
