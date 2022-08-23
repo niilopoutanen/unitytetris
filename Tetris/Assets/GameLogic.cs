@@ -17,7 +17,7 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private AudioSource positive;
     private float timeOnStart;
     private float timeOnEnd;
-    public float PlayTime;
+    public static float PlayTime;
     public static Transform[,] Grid { get => grid; set => grid = value; }
     public static int Height { get => height; set => height = value; }
     public static int Width { get => width; set => width = value; }
