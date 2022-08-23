@@ -564,8 +564,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.57, y: 0}
-  m_SizeDelta: {x: 207.8, y: 39.387}
+  m_AnchoredPosition: {x: -4.28, y: 0}
+  m_SizeDelta: {x: 84.659, y: 39.387}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &553428799
 MonoBehaviour:
@@ -600,9 +600,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Vasemmalle
-
-'
+  m_Text: Left
 --- !u!222 &553428800
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -902,7 +900,7 @@ GameObject:
   - component: {fileID: 770074721}
   - component: {fileID: 770074720}
   m_Layer: 5
-  m_Name: Text (Legacy) (1)
+  m_Name: Move2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -961,7 +959,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Liikuta 2 palaa kerrallaan
+  m_Text: Move 2 pieces at a time
 --- !u!222 &770074721
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1682,7 +1680,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Oikealle
+  m_Text: Right
 --- !u!222 &1325896177
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2009,8 +2007,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000081494, y: -259}
-  m_SizeDelta: {x: 418.24, y: 39.39}
+  m_AnchoredPosition: {x: 0, y: -259}
+  m_SizeDelta: {x: 276.38, y: 39.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1485308458
 MonoBehaviour:
@@ -2045,7 +2043,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Nuolin\xE4pp\xE4imet toimivat my\xF6s!"
+  m_Text: Arrow keys work too!
 --- !u!222 &1485308459
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2554,7 +2552,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Alas
+  m_Text: Down
 --- !u!222 &1661352631
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3113,7 +3111,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Alas (nopea)
+  m_Text: Down (fast)
 --- !u!222 &1890475975
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3369,7 +3367,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Py\xF6rit\xE4 Palaa"
+  m_Text: Rotate block
 --- !u!222 &2083130845
 CanvasRenderer:
   m_ObjectHideFlags: 0

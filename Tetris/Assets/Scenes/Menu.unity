@@ -194,9 +194,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Aloita Peli
-
-'
+  m_Text: Start Game
 --- !u!222 &261320773
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -423,7 +421,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Lopeta Peli
+  m_Text: 'Quit Game
 
 '
 --- !u!222 &752510868
