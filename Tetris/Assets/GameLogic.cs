@@ -26,7 +26,6 @@ public class GameLogic : MonoBehaviour
     {
         timeOnEnd = Time.time;
         float time = timeOnStart + timeOnEnd;
-        PlayTime = time;
         return time;
     }
     public Vector2 RoundVector(Vector2 vec)
@@ -138,13 +137,13 @@ public class GameLogic : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {        
-
+    {
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        PlayTime = Time.time - timeOnStart;
     }
 }
