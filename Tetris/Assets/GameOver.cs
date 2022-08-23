@@ -22,9 +22,9 @@ public class GameOver : MonoBehaviour
     }
     public void GetTime()
     {
-        FindObjectOfType<GameLogic>().GetEndTime();
         float Endtime = GameLogic.PlayTime;
-        string TextToShow = "Time survived: " + Endtime.ToString();
+        string[] splitted = Endtime.ToString().Split('.');
+        string TextToShow = "Time survived: " + splitted[0]+ " seconds";
         GameTime.text = TextToShow;
     }
     // Start is called before the first frame update
