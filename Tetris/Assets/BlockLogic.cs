@@ -67,7 +67,6 @@ public class BlockLogic : MonoBehaviour
     void Start()
     {
         FindObjectOfType<UIClass>().PauseMenu(false);
-        //FindObjectOfType<SaveSystem>().SaveScores(4, "testi");
 
         if (!ValidPos())
         {
