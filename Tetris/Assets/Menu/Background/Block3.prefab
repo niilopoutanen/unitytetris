@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4225972950705161772}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2096672, y: 0.029172007, z: -0.0015749988}
+  m_LocalPosition: {x: 0.34, y: -1.86, z: -0.0015749988}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -64,7 +64,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2448642019000462559}
   - component: {fileID: 6744297897753873297}
-  - component: {fileID: 6366081915404007351}
+  - component: {fileID: 7916853759387390815}
   m_Layer: 0
   m_Name: Block3
   m_TagString: Untagged
@@ -139,8 +139,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6366081915404007351
-BoxCollider2D:
+--- !u!60 &7916853759387390815
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -162,6 +162,11 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.72, y: 0.48}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.35999998, y: 0.24}
+      - {x: -0.35999998, y: -0.24}
+      - {x: 0.35999998, y: -0.24}
+      - {x: 0.35999998, y: 0.0059802122}
+      - {x: -0.11687562, y: 0.0043925643}
+      - {x: -0.11628714, y: 0.24}

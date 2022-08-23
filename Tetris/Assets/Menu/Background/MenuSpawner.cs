@@ -5,9 +5,10 @@ using UnityEngine;
 public class MenuSpawner : MonoBehaviour
 {
     private float time = 0.0f;
-    public float interpolationPeriod = 0.5f;
-    public int DestroyDelay;
+    public float WaitPeriod;
+    public int DestroyPeriod;
 
+    public GameObject parent;
     public GameObject[] objects;
     public Transform randomTransform;
     int heightY = 7;
@@ -18,13 +19,11 @@ public class MenuSpawner : MonoBehaviour
         randomTransform.position = new Vector2(posX, heightY);
         int rand = Random.Range(0, objects.Length);
 
-        Instantiate(objects[rand], randomTransform.position, Quaternion.identity);
+        GameObject todelete  = Instantiate(objects[rand], randomTransform.position, Quaternion.identity);
+        Destroy(todelete, DestroyPeriod);
     }
 
-    private void Destroy()
-    {
-        
-    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,11 +35,12 @@ public class MenuSpawner : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        if (time >= interpolationPeriod)
+        if (time >= WaitPeriod)
         {
-            time = time - interpolationPeriod;
+            time = time - WaitPeriod;
 
             SpawnNext();
+
         }
     }
 }

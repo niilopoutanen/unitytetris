@@ -1083,6 +1083,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c8f574710a66ac46a95bdeb59e818b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WaitPeriod: 0.2
+  DestroyPeriod: 15
+  parent: {fileID: 1841529499}
   objects:
   - {fileID: 2358386027907741851, guid: 38cb9c650d0f436458ecbd631f9bd10e, type: 3}
   - {fileID: 6506999120650103193, guid: 4b32f78bcdfa36046a6870d284789b12, type: 3}
