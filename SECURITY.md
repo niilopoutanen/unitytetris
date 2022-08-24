@@ -6,7 +6,7 @@ Only the newest version is supported, all the older releases are demos.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 0.7.0-beta  | :white_check_mark: |
+| 0.8.0-beta  | :white_check_mark: |
 
 
 ## Reporting a Vulnerability
