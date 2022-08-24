@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 public class UIClass : MonoBehaviour
@@ -35,7 +36,11 @@ public class UIClass : MonoBehaviour
     {
         FindObjectOfType<GameLogic>().GetEndTime();
         float Endtime = GameLogic.PlayTime;
-        string[] splitted = Endtime.ToString().Split('.');
+        string[] splitted = Endtime.ToString().Split(',');
+        if(splitted.Count() == 1)
+        {
+            splitted = Endtime.ToString().Split('.');
+        }
         SurvivedTime.text = "Survival time: " + splitted[0] + " seconds";
     }
     void Start()
