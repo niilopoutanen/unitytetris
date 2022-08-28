@@ -14,7 +14,6 @@ Only the newest version is supported, all the older releases are demos.
 | 0.4.0-beta  | :x: |
 | 0.3.0-beta  | :x: |
 | 0.2.0-beta  | :x: |
-| 0.1.0-beta  | :x: |
 
 
 ## Reporting a Vulnerability
