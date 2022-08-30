@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class GameOver : MonoBehaviour
 {
@@ -22,10 +23,14 @@ public class GameOver : MonoBehaviour
     }
     public void GetTime()
     {
+        FindObjectOfType<GameLogic>().GetEndTime();
         float Endtime = GameLogic.PlayTime;
-        string[] splitted = Endtime.ToString().Split('.');
-        string TextToShow = "Time survived: " + splitted[0]+ " seconds";
-        GameTime.text = TextToShow;
+        string[] splitted = Endtime.ToString().Split(',');
+        if (splitted.Count() == 1)
+        {
+            splitted = Endtime.ToString().Split('.');
+        }
+        GameTime.text = "Survival time: " + splitted[0] + " seconds";
     }
     // Start is called before the first frame update
     void Start()
