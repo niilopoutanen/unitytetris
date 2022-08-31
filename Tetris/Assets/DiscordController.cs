@@ -12,12 +12,10 @@ public class DiscordController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string det = "Score: " + GameLogic.ScoreValue;
         string stat = "";
         if (playerlocation == "Menu")
         {
             stat = "In main menu";
-            det = "";
         }
         else if (playerlocation == "Game")
         {
@@ -28,7 +26,6 @@ public class DiscordController : MonoBehaviour
         var activity = new Discord.Activity
         {
             State = stat,
-            Details = det,
             Assets =
             {
                 LargeImage = "logo"
