@@ -14,6 +14,7 @@ public class MenuButtons : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
         GameLogic.ScoreValue = 0;
+        GameLogic.BlocksPlaced = 0;
         GameLogic.gamespeed = 1f;
         GameLogic.timeOnStart = Time.time;
     }

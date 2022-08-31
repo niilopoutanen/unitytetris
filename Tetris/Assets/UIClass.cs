@@ -10,6 +10,7 @@ public class UIClass : MonoBehaviour
     [SerializeField] private AudioSource positive;
     public GameObject pauseCanvas;
     public Text SurvivedTime;
+    public Text BlocksPlacedText;
     public void PauseMenu(bool isPaused)
     {
         if (isPaused == true)
@@ -41,7 +42,13 @@ public class UIClass : MonoBehaviour
         {
             splitted = Endtime.ToString().Split('.');
         }
-        SurvivedTime.text = "Survival time: " + splitted[0] + " seconds";
+        SurvivedTime.text = splitted[0];
+    }
+
+    public void UpdateBlocksPlaced()
+    {
+        int blocksplaced = GameLogic.BlocksPlaced;
+        BlocksPlacedText.text = blocksplaced.ToString();
     }
     void Start()
     {
@@ -52,5 +59,6 @@ public class UIClass : MonoBehaviour
     void Update()
     {
         UpdatePlayTime();
+        UpdateBlocksPlaced();
     }
 }

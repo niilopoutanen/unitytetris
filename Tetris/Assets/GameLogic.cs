@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEditor;
+using System.ComponentModel;
 
 public class GameLogic : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GameLogic : MonoBehaviour
     private static int height = 20;
     private static Transform[,] grid = new Transform[Width, Height];
     private static int scoreValue;
+    private static int blocksPlaced;
     public static float gamespeed = 1.0f;
     public Canvas Canvas;
     public Text ScoreText;
@@ -22,6 +24,8 @@ public class GameLogic : MonoBehaviour
     public static int Height { get => height; set => height = value; }
     public static int Width { get => width; set => width = value; }
     public static int ScoreValue { get => scoreValue; set => scoreValue = value; }
+    public static int BlocksPlaced { get => blocksPlaced; set => blocksPlaced = value; }
+
     public float GetEndTime()
     {
         timeOnEnd = Time.time;
@@ -90,6 +94,8 @@ public class GameLogic : MonoBehaviour
     }
     public void DeleteRows()
     {
+        BlocksPlaced++;
+
         for (int y = 0; y < Height; ++y)
         {
             if (IsFull(y))
@@ -101,13 +107,12 @@ public class GameLogic : MonoBehaviour
                 DecreaseTop(y + 1);
                 y--;
                 ScoreValue++;
-                ScoreText.text = "Score: " + ScoreValue.ToString();
+                ScoreText.text = ScoreValue.ToString();
                 FindObjectOfType<UIClass>().Play();
 
             }
         }
     }
-
     public bool GameOver(Vector2 vec)
     {
         if(vec.y <18)
