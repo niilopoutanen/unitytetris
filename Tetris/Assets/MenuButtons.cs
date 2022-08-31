@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Discord;
 
 public class MenuButtons : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class MenuButtons : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+
     }
     public void ToMainMenu()
     {

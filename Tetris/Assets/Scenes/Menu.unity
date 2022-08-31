@@ -426,6 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2d9857b901da3438e53441bdf18bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 1584051026}
 --- !u!1 &752510865
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,6 +603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2d9857b901da3438e53441bdf18bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
 --- !u!114 &777311933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -711,6 +713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2d9857b901da3438e53441bdf18bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 1584051026}
 --- !u!114 &979155770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1043,6 +1046,7 @@ GameObject:
   - component: {fileID: 1584051025}
   - component: {fileID: 1584051024}
   - component: {fileID: 1584051023}
+  - component: {fileID: 1584051026}
   m_Layer: 0
   m_Name: MenuCamera
   m_TagString: MainCamera
@@ -1116,6 +1120,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1584051026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584051022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7224fdb17593048a5bb98ed0800d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerlocation: Menu
 --- !u!1 &1841529499
 GameObject:
   m_ObjectHideFlags: 0
