@@ -317,8 +317,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.7885132, y: -0.13627768}
-  m_SizeDelta: {x: 116.98, y: 62.2}
+  m_AnchoredPosition: {x: 2.3372, y: -0.0206}
+  m_SizeDelta: {x: 96.1516, y: 59.9278}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &418580143
 MonoBehaviour:
@@ -347,7 +347,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -999,8 +999,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.7901, y: -2.1341}
-  m_SizeDelta: {x: 118.8293, y: 57.5834}
+  m_AnchoredPosition: {x: 2.3426, y: -2.3929}
+  m_SizeDelta: {x: 96.1075, y: 57.9621}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1365299365
 MonoBehaviour:
@@ -1029,7 +1029,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 4
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1081,8 +1081,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.7600098, y: 1.8516693}
-  m_SizeDelta: {x: 119.78, y: 59.26}
+  m_AnchoredPosition: {x: 2.3301, y: 2.4102}
+  m_SizeDelta: {x: 96.1657, y: 56.9384}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1396375456
 AudioSource:
@@ -1207,7 +1207,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -2270,7 +2270,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090545748}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 484, y: 0, z: 0}
+  m_LocalPosition: {x: 475, y: 0, z: 0}
   m_LocalScale: {x: 49.09091, y: 49.09091, z: 49.09091}
   m_ConstrainProportionsScale: 0
   m_Children:
