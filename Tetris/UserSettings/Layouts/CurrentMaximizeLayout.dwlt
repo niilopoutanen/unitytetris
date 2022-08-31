@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 14673
+  controlID: 19417
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -45,8 +45,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 365
-    y: 73
+    x: 366
+    y: 19
     width: 1100
     height: 639
   m_ViewDataDictionary: {fileID: 0}
@@ -86,7 +86,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 14674
+  controlID: 19418
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 14675
+  controlID: 19390
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -226,7 +226,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 324dffff1a53ffffca53ffff4c55ffff5c55ffff6855ffffd85efffffc7cffffa87dffff4c87ffff2afbffffdc5e0000168d0000928f0000bc8f0000c88f00004a96000038a50000
+      m_ExpandedIDs: 324dffff1a53ffffca53ffff4c55ffff5c55ffff6855ffffd85efffffc7cffffa87dffff4c87ffff2afbffffdc5e0000168d0000928f0000bc8f0000c88f00004a96000038a50000c6a50000f4a5000000a6000006a600003aa6000078a60000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -525,9 +525,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 4.720705, y: 9.181488, z: -0.1873897}
+    m_Target: {x: 7.878171, y: 9.620261, z: -0.15576966}
     speed: 2
-    m_Value: {x: 4.720705, y: 9.181488, z: -0.1873897}
+    m_Value: {x: 7.878171, y: 9.620261, z: -0.15576966}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -578,9 +578,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 14.934115
+    m_Target: 11.866516
     speed: 2
-    m_Value: 14.934115
+    m_Value: 11.866516
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1104,8 +1104,8 @@ MonoBehaviour:
     y: 660
     width: 1467
     height: 287
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 11}
@@ -1154,21 +1154,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Textures
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Textures
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Ohjelmointi\UnityTetris\Tetris
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: aa600000
-    m_LastClickedID: 24746
+    m_SelectedIDs: 2c620000
+    m_LastClickedID: 25132
     m_ExpandedIDs: 00000000aa60000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1222,8 +1222,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 1ca60000
-    m_LastClickedInstanceID: 42524
+    m_SelectedInstanceIDs: c6a50000
+    m_LastClickedInstanceID: 42438
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300009a55000000000000
     m_RenameOverlay:
@@ -1311,7 +1311,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 42524
+  m_LastSelectedObjectID: 42616
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1372,7 +1372,7 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 42524
+  m_LastInspectedObjectInstanceID: 42438
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
