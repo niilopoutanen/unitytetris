@@ -1,10 +1,10 @@
-# Unity Tetris
 
-<img src="https://github.com/niilopoutanen/UnityTetris/blob/main/Tetris/Assets/Textures/SmallLogo.png?raw=true" width=300>
+# <img src="https://github.com/niilopoutanen/UnityTetris/blob/main/Tetris/Assets/Textures/Logo.png?raw=true" width=100>
 
-## Tetris made with unity and C#
+## Tetris made with Unity and C#
 
-You can play the game with **arrow** keys, or **WASD** keys. Pick the newest version from the ***Releases***-tab to try the game.
+Pick the newest version from the ***Releases***-tab to try the game. 
+If you face any errors or have development suggestions, please report them to the ***Issues***-page.
 
 
 
