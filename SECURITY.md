@@ -2,11 +2,12 @@
 
 ## Supported Versions
 
-Only the newest version is supported, all the older releases are demos.
+Only the newest version is supported, all the older releases before 1.0 are demos.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 0.9.0-beta  | :white_check_mark: |
+| 1.0.0  | :white_check_mark: |
+| 0.9.0-beta  | :x: |
 | 0.8.0-beta  | :x: |
 | 0.7.0-beta  | :x: |
 | 0.6.0-beta  | :x: |
@@ -16,6 +17,6 @@ Only the newest version is supported, all the older releases are demos.
 | 0.2.0-beta  | :x: |
 
 
-## Reporting a Vulnerability
+## Reporting a Issue
 
 If you notice a bug in the game, please create a new issue with enough information. I will fix the problem as soon as I can.
