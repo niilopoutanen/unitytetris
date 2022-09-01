@@ -18,7 +18,7 @@ public class GameOver : MonoBehaviour
     {
         Canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 
-        ScoreText.text = GameLogic.ScoreValue.ToString();
+        ScoreText.text = "Score: " + GameLogic.ScoreValue.ToString();
 
     }
     public void GetTime()
@@ -30,7 +30,7 @@ public class GameOver : MonoBehaviour
         {
             splitted = Endtime.ToString().Split('.');
         }
-        GameTime.text = splitted[0];
+        GameTime.text = "Survival time: " + splitted[0] + " seconds";
     }
     // Start is called before the first frame update
     void Start()
