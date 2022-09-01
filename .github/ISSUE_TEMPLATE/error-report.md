@@ -1,6 +1,6 @@
 ---
 name: Error report
-about: Create a report to help improve the app
+about: Describe the error or bug that you encountered.
 title: ''
 labels: bug
 assignees: ''
