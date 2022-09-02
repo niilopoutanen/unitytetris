@@ -22,4 +22,12 @@ public class Player : MonoBehaviour
     {
         blocksPlaced++;
     }
+    private void Start()
+    {
+        LoadPlayer();
+    }
+    private void Update()
+    {
+        SavePlayer();
+    }
 }
