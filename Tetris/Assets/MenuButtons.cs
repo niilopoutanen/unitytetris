@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Discord;
+using UnityEngine.Rendering;
 
 public class MenuButtons : MonoBehaviour
 {
@@ -27,6 +28,10 @@ public class MenuButtons : MonoBehaviour
     public void ToMainMenu()
     {
         SceneManager.LoadScene("Menu");
+    }
+    public void ToAchievements()
+    {
+        SceneManager.LoadScene("Achievements");
     }
     // Start is called before the first frame update
     void Start()
