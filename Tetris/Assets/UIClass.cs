@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 public class UIClass : MonoBehaviour
 {
@@ -12,10 +13,12 @@ public class UIClass : MonoBehaviour
     public Text SurvivedTime;
     public Text BlocksPlacedText;
     public Player player;
+
     public void PauseMenu(bool isPaused)
     {
         if (isPaused == true)
         {
+            player.SavePlayer();
             pauseCanvas.SetActive(true);
         }
         else if (isPaused == false)
@@ -58,7 +61,12 @@ public class UIClass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdatePlayTime();
-        UpdateBlocksPlaced();
+        if(pauseCanvas.activeSelf == false)
+        {
+            UpdatePlayTime();
+            UpdateBlocksPlaced();
+        }
+
+
     }
 }

@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class AchievementSystem : MonoBehaviour
 {
@@ -21,4 +23,23 @@ public class AchievementSystem : MonoBehaviour
     {
         
     }
+
+    public AchievementSystem(string AchievementName, string AchievementDescription, int requirement)
+    {
+
+    }
+
+
+}
+public class AchivementClass
+{
+    private int totalBlocks = 500;
+    private int scoreOver20times = 20;
+
+
+    private void CheckIfDone(int requirement, int value)
+    {
+
+    }
+
 }
