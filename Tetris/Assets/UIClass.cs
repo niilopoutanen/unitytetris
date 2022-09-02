@@ -11,6 +11,7 @@ public class UIClass : MonoBehaviour
     public GameObject pauseCanvas;
     public Text SurvivedTime;
     public Text BlocksPlacedText;
+    public Player player;
     public void PauseMenu(bool isPaused)
     {
         if (isPaused == true)
@@ -47,11 +48,14 @@ public class UIClass : MonoBehaviour
 
     public void UpdateBlocksPlaced()
     {
-        int blocksplaced = GameLogic.BlocksPlaced;
-        BlocksPlacedText.text = blocksplaced.ToString();
+        player = GameObject.Find("Player").GetComponent<Player>();
+        BlocksPlacedText.text = player.BlocksPlaced.ToString();
+        player.SavePlayer();
     }
     void Start()
     {
+        player.LoadPlayer();
+
         //pauseCanvas.SetActive(false);
     }
 

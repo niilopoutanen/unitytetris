@@ -12,8 +12,8 @@ public class PlayerData
 
     public PlayerData (Player player)
     {
-        highScore = player.score;
-        blocksPlaced = player.blocksPlaced;
+        highScore = Player.Score;
+        blocksPlaced = player.BlocksPlaced;
         totalPlayTime = 1;
     }
 }

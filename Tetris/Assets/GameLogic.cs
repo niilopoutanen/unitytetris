@@ -20,6 +20,8 @@ public class GameLogic : MonoBehaviour
     public static float timeOnStart;
     private float timeOnEnd;
     public static float PlayTime;
+    public Player player;
+
     public static Transform[,] Grid { get => grid; set => grid = value; }
     public static int Height { get => height; set => height = value; }
     public static int Width { get => width; set => width = value; }
@@ -94,12 +96,12 @@ public class GameLogic : MonoBehaviour
     }
     public void DeleteRows()
     {
-        BlocksPlaced++;
-
+        player.BlocksPlaced++;
         for (int y = 0; y < Height; ++y)
         {
             if (IsFull(y))
             {
+
                 IncreaseSpeed();
                 Canvas = GameObject.Find("UICanvas").GetComponent<Canvas>();
                 ScoreText = Canvas.GetComponentInChildren<Text>();
@@ -109,7 +111,6 @@ public class GameLogic : MonoBehaviour
                 ScoreValue++;
                 ScoreText.text = ScoreValue.ToString();
                 FindObjectOfType<UIClass>().Play();
-
             }
         }
     }
@@ -143,7 +144,8 @@ public class GameLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("Player").GetComponent<Player>();
+
     }
 
     // Update is called once per frame
