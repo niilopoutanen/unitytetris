@@ -1,0 +1,8 @@
+{
+    "500BlocksPlaced": {
+        "title": "500 blocks placed",
+        "description": "place 500 blocks.",
+        "requirement": "500",
+        "completed": false
+    }
+}

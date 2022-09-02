@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine.SocialPlatforms.Impl;
 
 public static class SaveSystem
 {
@@ -47,12 +48,20 @@ public static class SaveSystem
     public static PlayerData LoadData()
     {
         string path = Application.persistentDataPath + "/save.json";
-
-        using (StreamReader reader = new StreamReader(path))
+        if (File.Exists(path))
         {
-            string json = reader.ReadToEnd();
-            PlayerData returnData = JsonUtility.FromJson<PlayerData>(json);
-            return returnData;
+            using (StreamReader reader = new StreamReader(path))
+            {
+                string json = reader.ReadToEnd();
+                PlayerData returnData = JsonUtility.FromJson<PlayerData>(json);
+                return returnData;
+            }
         }
+        else
+        {
+            return null;
+        }
+
     }
+
 }

@@ -7,39 +7,39 @@ using UnityEngine.UIElements;
 
 public class AchievementSystem : MonoBehaviour
 {
+    private Achievement achievements;
 
     public Player player;
     public Text totalBlocks;
-    // Start is called before the first frame update
+
+
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
         player.LoadPlayer();
-        totalBlocks.text = player.blocksPlaced.ToString();
+
+        if(achievements.CheckIfDone(achievements.totalBlocks, player.blocksPlaced) == true)
+        {
+            totalBlocks.text = "done";
+        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public AchievementSystem(string AchievementName, string AchievementDescription, int requirement)
-    {
-
-    }
-
 
 }
-public class AchivementClass
+public class Achievement
 {
-    private int totalBlocks = 500;
-    private int scoreOver20times = 20;
+    public int totalBlocks = 500;
 
 
-    private void CheckIfDone(int requirement, int value)
+    public bool CheckIfDone(int requirement, int value)
     {
-
+        if (requirement < value)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 }
