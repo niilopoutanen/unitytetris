@@ -8,6 +8,7 @@ public class BlockLogic : MonoBehaviour
     public GameLogic logic;
     public bool gameover = false;
     public static bool paused = false;
+    public Player player;
     [SerializeField] private AudioSource interact;
 
     bool ValidPos()
@@ -66,6 +67,8 @@ public class BlockLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player").GetComponent<Player>();
+
         FindObjectOfType<UIClass>().PauseMenu(false);
 
         if (!ValidPos())
@@ -214,6 +217,8 @@ public class BlockLogic : MonoBehaviour
                         if (logic.HasBlock(17))
                         {
                             gameover = true;
+                            player.AddBlock(GameLogic.BlocksPlaced);
+                            player.SavePlayer();
                             SceneManager.LoadScene("Game Over");
                             FindObjectOfType<GameLogic>().GetEndTime();
                         }

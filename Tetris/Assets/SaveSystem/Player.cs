@@ -18,16 +18,12 @@ public class Player : MonoBehaviour
         blocksPlaced = data.blocksPlaced;
         Debug.Log("Loaded, BlocksPlaced = " + blocksPlaced);
     }
-    public void AddBlock()
+    public void AddBlock(int sessionblocks)
     {
-        blocksPlaced++;
+        blocksPlaced += sessionblocks;
     }
     private void Start()
     {
         LoadPlayer();
-    }
-    private void Update()
-    {
-        SavePlayer();
     }
 }

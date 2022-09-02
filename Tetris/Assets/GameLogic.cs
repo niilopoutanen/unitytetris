@@ -96,7 +96,8 @@ public class GameLogic : MonoBehaviour
     }
     public void DeleteRows()
     {
-        player.AddBlock();
+        BlocksPlaced++;
+        Debug.Log("added value" + BlocksPlaced);
         for (int y = 0; y < Height; ++y)
         {
             if (IsFull(y))
@@ -144,7 +145,6 @@ public class GameLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Player>();
 
     }
 

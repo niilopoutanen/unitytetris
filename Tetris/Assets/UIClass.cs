@@ -48,7 +48,7 @@ public class UIClass : MonoBehaviour
 
     public void UpdateBlocksPlaced()
     {
-        BlocksPlacedText.text = player.blocksPlaced.ToString();
+        BlocksPlacedText.text = GameLogic.BlocksPlaced.ToString();
     }
     void Start()
     {
