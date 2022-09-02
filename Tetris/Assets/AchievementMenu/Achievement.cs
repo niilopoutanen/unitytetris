@@ -25,7 +25,6 @@ public class Achievement : MonoBehaviour
 
 
     public Player player;
-    public Text playertotalBlocks;
 
     void Start()
     {
@@ -34,7 +33,7 @@ public class Achievement : MonoBehaviour
 
         if (CheckIfDone(totalBlocks, player.blocksPlaced) == true)
         {
-            playertotalBlocks.text = "done";
+
         }
 
         if (CheckIfDone(ScoreOver20times, player.scoreOver20Times) == true)
