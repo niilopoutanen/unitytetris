@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private static int score;
-    private int blocksPlaced;
-
-    public static int Score { get => score; set => score = value; }
-    public int BlocksPlaced { get => blocksPlaced; set => blocksPlaced = value; }
+    public int blocksPlaced;
 
     public void SavePlayer()
     {
         SaveSystem.SaveData(this);
-        Debug.Log("Saved");
+        Debug.Log("Saved, BlocksPlaced = " + blocksPlaced);
     }
     public void LoadPlayer()
     {
         PlayerData data = SaveSystem.LoadData();
 
-        Score = data.highScore;
-        BlocksPlaced = data.blocksPlaced;
-        Debug.Log("Loaded");
+        blocksPlaced = data.blocksPlaced;
+        Debug.Log("Loaded, BlocksPlaced = " + blocksPlaced);
     }
-
+    public void AddBlock()
+    {
+        blocksPlaced++;
+    }
 }
