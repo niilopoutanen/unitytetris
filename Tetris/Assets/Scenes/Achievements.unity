@@ -503,8 +503,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01fe31e10343aa4a87e8e542e4b26d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalBlocks: 500
+  ScoreOver20times: 10
   player: {fileID: 555886093}
-  totalBlocks: {fileID: 1666713955}
+  playertotalBlocks: {fileID: 1666713955}
 --- !u!1 &555886092
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,6 +537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocksPlaced: 0
+  scoreOver20Times: 0
 --- !u!4 &555886094
 Transform:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 public class Achievement : MonoBehaviour
 {
     public int totalBlocks = 500;
-
+    public int ScoreOver20times = 10;
 
     public bool CheckIfDone(int requirement, int value)
     {
@@ -35,6 +35,11 @@ public class Achievement : MonoBehaviour
         if (CheckIfDone(totalBlocks, player.blocksPlaced) == true)
         {
             playertotalBlocks.text = "done";
+        }
+
+        if (CheckIfDone(ScoreOver20times, player.scoreOver20Times) == true)
+        {
+
         }
     }
 

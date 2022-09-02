@@ -18,7 +18,6 @@ public class UIClass : MonoBehaviour
     {
         if (isPaused == true)
         {
-            player.SavePlayer();
             pauseCanvas.SetActive(true);
         }
         else if (isPaused == false)

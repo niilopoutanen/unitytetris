@@ -35,7 +35,7 @@ public class DiscordController : MonoBehaviour
         {
             if (res == Discord.Result.Ok)
             {
-                Debug.LogError("Everything is fine!");
+                Debug.Log("Discord initialize successful.");
             }
         });
     }

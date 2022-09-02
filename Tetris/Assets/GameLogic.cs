@@ -111,6 +111,10 @@ public class GameLogic : MonoBehaviour
                 y--;
                 ScoreValue++;
                 ScoreText.text = ScoreValue.ToString();
+                if(ScoreValue == 10)
+                {
+                    player.AddTimes("scoreOver20Times");
+                }
                 FindObjectOfType<UIClass>().Play();
             }
         }
@@ -145,7 +149,15 @@ public class GameLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        try
+        {
+            player = GameObject.Find("Player").GetComponent<Player>();
 
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("Player not found: " + e);
+        }
     }
 
     // Update is called once per frame

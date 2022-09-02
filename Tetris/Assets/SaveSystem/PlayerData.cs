@@ -7,9 +7,11 @@ using UnityEngine;
 public class PlayerData
 {
     public int blocksPlaced;
+    public int scoreOver20Times;
 
     public PlayerData (Player player)
     {
         blocksPlaced = player.blocksPlaced;
+        scoreOver20Times = player.scoreOver20Times;
     }
 }
