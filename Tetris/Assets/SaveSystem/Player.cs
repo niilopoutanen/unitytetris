@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     }
     public void AddBlock(int sessionblocks)
     {
+        Debug.Log("new blocksplaced amount. " + blocksPlaced);
         blocksPlaced += sessionblocks;
     }
     private void Start()

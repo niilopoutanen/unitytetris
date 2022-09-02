@@ -251,7 +251,10 @@ public class BlockLogic : MonoBehaviour
                             if (logic.HasBlock(17))
                             {
                                 gameover = true;
+                                player.AddBlock(GameLogic.BlocksPlaced);
+                                player.SavePlayer();
                                 SceneManager.LoadScene("Game Over");
+                                FindObjectOfType<GameLogic>().GetEndTime();
                             }
                             FindObjectOfType<Spawner>().SpawnNext();
 
