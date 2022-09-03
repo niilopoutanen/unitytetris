@@ -72,9 +72,13 @@ public class Achievement : MonoBehaviour
         {
             ChangeVisibility(true, "ScoreOver20");
         }
+        if (ScoreOver20times >= 1)
+        {
+            ChangeVisibility(true, "ScoreOver20");
+        }
 
 
-        foreach(Transform child in content.transform)
+        foreach (Transform child in content.transform)
         {
             if(child.tag == "Unlocked")
             {

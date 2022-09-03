@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public int blocksPlaced;
     public int scoreOver20Times;
     public int timesPlayed;
+    public int highScore;
     public void SavePlayer()
     {
         SaveSystem.SaveData(this);
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
         blocksPlaced = data.blocksPlaced;
         scoreOver20Times = data.scoreOver20Times;
         timesPlayed = data.timesPlayed;
+        highScore = data.highScore;
         Debug.Log("Loaded" + data.ToString());
     }
     public void AddBlock(int sessionblocks)
@@ -34,6 +36,14 @@ public class Player : MonoBehaviour
         else if(toWhat == "timesPlayed")
         {
             timesPlayed++;
+        }
+    }
+    public void CheckHighScore(int currentscore)
+    {
+        LoadPlayer();
+        if(highScore < currentscore)
+        {
+            highScore = currentscore;
         }
     }
     private void Start()

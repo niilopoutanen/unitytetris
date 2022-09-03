@@ -216,9 +216,12 @@ public class BlockLogic : MonoBehaviour
 
                         if (logic.HasBlock(17))
                         {
-                            gameover = true;
                             player.AddBlock(GameLogic.BlocksPlaced);
+                            player.AddTimes("timesPlayed");
+                            player.CheckHighScore(GameLogic.ScoreValue);
+                            Debug.Log(player.timesPlayed.ToString());
                             player.SavePlayer();
+                            gameover = true;
                             SceneManager.LoadScene("Game Over");
                             FindObjectOfType<GameLogic>().GetEndTime();
                         }
@@ -252,6 +255,7 @@ public class BlockLogic : MonoBehaviour
                                 
                                 player.AddBlock(GameLogic.BlocksPlaced);
                                 player.AddTimes("timesPlayed");
+                                player.CheckHighScore(GameLogic.ScoreValue);
                                 Debug.Log(player.timesPlayed.ToString());
                                 player.SavePlayer();
                                 gameover = true;

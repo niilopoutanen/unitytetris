@@ -988,6 +988,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 174815232}
     m_Modifications:
+    - target: {fileID: 98445025736485001, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8c095ec2f64db9e4d9e55799ad1fc00b, type: 3}
+    - target: {fileID: 787447523157709530, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 787447523157709530, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 57
+      objectReference: {fileID: 0}
+    - target: {fileID: 787447523157709530, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 787447523157709530, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 88
+      objectReference: {fileID: 0}
     - target: {fileID: 2690033997032847806, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
       propertyPath: m_Name
       value: 10Games
@@ -1182,6 +1202,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 174815232}
     m_Modifications:
+    - target: {fileID: 98445025736485001, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f8001bc38894b0843a7345385094fe49, type: 3}
+    - target: {fileID: 787447523157709530, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 787447523157709530, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 108
+      objectReference: {fileID: 0}
+    - target: {fileID: 787447523157709530, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 82
+      objectReference: {fileID: 0}
     - target: {fileID: 2690033997032847806, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
       propertyPath: m_Name
       value: 20Score10Times
@@ -1288,6 +1324,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 174815232}
     m_Modifications:
+    - target: {fileID: 98445025736485001, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bedeefe470eb2814a85889dbb2c91221, type: 3}
+    - target: {fileID: 787447523157709530, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 787447523157709530, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 109.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 787447523157709530, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 78.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2690033997032847806, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
       propertyPath: m_Name
       value: ScoreOver20
