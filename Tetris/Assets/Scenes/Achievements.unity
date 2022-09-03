@@ -525,6 +525,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 174815232}
     m_Modifications:
+    - target: {fileID: 98445025736485001, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fa0dd2c00bc87e84d845184e1d16819f, type: 3}
+    - target: {fileID: 98445025736485001, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 787447523157709530, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 2690033997032847806, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
       propertyPath: m_Name
       value: 500Blocks
@@ -613,6 +625,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2842501320310549917, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3591958847209793025, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
       propertyPath: m_Text
       value: Over 500
@@ -620,6 +636,14 @@ PrefabInstance:
     - target: {fileID: 7816189741529002686, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
       propertyPath: m_Text
       value: Placed over 500 blocks.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8580751078383656597, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8614089886280457565, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
@@ -744,8 +768,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01fe31e10343aa4a87e8e542e4b26d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalBlocks: 500
-  ScoreOver20times: 10
   player: {fileID: 555886093}
 --- !u!1 &405819109
 GameObject:
