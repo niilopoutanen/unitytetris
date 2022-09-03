@@ -8,7 +8,7 @@ public class Achievement : MonoBehaviour
 {
     private int totalBlocks = 500;
     private int ScoreOver20times = 10;
-
+    public GameObject content;
 
     public bool CheckIfDone(int requirement, int value)
     {
@@ -35,6 +35,9 @@ public class Achievement : MonoBehaviour
             tochange.transform.Find("Gold").gameObject.SetActive(true);
             tochange.transform.Find("Locked").gameObject.SetActive(false);
         }
+        tochange.tag = "Unlocked";
+
+
         Transform icon = tochange.transform.Find("Icon");
         icon.gameObject.SetActive(true);
         //icon.GetComponent<Image>().color = new Color(1,1,1,1);
@@ -60,6 +63,23 @@ public class Achievement : MonoBehaviour
         if(player.timesPlayed >= 1)
         {
             ChangeVisibility(true, "FirstGame");
+        }
+        if(player.timesPlayed >= 10)
+        {
+            ChangeVisibility(true, "10Games");
+        }
+        if(ScoreOver20times >= 1)
+        {
+            ChangeVisibility(true, "ScoreOver20");
+        }
+
+
+        foreach(Transform child in content.transform)
+        {
+            if(child.tag == "Unlocked")
+            {
+                child.SetAsFirstSibling();
+            }
         }
     }
 

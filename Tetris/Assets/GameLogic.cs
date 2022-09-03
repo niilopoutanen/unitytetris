@@ -110,7 +110,7 @@ public class GameLogic : MonoBehaviour
                 y--;
                 ScoreValue++;
                 ScoreText.text = ScoreValue.ToString();
-                if(ScoreValue == 10)
+                if(ScoreValue == 21)
                 {
                     player.AddTimes("scoreOver20Times");
                 }

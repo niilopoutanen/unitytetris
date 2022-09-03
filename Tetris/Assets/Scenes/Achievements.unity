@@ -927,7 +927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocksPlaced: 0
   scoreOver20Times: 0
-  hasPlayedAGame: 0
+  timesPlayed: 0
 --- !u!4 &555886094
 Transform:
   m_ObjectHideFlags: 0
@@ -989,7 +989,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2690033997032847806, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
       propertyPath: m_Name
-      value: Achievement (3)
+      value: 10Games
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690033997032847806, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2690033997032847807, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
       propertyPath: m_Pivot.x
@@ -1074,6 +1078,14 @@ PrefabInstance:
     - target: {fileID: 2690033997032847807, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3591958847209793025, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_Text
+      value: Getting started
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816189741529002686, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_Text
+      value: Played 10 games of Unity Tetris
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
@@ -1277,7 +1289,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2690033997032847806, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
       propertyPath: m_Name
-      value: Achievement (4)
+      value: ScoreOver20
       objectReference: {fileID: 0}
     - target: {fileID: 2690033997032847807, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
       propertyPath: m_Pivot.x
@@ -1362,6 +1374,14 @@ PrefabInstance:
     - target: {fileID: 2690033997032847807, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3591958847209793025, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_Text
+      value: Over 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816189741529002686, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_Text
+      value: Got a score bigger than 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
