@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class Achievement : MonoBehaviour
 {
@@ -36,7 +35,9 @@ public class Achievement : MonoBehaviour
             tochange.transform.Find("Gold").gameObject.SetActive(true);
             tochange.transform.Find("Locked").gameObject.SetActive(false);
         }
-        tochange.transform.Find("Icon").gameObject.SetActive(true);
+        Transform icon = tochange.transform.Find("Icon");
+        icon.gameObject.SetActive(true);
+        //icon.GetComponent<Image>().color = new Color(1,1,1,1);
     }
 
     public Player player;
@@ -56,9 +57,9 @@ public class Achievement : MonoBehaviour
             ChangeVisibility(false, "20Score10Times");
 
         }
-        if(player.hasPlayedAGame == true)
+        if(player.timesPlayed >= 1)
         {
-            ChangeVisibility(false, "FirstGame");
+            ChangeVisibility(true, "FirstGame");
         }
     }
 

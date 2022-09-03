@@ -251,8 +251,8 @@ public class BlockLogic : MonoBehaviour
                             {
                                 
                                 player.AddBlock(GameLogic.BlocksPlaced);
-                                player.hasPlayedAGame = true;
-                                Debug.Log("hasplayed = " + player.hasPlayedAGame.ToString());
+                                player.AddTimes("timesPlayed");
+                                Debug.Log(player.timesPlayed.ToString());
                                 player.SavePlayer();
                                 gameover = true;
                                 SceneManager.LoadScene("Game Over");
