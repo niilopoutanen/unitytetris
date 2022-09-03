@@ -52,6 +52,7 @@ public class Achievement : MonoBehaviour
 
         if (CheckIfDone(ScoreOver20times, player.scoreOver20Times) == true)
         {
+            ChangeVisibility(false, "20Score10Times");
 
         }
     }

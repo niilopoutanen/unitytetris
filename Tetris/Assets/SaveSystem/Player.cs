@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     public int blocksPlaced;
     public int scoreOver20Times;
-
+    public bool hasPlayedAGame;
     public void SavePlayer()
     {
         SaveSystem.SaveData(this);
@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
 
         blocksPlaced = data.blocksPlaced;
         scoreOver20Times = data.scoreOver20Times;
+        hasPlayedAGame = data.hasPlayedAGame;
         Debug.Log("Loaded" + data);
     }
     public void AddBlock(int sessionblocks)
