@@ -10,6 +10,7 @@ public class Achievement : MonoBehaviour
     private int totalBlocks = 500;
     private int ScoreOver20times = 10;
 
+
     public bool CheckIfDone(int requirement, int value)
     {
         if (requirement < value)
@@ -54,6 +55,10 @@ public class Achievement : MonoBehaviour
         {
             ChangeVisibility(false, "20Score10Times");
 
+        }
+        if(player.hasPlayedAGame == true)
+        {
+            ChangeVisibility(false, "FirstGame");
         }
     }
 

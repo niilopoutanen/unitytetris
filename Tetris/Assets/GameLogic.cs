@@ -97,7 +97,6 @@ public class GameLogic : MonoBehaviour
     public void DeleteRows()
     {
         BlocksPlaced++;
-        Debug.Log("added value" + BlocksPlaced);
         for (int y = 0; y < Height; ++y)
         {
             if (IsFull(y))

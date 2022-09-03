@@ -246,13 +246,15 @@ public class BlockLogic : MonoBehaviour
                         else
                         {
                             transform.position += new Vector3(0, 1, 0);
-
                             logic.DeleteRows();
                             if (logic.HasBlock(17))
                             {
-                                gameover = true;
+                                
                                 player.AddBlock(GameLogic.BlocksPlaced);
+                                player.hasPlayedAGame = true;
+                                Debug.Log("hasplayed = " + player.hasPlayedAGame.ToString());
                                 player.SavePlayer();
+                                gameover = true;
                                 SceneManager.LoadScene("Game Over");
                                 FindObjectOfType<GameLogic>().GetEndTime();
                             }

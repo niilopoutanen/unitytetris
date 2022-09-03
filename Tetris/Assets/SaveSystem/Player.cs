@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
         blocksPlaced = data.blocksPlaced;
         scoreOver20Times = data.scoreOver20Times;
         hasPlayedAGame = data.hasPlayedAGame;
-        Debug.Log("Loaded" + data);
+        Debug.Log("Loaded" + data.ToString());
     }
     public void AddBlock(int sessionblocks)
     {
