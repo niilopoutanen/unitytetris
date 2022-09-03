@@ -527,7 +527,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2690033997032847806, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
       propertyPath: m_Name
-      value: Achievement
+      value: 500Blocks
       objectReference: {fileID: 0}
     - target: {fileID: 2690033997032847807, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
       propertyPath: m_Pivot.x
@@ -612,6 +612,14 @@ PrefabInstance:
     - target: {fileID: 2690033997032847807, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3591958847209793025, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_Text
+      value: Over 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816189741529002686, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_Text
+      value: Placed over 500 blocks.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
