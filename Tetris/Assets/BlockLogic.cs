@@ -236,11 +236,10 @@ public class BlockLogic : MonoBehaviour
         SceneManager.LoadScene("Game Over");
 
 
-        //player.AddBlock(GameLogic.BlocksPlaced);
-        //player.AddTimes("timesPlayed");
-        //player.CheckHighScore(GameLogic.ScoreValue);
-        //Debug.Log(player.timesPlayed.ToString());
-        //player.SavePlayer();
+        player.AddBlock(GameLogic.BlocksPlaced);
+        player.AddTimes("timesPlayed");
+        player.CheckHighScore(GameLogic.ScoreValue);
+        player.SavePlayer();
     }
 
     // Start is called before the first frame update
