@@ -64,6 +64,185 @@ public class BlockLogic : MonoBehaviour
         }
     }
 
+
+    private void MoveBlock(string LeftRightDown)
+    {
+        if(LeftRightDown == "left")
+        {
+            if (Input.GetKey(KeyCode.LeftShift) == true)
+            {
+                transform.position += new Vector3(-1, 0, 0);
+
+                if (ValidPos())
+                {
+                    PlaySound("interact");
+                    UpdateGrid();
+                }
+
+                else
+                {
+                    transform.position += new Vector3(1, 0, 0);
+                }
+                transform.position += new Vector3(-1, 0, 0);
+
+                if (ValidPos())
+                {
+                    PlaySound("interact");
+                    UpdateGrid();
+                }
+
+                else
+                {
+                    transform.position += new Vector3(1, 0, 0);
+                }
+            }
+            transform.position += new Vector3(-1, 0, 0);
+
+            if (ValidPos())
+            {
+                PlaySound("interact");
+                UpdateGrid();
+            }
+
+            else
+            {
+                transform.position += new Vector3(1, 0, 0);
+            }
+        }
+        else if (LeftRightDown == "right")
+        {
+            if (Input.GetKey(KeyCode.LeftShift) == true)
+            {
+                transform.position += new Vector3(1, 0, 0);
+
+                if (ValidPos())
+                {
+                    PlaySound("interact");
+                    UpdateGrid();
+                }
+                else
+                {
+                    transform.position += new Vector3(-1, 0, 0);
+
+                }
+                transform.position += new Vector3(1, 0, 0);
+
+                if (ValidPos())
+                {
+                    PlaySound("interact");
+                    UpdateGrid();
+                }
+                else
+                {
+                    transform.position += new Vector3(-1, 0, 0);
+
+                }
+            }
+            transform.position += new Vector3(1, 0, 0);
+
+            if (ValidPos())
+            {
+                PlaySound("interact");
+                UpdateGrid();
+            }
+            else
+            {
+                transform.position += new Vector3(-1, 0, 0);
+
+            }
+        }
+    }
+    private void RotateBlock()
+    {
+        transform.Rotate(0, 0, -90);
+
+        if (ValidPos())
+        {
+            PlaySound("interact");
+            UpdateGrid();
+        }
+        else
+        {
+            transform.Rotate(0, 0, 90);
+        }
+    }
+
+    private void MoveBlockDown(bool isSpace)
+    {
+        if (isSpace == false)
+        {
+            transform.position += new Vector3(0, -1, 0);
+
+            if (ValidPos())
+            {
+                UpdateGrid();
+            }
+
+            //Tarkistaa onko rivi täynnä ja spawnaa uuden palan
+            else
+            {
+                transform.position += new Vector3(0, 1, 0);
+
+                logic.DeleteRows();
+
+                if (logic.HasBlock(17))
+                {
+                    OnGameOver();
+                }
+
+                FindObjectOfType<Spawner>().SpawnNext();
+
+                enabled = false;
+            }
+
+            Fall = Time.time;
+        }
+        else if (isSpace == true)
+        {
+            while (true)
+            {
+                transform.position += new Vector3(0, -1, 0);
+
+                if (ValidPos())
+                {
+                    PlaySound("interact");
+                    UpdateGrid();
+                }
+
+                //Tarkistaa onko rivi täynnä ja spawnaa uuden palan
+                else
+                {
+                    transform.position += new Vector3(0, 1, 0);
+                    logic.DeleteRows();
+                    if (logic.HasBlock(17))
+                    {
+                        OnGameOver();
+                    }
+                    FindObjectOfType<Spawner>().SpawnNext();
+
+                    enabled = false;
+                    break;
+                }
+
+                Fall = Time.time;
+            }
+        }
+    }
+
+    private void OnGameOver()
+    {
+        gameover = true;
+        FindObjectOfType<GameLogic>().GetEndTime();
+        SceneManager.LoadScene("Game Over");
+
+
+        //player.AddBlock(GameLogic.BlocksPlaced);
+        //player.AddTimes("timesPlayed");
+        //player.CheckHighScore(GameLogic.ScoreValue);
+        //Debug.Log(player.timesPlayed.ToString());
+        //player.SavePlayer();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -97,179 +276,27 @@ public class BlockLogic : MonoBehaviour
 
                 else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
                 {
-                    if (Input.GetKey(KeyCode.LeftShift) == true)
-                    {
-                        transform.position += new Vector3(-1, 0, 0);
-
-                        if (ValidPos())
-                        {
-                            PlaySound("interact");
-                            UpdateGrid();
-                        }
-
-                        else
-                        {
-                            transform.position += new Vector3(1, 0, 0);
-                        }
-                        transform.position += new Vector3(-1, 0, 0);
-
-                        if (ValidPos())
-                        {
-                            PlaySound("interact");
-                            UpdateGrid();
-                        }
-
-                        else
-                        {
-                            transform.position += new Vector3(1, 0, 0);
-                        }
-                    }
-                    transform.position += new Vector3(-1, 0, 0);
-
-                    if (ValidPos())
-                    {
-                        PlaySound("interact");
-                        UpdateGrid();
-                    }
-
-                    else
-                    {
-                        transform.position += new Vector3(1, 0, 0);
-                    }
+                    MoveBlock("left");
                 }
                 //oikealle
                 else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
                 {
-                    if (Input.GetKey(KeyCode.LeftShift) == true)
-                    {
-                        transform.position += new Vector3(1, 0, 0);
-
-                        if (ValidPos())
-                        {
-                            PlaySound("interact");
-                            UpdateGrid();
-                        }
-                        else
-                        {
-                            transform.position += new Vector3(-1, 0, 0);
-
-                        }
-                        transform.position += new Vector3(1, 0, 0);
-
-                        if (ValidPos())
-                        {
-                            PlaySound("interact");
-                            UpdateGrid();
-                        }
-                        else
-                        {
-                            transform.position += new Vector3(-1, 0, 0);
-
-                        }
-                    }
-                        transform.position += new Vector3(1, 0, 0);
-
-                    if (ValidPos())
-                    {
-                        PlaySound("interact");
-                        UpdateGrid();
-                    }
-                    else
-                    {
-                        transform.position += new Vector3(-1, 0, 0);
-
-                    }
+                    MoveBlock("right");
                 }
                 //Pyöritä
                 else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
                 {
-                    transform.Rotate(0, 0, -90);
-
-                    if (ValidPos())
-                    {
-                        PlaySound("interact");
-                        UpdateGrid();
-                    }
-                    else
-                    {
-                        transform.Rotate(0, 0, 90);
-                    }
+                    RotateBlock();
                 }
 
                 //Nopeammin alas
                 else if (Input.GetKeyDown(KeyCode.DownArrow) || Time.time - Fall >= GameLogic.gamespeed || Input.GetKeyDown(KeyCode.S))
                 {
-
-                    transform.position += new Vector3(0, -1, 0);
-
-                    if (ValidPos())
-                    {
-                        UpdateGrid();
-                    }
-
-                    //Tarkistaa onko rivi täynnä ja spawnaa uuden palan
-                    else
-                    {
-                        transform.position += new Vector3(0, 1, 0);
-
-                        logic.DeleteRows();
-
-                        if (logic.HasBlock(17))
-                        {
-                            player.AddBlock(GameLogic.BlocksPlaced);
-                            player.AddTimes("timesPlayed");
-                            player.CheckHighScore(GameLogic.ScoreValue);
-                            Debug.Log(player.timesPlayed.ToString());
-                            player.SavePlayer();
-                            gameover = true;
-                            SceneManager.LoadScene("Game Over");
-                            FindObjectOfType<GameLogic>().GetEndTime();
-                        }
-
-                        FindObjectOfType<Spawner>().SpawnNext();
-
-                        enabled = false;
-                    }
-
-                    Fall = Time.time;
+                    MoveBlockDown(false);
                 }
                 else if (Input.GetKeyDown(KeyCode.Space) || Time.time - Fall >= GameLogic.gamespeed)
                 {
-                    while (true)
-                    {
-                        transform.position += new Vector3(0, -1, 0);
-
-                        if (ValidPos())
-                        {
-                            PlaySound("interact");
-                            UpdateGrid();
-                        }
-
-                        //Tarkistaa onko rivi täynnä ja spawnaa uuden palan
-                        else
-                        {
-                            transform.position += new Vector3(0, 1, 0);
-                            logic.DeleteRows();
-                            if (logic.HasBlock(17))
-                            {
-                                
-                                player.AddBlock(GameLogic.BlocksPlaced);
-                                player.AddTimes("timesPlayed");
-                                player.CheckHighScore(GameLogic.ScoreValue);
-                                Debug.Log(player.timesPlayed.ToString());
-                                player.SavePlayer();
-                                gameover = true;
-                                SceneManager.LoadScene("Game Over");
-                                FindObjectOfType<GameLogic>().GetEndTime();
-                            }
-                            FindObjectOfType<Spawner>().SpawnNext();
-
-                            enabled = false;
-                            break;
-                        }
-
-                        Fall = Time.time;
-                    }
+                    MoveBlockDown(true);
                 }
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
                 {

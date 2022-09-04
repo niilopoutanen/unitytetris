@@ -155,7 +155,7 @@ public class GameLogic : MonoBehaviour
         }
         catch (System.Exception e)
         {
-            Debug.LogError("Player not found: " + e);
+            Debug.Log("(might be on game over) Player not found: " + e);
         }
     }
 

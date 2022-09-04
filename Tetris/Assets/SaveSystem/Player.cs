@@ -15,13 +15,20 @@ public class Player : MonoBehaviour
     }
     public void LoadPlayer()
     {
-        PlayerData data = SaveSystem.LoadData();
+        try
+        {
+            PlayerData data = SaveSystem.LoadData();
 
-        blocksPlaced = data.blocksPlaced;
-        scoreOver20Times = data.scoreOver20Times;
-        timesPlayed = data.timesPlayed;
-        highScore = data.highScore;
-        Debug.Log("Loaded" + data.ToString());
+            blocksPlaced = data.blocksPlaced;
+            scoreOver20Times = data.scoreOver20Times;
+            timesPlayed = data.timesPlayed;
+            highScore = data.highScore;
+            Debug.Log("Loaded" + data.ToString());
+        }
+        catch (System.Exception)
+        {
+            Debug.Log("player not found");
+        }
     }
     public void AddBlock(int sessionblocks)
     {

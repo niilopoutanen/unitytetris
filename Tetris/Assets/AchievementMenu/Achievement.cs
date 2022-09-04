@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class Achievement : MonoBehaviour
 {
-    private int totalBlocks = 500;
-    private int ScoreOver20times = 10;
     public GameObject content;
+    public GameObject statsPanel;
+    public Text highScoreText;
+    public Text blocksPlacedText;
+    public Text gamesPlayedText;
 
     public bool CheckIfDone(int requirement, int value)
     {
@@ -50,12 +52,12 @@ public class Achievement : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<Player>();
         player.LoadPlayer();
 
-        if (CheckIfDone(totalBlocks, player.blocksPlaced) == true)
+        if (CheckIfDone(500, player.blocksPlaced) == true)
         {
             ChangeVisibility(true, "500Blocks");
         }
 
-        if (CheckIfDone(ScoreOver20times, player.scoreOver20Times) == true)
+        if (CheckIfDone(10, player.scoreOver20Times) == true)
         {
             ChangeVisibility(false, "20Score10Times");
 
@@ -68,11 +70,7 @@ public class Achievement : MonoBehaviour
         {
             ChangeVisibility(true, "10Games");
         }
-        if(ScoreOver20times >= 1)
-        {
-            ChangeVisibility(true, "ScoreOver20");
-        }
-        if (ScoreOver20times >= 1)
+        if(player.scoreOver20Times >= 1)
         {
             ChangeVisibility(true, "ScoreOver20");
         }
@@ -85,6 +83,12 @@ public class Achievement : MonoBehaviour
                 child.SetAsFirstSibling();
             }
         }
+
+        statsPanel.transform.SetAsFirstSibling(); ;
+        highScoreText.text = player.highScore.ToString();
+        blocksPlacedText.text = player.blocksPlaced.ToString();
+        gamesPlayedText.text = player.timesPlayed.ToString();
+
     }
 
 }
