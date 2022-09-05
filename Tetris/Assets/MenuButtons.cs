@@ -7,6 +7,7 @@ using UnityEngine.Rendering;
 
 public class MenuButtons : MonoBehaviour
 {
+    private LevelLoader levelLoader;
     private Player player;
     public void ToGithub()
     {
@@ -15,7 +16,8 @@ public class MenuButtons : MonoBehaviour
     }
     public void StartGame()
     {
-        SceneManager.LoadScene("Game");
+        levelLoader.LoadNextLevel("Game");
+        //SceneManager.LoadScene("Game");
         GameLogic.ScoreValue = 0;
         GameLogic.BlocksPlaced = 0;
         GameLogic.gamespeed = 1f;
@@ -28,6 +30,7 @@ public class MenuButtons : MonoBehaviour
     }
     public void ToMainMenu()
     {
+        Time.timeScale = 1f;
         try
         {
             player = GameObject.Find("Player").GetComponent<Player>();
@@ -38,16 +41,17 @@ public class MenuButtons : MonoBehaviour
         {
             Debug.Log("Player save failed");
         }
-        SceneManager.LoadScene("Menu");
+        levelLoader.LoadNextLevel("Menu");
     }
     public void ToAchievements()
     {
-        SceneManager.LoadScene("Achievements");
+        levelLoader.LoadNextLevel("Achievements");
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        levelLoader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
+
     }
 
     // Update is called once per frame

@@ -233,7 +233,9 @@ public class BlockLogic : MonoBehaviour
     {
         gameover = true;
         FindObjectOfType<GameLogic>().GetEndTime();
-        SceneManager.LoadScene("Game Over");
+        LevelLoader levelloader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
+        levelloader.LoadNextLevel("Game Over");
+        //SceneManager.LoadScene("Game Over");
 
         player.LoadPlayer();
         player.AddBlock(GameLogic.BlocksPlaced);
