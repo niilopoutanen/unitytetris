@@ -7,6 +7,7 @@ using UnityEngine.Rendering;
 
 public class MenuButtons : MonoBehaviour
 {
+    private Player player;
     public void ToGithub()
     {
         string link = "https://github.com/niilopoutanen/UnityTetris";
@@ -27,6 +28,16 @@ public class MenuButtons : MonoBehaviour
     }
     public void ToMainMenu()
     {
+        try
+        {
+            player = GameObject.Find("Player").GetComponent<Player>();
+            player.SavePlayer();
+            Debug.Log("Player saved");
+        }
+        catch (System.Exception)
+        {
+            Debug.Log("Player save failed");
+        }
         SceneManager.LoadScene("Menu");
     }
     public void ToAchievements()
