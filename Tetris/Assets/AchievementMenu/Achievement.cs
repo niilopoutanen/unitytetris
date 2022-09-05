@@ -69,7 +69,7 @@ public class Achievement : MonoBehaviour
         {
             ChangeVisibility(true, "10Games");
         }
-        if(player.scoreOver20Times >= 1)
+        if(player.highScore >= 20)
         {
             ChangeVisibility(false, "ScoreOver20");
         }
