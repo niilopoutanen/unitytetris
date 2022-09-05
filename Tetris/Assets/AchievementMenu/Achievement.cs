@@ -53,7 +53,7 @@ public class Achievement : MonoBehaviour
 
         if (CheckIfDone(500, player.blocksPlaced) == true)
         {
-            ChangeVisibility(true, "500Blocks");
+            ChangeVisibility(false, "500Blocks");
         }
 
         if (CheckIfDone(10, player.scoreOver20Times) == true)
@@ -71,10 +71,20 @@ public class Achievement : MonoBehaviour
         }
         if(player.scoreOver20Times >= 1)
         {
-            ChangeVisibility(true, "ScoreOver20");
+            ChangeVisibility(false, "ScoreOver20");
         }
-
-
+        if(player.timesPlayed >= 5)
+        {
+            ChangeVisibility(true, "5Games");
+        }
+        if(player.blocksPlaced >= 100)
+        {
+            ChangeVisibility(true, "100Blocks");
+        }
+        if(player.highScore >= 10)
+        {
+            ChangeVisibility(true, "ScoreOver10");
+        }
         foreach (Transform child in content.transform)
         {
             if(child.tag == "Unlocked")
