@@ -47,7 +47,6 @@ public class Player : MonoBehaviour
     }
     public void CheckHighScore(int currentscore)
     {
-        LoadPlayer();
         if(highScore < currentscore)
         {
             highScore = currentscore;

@@ -235,7 +235,7 @@ public class BlockLogic : MonoBehaviour
         FindObjectOfType<GameLogic>().GetEndTime();
         SceneManager.LoadScene("Game Over");
 
-
+        player.LoadPlayer();
         player.AddBlock(GameLogic.BlocksPlaced);
         player.AddTimes("timesPlayed");
         player.CheckHighScore(GameLogic.ScoreValue);

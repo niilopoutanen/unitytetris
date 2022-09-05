@@ -42,7 +42,6 @@ public class Achievement : MonoBehaviour
 
         Transform icon = tochange.transform.Find("Icon");
         icon.gameObject.SetActive(true);
-        //icon.GetComponent<Image>().color = new Color(1,1,1,1);
     }
 
     public Player player;
