@@ -47,8 +47,15 @@ public class DiscordController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        discord.RunCallbacks();
-        discord.SetLogHook(Discord.LogLevel.Debug, LogProblemsFunction);
+        try
+        {
+            discord.RunCallbacks();
+            discord.SetLogHook(Discord.LogLevel.Debug, LogProblemsFunction);
+        }
+        catch (NullReferenceException)
+        {
+            //Discord not started
+        }
 
     }
 }

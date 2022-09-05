@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
 using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.UI;
@@ -36,9 +37,9 @@ public class Achievement : MonoBehaviour
         {
             tochange.transform.Find("Gold").gameObject.SetActive(true);
             tochange.transform.Find("Locked").gameObject.SetActive(false);
+
         }
         tochange.tag = "Unlocked";
-
 
         Transform icon = tochange.transform.Find("Icon");
         icon.gameObject.SetActive(true);
@@ -92,8 +93,15 @@ public class Achievement : MonoBehaviour
                 child.SetAsFirstSibling();
             }
         }
+        foreach (Transform child in content.transform)
+        {
+            if (child.transform.Find("Gold").gameObject.activeSelf == true)
+            {
+                child.SetAsFirstSibling();
+            }
+            statsPanel.transform.SetAsFirstSibling(); ;
 
-        statsPanel.transform.SetAsFirstSibling(); ;
+        }
         highScoreText.text = player.highScore.ToString();
         blocksPlacedText.text = player.blocksPlaced.ToString();
         gamesPlayedText.text = player.timesPlayed.ToString();

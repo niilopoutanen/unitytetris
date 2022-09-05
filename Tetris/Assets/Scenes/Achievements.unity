@@ -248,6 +248,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 174815232}
     m_Modifications:
+    - target: {fileID: 98445025736485001, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8c095ec2f64db9e4d9e55799ad1fc00b, type: 3}
+    - target: {fileID: 787447523157709530, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 101.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 787447523157709530, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 64.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 787447523157709530, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 787447523157709530, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 74.97
+      objectReference: {fileID: 0}
     - target: {fileID: 2690033997032847806, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
       propertyPath: m_Name
       value: 5Games
@@ -537,7 +557,7 @@ PrefabInstance:
     - target: {fileID: 98445025736485001, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: fa0dd2c00bc87e84d845184e1d16819f, type: 3}
+      objectReference: {fileID: 21300000, guid: fd7752d9ca2be084db5d3a7ddedc20df, type: 3}
     - target: {fileID: 98445025736485001, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -1169,11 +1189,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 8c095ec2f64db9e4d9e55799ad1fc00b, type: 3}
     - target: {fileID: 787447523157709530, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 90
+      value: 104.59
       objectReference: {fileID: 0}
     - target: {fileID: 787447523157709530, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 57
+      value: 66.24
       objectReference: {fileID: 0}
     - target: {fileID: 787447523157709530, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1181,8 +1201,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 787447523157709530, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 88
+      value: 92.62
       objectReference: {fileID: 0}
+    - target: {fileID: 2690033997032847744, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8c095ec2f64db9e4d9e55799ad1fc00b, type: 3}
     - target: {fileID: 2690033997032847806, guid: 122803c7ff1b2784a9c0115b89631657, type: 3}
       propertyPath: m_Name
       value: 10Games
