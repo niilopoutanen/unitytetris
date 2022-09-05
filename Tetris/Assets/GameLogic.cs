@@ -153,9 +153,8 @@ public class GameLogic : MonoBehaviour
             player = GameObject.Find("Player").GetComponent<Player>();
 
         }
-        catch (System.Exception e)
+        catch (System.Exception)
         {
-            Debug.Log("(might be on game over) Player not found: " + e);
         }
     }
 
