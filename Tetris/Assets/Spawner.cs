@@ -8,7 +8,9 @@ public class Spawner : MonoBehaviour
     private int current;
     private int next = -1;
     public GameObject[] objects;
-
+    public GameObject[] visualObjects;
+    public GameObject pos;
+    private GameObject todelete;
     public int Next { get => next; set => next = value; }
     public int Current { get => current; set => current = value; }
 
@@ -21,6 +23,14 @@ public class Spawner : MonoBehaviour
 
     public void SpawnNext()
     {
+        try
+        {
+            Destroy(todelete);
+        }
+        catch (System.Exception)
+        {
+
+        }
         Random.InitState((int)System.DateTime.Now.Ticks);
         if (Next == -1)
         {
@@ -34,6 +44,7 @@ public class Spawner : MonoBehaviour
             Next = Random.Range(0, objects.Length);
         }
         Instantiate(objects[Current], transform.position, Quaternion.identity);
+        todelete = Instantiate(visualObjects[Next], pos.transform.position, Quaternion.identity);
     }
     // Start is called before the first frame update
     void Start()

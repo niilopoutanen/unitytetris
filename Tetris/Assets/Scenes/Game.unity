@@ -1144,6 +1144,15 @@ MonoBehaviour:
   - {fileID: 2408780264516886673, guid: 683b978ef9cdc544bbea0fea6e2f4eea, type: 3}
   - {fileID: 6042868361759148543, guid: 9ee9035329792f4409a6e790d6ea0640, type: 3}
   - {fileID: 846042971877278876, guid: 5304c9250ff916a4198ae24b8ff0ef47, type: 3}
+  visualObjects:
+  - {fileID: 1589711261975341003, guid: b7707aa8bc7963c44991ad022afc6c7b, type: 3}
+  - {fileID: 2424511599203888464, guid: b66a901c02292e24486a8b1c4a2858d4, type: 3}
+  - {fileID: 1651091325425499093, guid: 8b7d51fa4e7967d43a08364605e1029a, type: 3}
+  - {fileID: 1248875684567365582, guid: 7c73bd56f31c61c43b7a1678fc4a412a, type: 3}
+  - {fileID: 2408780264516886673, guid: 29602e1e70535934881e2bab5059c133, type: 3}
+  - {fileID: 6042868361759148543, guid: e8d25e16691d29f468f22db0107a9e17, type: 3}
+  - {fileID: 846042971877278876, guid: ea9e74d16f9b6db44b26bad9725802cf, type: 3}
+  pos: {fileID: 1743947794}
 --- !u!1 &1175615268
 GameObject:
   m_ObjectHideFlags: 0
@@ -2237,6 +2246,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1743947794
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1743947795}
+  m_Layer: 0
+  m_Name: testpos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1743947795
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743947794}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.2, y: 16.53, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1882811036
 GameObject:
   m_ObjectHideFlags: 0
