@@ -12,7 +12,7 @@ public class MenuSpawner : MonoBehaviour
     public GameObject[] objects;
     public Transform randomTransform;
     private GameObject todelete;
-    int heightY = 7;
+    readonly int heightY = 7;
     int posX;
     public void SpawnNext()
     {
@@ -24,17 +24,10 @@ public class MenuSpawner : MonoBehaviour
         todelete.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         todelete.GetComponent<PolygonCollider2D>().enabled = true;
         todelete.AddComponent<Rigidbody2D>();
+        todelete.GetComponent<Rigidbody2D>().collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         Destroy(todelete, DestroyPeriod);
     }
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         time += Time.deltaTime;
