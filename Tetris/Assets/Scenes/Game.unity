@@ -1559,7 +1559,6 @@ GameObject:
   - component: {fileID: 1504576566}
   - component: {fileID: 1504576565}
   - component: {fileID: 1504576564}
-  - component: {fileID: 1504576568}
   m_Layer: 5
   m_Name: ResumeGame
   m_TagString: Untagged
@@ -1699,23 +1698,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1504576562}
   m_CullTransparentMesh: 1
---- !u!114 &1504576568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1504576562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 0
-  sharedProfile: {fileID: 11400000, guid: ba97c7f9c864e9d4d969c0ec0d9cb0e3, type: 2}
 --- !u!1 &1509899460
 GameObject:
   m_ObjectHideFlags: 0
