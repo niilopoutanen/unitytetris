@@ -123,7 +123,6 @@ public class GameLogic : MonoBehaviour
         if(vec.y <18)
         {
             return false;
-
         }
         else
         {
