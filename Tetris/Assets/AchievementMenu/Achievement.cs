@@ -86,6 +86,14 @@ public class Achievement : MonoBehaviour
         {
             ChangeVisibility(true, "ScoreOver10");
         }
+        if (player.blocksPlaced >= 1000)
+        {
+            ChangeVisibility(false, "1000Blocks");
+        }
+        if (player.timesPlayed >= 20)
+        {
+            ChangeVisibility(false, "20Games");
+        }
         foreach (Transform child in content.transform)
         {
             if(child.tag == "Unlocked")
