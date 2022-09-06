@@ -12,7 +12,7 @@ public class Achievement : MonoBehaviour
     public Text highScoreText;
     public Text blocksPlacedText;
     public Text gamesPlayedText;
-
+    public MenuButtons menucode;
     public bool CheckIfDone(int requirement, int value)
     {
         if (requirement < value)
@@ -115,5 +115,11 @@ public class Achievement : MonoBehaviour
         gamesPlayedText.text = player.timesPlayed.ToString();
 
     }
-
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            menucode.ToMainMenu();
+        }
+    }
 }

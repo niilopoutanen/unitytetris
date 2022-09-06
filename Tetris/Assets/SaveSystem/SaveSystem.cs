@@ -8,24 +8,24 @@ public static class SaveSystem
 
     public static void SaveData(Player player)
     {
-        string path = Application.persistentDataPath + "/save.json";
-        string json = JsonUtility.ToJson(player);
-        using (StreamWriter writer = new StreamWriter(path))
-        {
-            writer.Write(json);
-        }
+        string path = Application.persistentDataPath + "/save.NPgame";
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream datastream = new FileStream(path, FileMode.Create);
+        PlayerData data = new PlayerData(player);
+
+        formatter.Serialize(datastream, data);
+        datastream.Close();
     }
     public static PlayerData LoadData()
     {
-        string path = Application.persistentDataPath + "/save.json";
+        string path = Application.persistentDataPath + "/save.NPgame";
         if (File.Exists(path))
         {
-            using (StreamReader reader = new StreamReader(path))
-            {
-                string json = reader.ReadToEnd();
-                PlayerData returnData = JsonUtility.FromJson<PlayerData>(json);
-                return returnData;
-            }
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream datastream = new FileStream(path, FileMode.Open);
+            PlayerData data = formatter.Deserialize(datastream) as PlayerData;
+            datastream.Close();
+            return data;
         }
         else
         {
