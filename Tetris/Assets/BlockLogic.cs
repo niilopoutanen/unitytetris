@@ -248,7 +248,6 @@ public class BlockLogic : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
-
         FindObjectOfType<UIClass>().PauseMenu(false);
 
         if (!ValidPos())
