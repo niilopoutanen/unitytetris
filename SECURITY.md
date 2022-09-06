@@ -6,7 +6,10 @@ Only the newest version is supported, all the older releases before 1.0 are demo
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.0.0  | :white_check_mark: |
+| 1.1.0-installer  | :white_check_mark: :white_check_mark:|
+| 1.1.0  | :white_check_mark: |
+| 1.0.0-installer  | :x: |
+| 1.0.0  | :x: |
 | 0.9.0-beta  | :x: |
 | 0.8.0-beta  | :x: |
 | 0.7.0-beta  | :x: |
