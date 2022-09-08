@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using UnityEngine.SocialPlatforms.Impl;
 
 public static class SaveSystem
 {
@@ -31,7 +30,5 @@ public static class SaveSystem
         {
             return null;
         }
-
     }
-
 }

@@ -1,10 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using UnityEditor;
-using System.ComponentModel;
 
 public class GameLogic : MonoBehaviour
 {
@@ -16,7 +11,6 @@ public class GameLogic : MonoBehaviour
     public static float gamespeed = 1.0f;
     public Canvas Canvas;
     public Text ScoreText;
-    [SerializeField] private AudioSource positive;
     public static float timeOnStart;
     private float timeOnEnd;
     public static float PlayTime;
@@ -150,7 +144,6 @@ public class GameLogic : MonoBehaviour
         try
         {
             player = GameObject.Find("Player").GetComponent<Player>();
-
         }
         catch (System.Exception)
         {

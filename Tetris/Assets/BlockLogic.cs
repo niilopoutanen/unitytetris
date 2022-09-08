@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class BlockLogic : MonoBehaviour
 {
@@ -189,7 +186,14 @@ public class BlockLogic : MonoBehaviour
                 {
                     OnGameOver();
                 }
-
+                if (logic.HasBlock(18))
+                {
+                    OnGameOver();
+                }
+                if (logic.HasBlock(19))
+                {
+                    OnGameOver();
+                }
                 FindObjectOfType<Spawner>().SpawnNext();
 
                 enabled = false;
