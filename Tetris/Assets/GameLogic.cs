@@ -148,6 +148,11 @@ public class GameLogic : MonoBehaviour
         catch (System.Exception)
         {
         }
+        int guideVisible = PlayerPrefs.GetInt("GuideVisible", 1);
+        if(guideVisible == 0)
+        {
+            UIClass.HideGuide();
+        }
     }
 
     // Update is called once per frame

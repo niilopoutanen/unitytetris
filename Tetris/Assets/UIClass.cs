@@ -47,7 +47,10 @@ public class UIClass : MonoBehaviour
         }
         SurvivedTime.text = splitted[0];
     }
-
+    public static void HideGuide()
+    {
+        GameObject.Find("KeyGuide").SetActive(false);
+    }
     public void UpdateBlocksPlaced()
     {
         BlocksPlacedText.text = GameLogic.BlocksPlaced.ToString();

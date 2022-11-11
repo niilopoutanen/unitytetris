@@ -116,7 +116,7 @@ public class Achievement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            menucode.ToMainMenu();
+            menucode.ToMainMenu(false);
         }
     }
 }

@@ -12,6 +12,11 @@ public class MenuButtons : MonoBehaviour
     public void StartGame()
     {
         levelLoader.LoadNextLevel("Game");
+        int audioOn = PlayerPrefs.GetInt("AudioOn", 1);
+        if(audioOn == 0)
+        {
+            AudioListener.volume = 0;
+        }
         //SceneManager.LoadScene("Game");
         GameLogic.ScoreValue = 0;
         GameLogic.BlocksPlaced = 0;
@@ -23,19 +28,23 @@ public class MenuButtons : MonoBehaviour
         Application.Quit();
 
     }
-    public void ToMainMenu()
+    public void ToMainMenu(bool saveGameNeeded)
     {
         Time.timeScale = 1f;
-        try
+        if (saveGameNeeded)
         {
-            player = GameObject.Find("Player").GetComponent<Player>();
-            player.SavePlayer();
-            Debug.Log("Player saved");
+            try
+            {
+                player = GameObject.Find("Player").GetComponent<Player>();
+                player.SavePlayer();
+                Debug.Log("Player saved");
+            }
+            catch (System.Exception)
+            {
+                Debug.Log("Player save failed");
+            }
         }
-        catch (System.Exception)
-        {
-            Debug.Log("Player save failed");
-        }
+
         levelLoader.LoadNextLevel("Menu");
     }
     public void ToAchievements()
