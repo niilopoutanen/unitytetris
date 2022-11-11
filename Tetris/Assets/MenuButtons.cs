@@ -42,6 +42,11 @@ public class MenuButtons : MonoBehaviour
     {
         levelLoader.LoadNextLevel("Achievements");
     }
+
+    public void ToSettings()
+    {
+        levelLoader.LoadNextLevel("Settings");
+    }
     // Start is called before the first frame update
     void Start()
     {

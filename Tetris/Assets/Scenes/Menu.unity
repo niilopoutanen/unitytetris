@@ -192,6 +192,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1991510229}
     m_Modifications:
+    - target: {fileID: 699894038132194402, guid: d6ff91815d3e92a49b43cae7e45e6e7e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToSettings
+      objectReference: {fileID: 0}
+    - target: {fileID: 699894038132194402, guid: d6ff91815d3e92a49b43cae7e45e6e7e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuButtons, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 699894038132194402, guid: d6ff91815d3e92a49b43cae7e45e6e7e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6661375659792971113, guid: d6ff91815d3e92a49b43cae7e45e6e7e, type: 3}
       propertyPath: m_Text
       value: Settings
