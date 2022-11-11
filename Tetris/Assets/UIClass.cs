@@ -13,7 +13,6 @@ public class UIClass : MonoBehaviour
     public Text SurvivedTime;
     public Text BlocksPlacedText;
     public Player player;
-
     public void PauseMenu(bool isPaused)
     {
         if (isPaused == true)
@@ -49,7 +48,12 @@ public class UIClass : MonoBehaviour
     }
     public static void HideGuide()
     {
-        GameObject.Find("KeyGuide").SetActive(false);
+        try
+        {
+            GameObject.Find("KeyGuide").SetActive(false);
+        }
+        catch
+        {}
     }
     public void UpdateBlocksPlaced()
     {

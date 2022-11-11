@@ -12,6 +12,8 @@ public class MenuSpawner : MonoBehaviour
     private GameObject todelete;
     readonly int heightY = 7;
     int posX;
+
+    int performanceOn;
     public void SpawnNext()
     {
         posX = Random.Range(-9, 9);
@@ -28,14 +30,21 @@ public class MenuSpawner : MonoBehaviour
 
     void Update()
     {
-        time += Time.deltaTime;
-
-        if (time >= WaitPeriod)
+        if(performanceOn != 1)
         {
-            time = time - WaitPeriod;
+            time += Time.deltaTime;
 
-            SpawnNext();
+            if (time >= WaitPeriod)
+            {
+                time = time - WaitPeriod;
 
+                SpawnNext();
+            }
         }
+
+    }
+    private void Start()
+    {
+        performanceOn = PlayerPrefs.GetInt("PerformanceOn");
     }
 }

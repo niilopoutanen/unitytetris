@@ -28,11 +28,13 @@ public class SettingsLogic : MonoBehaviour
         {
             PlayerPrefs.SetInt("PerformanceOn", 0);
             PerformanceSwitch.gameObject.transform.Find("Active").GetComponent<Image>().enabled = false;
+            QualitySettings.SetQualityLevel(1);
         }
         else
         {
             PlayerPrefs.SetInt("PerformanceOn", 1);
             PerformanceSwitch.gameObject.transform.Find("Active").GetComponent<Image>().enabled = true;
+            QualitySettings.SetQualityLevel(5);
         }
     }
     public void AudioValueChanged(float value)
