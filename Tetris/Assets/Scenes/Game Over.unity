@@ -228,7 +228,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.16862746, g: 0.16862746, b: 0.16862746, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -373,7 +373,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 42bfdf8d1e8ef8b418360706abae7ff5, type: 3}
+    m_Font: {fileID: 12800000, guid: b2020554364a0ff458b229a1277afb55, type: 3}
     m_FontSize: 200
     m_FontStyle: 0
     m_BestFit: 0
@@ -794,7 +794,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Canvas: {fileID: 0}
   ScoreText: {fileID: 0}
-  positive: {fileID: 0}
   player: {fileID: 0}
 --- !u!1 &2139724610
 GameObject:
