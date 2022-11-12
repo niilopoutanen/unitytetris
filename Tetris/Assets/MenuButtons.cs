@@ -61,18 +61,6 @@ public class MenuButtons : MonoBehaviour
     void Start()
     {
         levelLoader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
-        if (SceneManager.GetActiveScene().name == "Menu")
-        {
-            int performanceOn = PlayerPrefs.GetInt("PerformanceOn");
-            if (performanceOn == 1)
-            {
-                QualitySettings.SetQualityLevel(1);
-            }
-            else if (performanceOn == 0)
-            {
-                QualitySettings.SetQualityLevel(5);
-            }
-        }
     }
     // Update is called once per frame
     void Update()
