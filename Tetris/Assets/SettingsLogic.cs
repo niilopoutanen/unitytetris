@@ -67,4 +67,10 @@ public class SettingsLogic : MonoBehaviour
 
         }
     }
+
+    public void ResetAchievementsClick()
+    {
+        Player player = new();
+        player.SavePlayer();
+    }
 }
