@@ -9,6 +9,7 @@ public class BlockLogic : MonoBehaviour
     [SerializeField] private AudioSource interact;
 
     private Camera cam;
+    private bool prefersMouseControls = false;
     bool ValidPos()
     {
         logic = gameObject.GetComponent<GameLogic>();
@@ -255,7 +256,7 @@ public class BlockLogic : MonoBehaviour
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
         player = GameObject.Find("Player").GetComponent<Player>();
         FindObjectOfType<UIClass>().PauseMenu(false);
-
+        prefersMouseControls = PlayerPrefs.GetInt("MouseControls") != 0;
         if (!ValidPos())
         {
             Destroy(gameObject);
@@ -279,40 +280,63 @@ public class BlockLogic : MonoBehaviour
                     paused = true;
 
                 }
+
+
+                //hiirellä ohjaaminen
+
+
+
                 //vasemmalle
 
                 else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
                 {
                     MoveBlock("left");
                 }
-                else if(Input.GetAxis("Mouse X") < 0)
-                {
-                    if(Input.mousePosition.x < cam.WorldToScreenPoint(transform.position).x)
-                    {
-                        if(cam.WorldToScreenPoint(transform.position).x - Input.mousePosition.x > 20)
-                        {
-                            MoveBlock("left");
-                        }
-                    }
-                }
+
                 //oikealle
                 else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
                 {
                     MoveBlock("right");
                 }
-                else if (Input.GetAxis("Mouse X") > 0)
+
+                else if (prefersMouseControls)
                 {
-                    if (Input.mousePosition.x > cam.WorldToScreenPoint(transform.position).x)
+                    if (Input.GetAxis("Mouse X") < 0)
                     {
-                        if (Input.mousePosition.x - cam.WorldToScreenPoint(transform.position).x > 20)
+                        if (Input.mousePosition.x < cam.WorldToScreenPoint(transform.position).x)
                         {
-                            MoveBlock("right");
+                            if (cam.WorldToScreenPoint(transform.position).x - Input.mousePosition.x > 20)
+                            {
+                                MoveBlock("left");
+                            }
                         }
                     }
-                }
 
+                    if (Input.GetAxis("Mouse X") > 0)
+                    {
+                        if (Input.mousePosition.x > cam.WorldToScreenPoint(transform.position).x)
+                        {
+                            if (Input.mousePosition.x - cam.WorldToScreenPoint(transform.position).x > 20)
+                            {
+                                MoveBlock("right");
+                            }
+                        }
+                    }
+                    if (Input.GetMouseButtonDown(1))
+                    {
+                        RotateBlock();
+                    }
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        MoveBlockDown(true);
+                    }
+                    if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+                    {
+                        MoveBlockDown(false);
+                    }
+                }
                 //Pyöritä
-                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetMouseButtonDown(1))
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
                 {
                     RotateBlock();
                 }
@@ -326,10 +350,7 @@ public class BlockLogic : MonoBehaviour
                 {
                     MoveBlockDown(true);
                 }
-                if (Input.GetMouseButtonDown(0) || Time.time - Fall >= GameLogic.gamespeed)
-                {
-                    MoveBlockDown(true);
-                }
+
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
                 {
                     PlaySound("interact");

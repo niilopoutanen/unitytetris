@@ -8,12 +8,14 @@ public class SettingsLogic : MonoBehaviour
     public Slider GuideSwitch;
     public Slider PerformanceSwitch;
     public Slider AudioSwitch;
+    public Slider MouseControlsSwitch;
     public MenuButtons menuButtons;
     void Start()
     {
         GuideSwitch.value = PlayerPrefs.GetInt("GuideVisible", 1);
         PerformanceSwitch.value = PlayerPrefs.GetInt("PerformanceOn");
         AudioSwitch.value = PlayerPrefs.GetInt("AudioOn", 1);
+        MouseControlsSwitch.value = PlayerPrefs.GetInt("MouseControls");
     }
     void Update()
     {
@@ -67,10 +69,23 @@ public class SettingsLogic : MonoBehaviour
 
         }
     }
-
     public void ResetAchievementsClick()
     {
         Player player = new();
         player.SavePlayer();
+    }
+
+    public void MouseControlsValueChanged(float value)
+    {
+        if (value == 0)
+        {
+            PlayerPrefs.SetInt("MouseControls", 0);
+            MouseControlsSwitch.gameObject.transform.Find("Active").GetComponent<Image>().enabled = false;
+        }
+        else
+        {
+            PlayerPrefs.SetInt("MouseControls", 1);
+            MouseControlsSwitch.gameObject.transform.Find("Active").GetComponent<Image>().enabled = true;
+        }
     }
 }
