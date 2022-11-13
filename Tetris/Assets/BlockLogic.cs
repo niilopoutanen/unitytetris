@@ -9,15 +9,15 @@ public class BlockLogic : MonoBehaviour
     public AudioSystem audioSystem; 
     private Camera cam;
     private bool prefersMouseControls = false;
-    bool ValidPos()
+    bool ValidPosition()
     {
         logic = gameObject.GetComponent<GameLogic>();
 
         foreach (Transform child in transform)
         {
-            Vector2 vector = logic.RoundVector(child.position);
+            Vector2 vector = logic.RoundPosition(child.position);
 
-            if (!logic.InsideGrid(vector))
+            if (!logic.IsInsideGrid(vector))
             {
                 return false;
             }
@@ -50,7 +50,7 @@ public class BlockLogic : MonoBehaviour
 
         foreach (Transform child in transform)
         {
-            Vector2 v = logic.RoundVector(child.position);
+            Vector2 v = logic.RoundPosition(child.position);
             GameLogic.Grid[(int)v.x, (int)v.y] = child;
         }
     }
@@ -64,7 +64,7 @@ public class BlockLogic : MonoBehaviour
             {
                 transform.position += new Vector3(-1, 0, 0);
 
-                if (ValidPos())
+                if (ValidPosition())
                 {
                     UpdateGrid();
                 }
@@ -75,7 +75,7 @@ public class BlockLogic : MonoBehaviour
                 }
                 transform.position += new Vector3(-1, 0, 0);
 
-                if (ValidPos())
+                if (ValidPosition())
                 {
                     UpdateGrid();
                 }
@@ -87,7 +87,7 @@ public class BlockLogic : MonoBehaviour
             }
             transform.position += new Vector3(-1, 0, 0);
 
-            if (ValidPos())
+            if (ValidPosition())
             {
                 UpdateGrid();
             }
@@ -103,7 +103,7 @@ public class BlockLogic : MonoBehaviour
             {
                 transform.position += new Vector3(1, 0, 0);
 
-                if (ValidPos())
+                if (ValidPosition())
                 {
                     UpdateGrid();
                 }
@@ -114,7 +114,7 @@ public class BlockLogic : MonoBehaviour
                 }
                 transform.position += new Vector3(1, 0, 0);
 
-                if (ValidPos())
+                if (ValidPosition())
                 {
                     UpdateGrid();
                 }
@@ -126,7 +126,7 @@ public class BlockLogic : MonoBehaviour
             }
             transform.position += new Vector3(1, 0, 0);
 
-            if (ValidPos())
+            if (ValidPosition())
             {
                 UpdateGrid();
             }
@@ -141,7 +141,7 @@ public class BlockLogic : MonoBehaviour
     {
         transform.Rotate(0, 0, -90);
 
-        if (ValidPos())
+        if (ValidPosition())
         {
             UpdateGrid();
         }
@@ -157,7 +157,7 @@ public class BlockLogic : MonoBehaviour
         {
             transform.position += new Vector3(0, -1, 0);
 
-            if (ValidPos())
+            if (ValidPosition())
             {
                 UpdateGrid();
             }
@@ -167,7 +167,7 @@ public class BlockLogic : MonoBehaviour
             {
                 transform.position += new Vector3(0, 1, 0);
 
-                logic.DeleteRows();
+                logic.ClearRows();
 
                 if (logic.HasBlock(17))
                 {
@@ -194,7 +194,7 @@ public class BlockLogic : MonoBehaviour
             {
                 transform.position += new Vector3(0, -1, 0);
 
-                if (ValidPos())
+                if (ValidPosition())
                 {
                     UpdateGrid();
                 }
@@ -203,7 +203,7 @@ public class BlockLogic : MonoBehaviour
                 else
                 {
                     transform.position += new Vector3(0, 1, 0);
-                    logic.DeleteRows();
+                    logic.ClearRows();
                     if (logic.HasBlock(17))
                     {
                         OnGameOver();
@@ -242,7 +242,7 @@ public class BlockLogic : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<Player>();
         FindObjectOfType<UIClass>().PauseMenu(false);
         prefersMouseControls = PlayerPrefs.GetInt("MouseControls") != 0;
-        if (!ValidPos())
+        if (!ValidPosition())
         {
             Destroy(gameObject);
         }
@@ -265,21 +265,12 @@ public class BlockLogic : MonoBehaviour
                     paused = true;
 
                 }
-
-
-                //hiirellä ohjaaminen
-
-
-
-                //vasemmalle
-
                 else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
                 {
                     audioSystem.PlayKeyPressed(KeyCode.A);
                     MoveBlock("left");
                 }
 
-                //oikealle
                 else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
                 {
                     audioSystem.PlayKeyPressed(KeyCode.D);
@@ -324,14 +315,12 @@ public class BlockLogic : MonoBehaviour
                         MoveBlockDown(false);
                     }
                 }
-                //Pyöritä
                 if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
                 {
                     audioSystem.PlayKeyPressed(KeyCode.W);
                     RotateBlock();
                 }
 
-                //Nopeammin alas
                 else if (Input.GetKeyDown(KeyCode.DownArrow) || Time.time - Fall >= GameLogic.gamespeed || Input.GetKeyDown(KeyCode.S))
                 {
                     MoveBlockDown(false);

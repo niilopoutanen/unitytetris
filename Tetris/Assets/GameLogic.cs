@@ -29,18 +29,17 @@ public class GameLogic : MonoBehaviour
         float time = timeOnStart + timeOnEnd;
         return time;
     }
-    public Vector2 RoundVector(Vector2 vec)
+    public Vector2 RoundPosition(Vector2 vec)
     {
         return new Vector2(Mathf.Round(vec.x), Mathf.Round(vec.y));
     }
-    public bool InsideGrid(Vector2 pos)
+    public bool IsInsideGrid(Vector2 pos)
     {
         return ((int)pos.x >= 0 && (int)pos.x < Width && (int)pos.y >= 0);
     }
 
     public void DeleteRow(int y)
     {
-
         for (int x = 0; x < Width; ++x)
         {
             Destroy(Grid[x, y].gameObject);
@@ -89,14 +88,13 @@ public class GameLogic : MonoBehaviour
         gamespeed = speed;
         return speed;
     }
-    public void DeleteRows()
+    public void ClearRows()
     {
         BlocksPlaced++;
         for (int y = 0; y < Height; ++y)
         {
             if (IsFull(y))
             {
-
                 IncreaseSpeed();
                 Canvas = GameObject.Find("UICanvas").GetComponent<Canvas>();
                 ScoreText = Canvas.GetComponentInChildren<Text>();

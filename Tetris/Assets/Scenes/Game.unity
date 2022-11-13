@@ -202,6 +202,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91979318}
   m_CullTransparentMesh: 1
+--- !u!1 &102147482 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7272411437479016544, guid: ed657ba8a0a3c4341afbeb913737eff1, type: 3}
+  m_PrefabInstance: {fileID: 7272411435763268459}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &102147485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102147482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0a241cd21392f49a6d6f78c6d17df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystem: {fileID: 1545797724}
+  grid: {fileID: 883935259}
 --- !u!1 &216197515
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,7 +2125,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0, b: 0.94998837, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
