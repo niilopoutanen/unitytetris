@@ -8,6 +8,7 @@ public class BlockLogic : MonoBehaviour
     public Player player;
     [SerializeField] private AudioSource interact;
 
+    private Camera cam;
     bool ValidPos()
     {
         logic = gameObject.GetComponent<GameLogic>();
@@ -251,6 +252,7 @@ public class BlockLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cam = GameObject.Find("Main Camera").GetComponent<Camera>();
         player = GameObject.Find("Player").GetComponent<Player>();
         FindObjectOfType<UIClass>().PauseMenu(false);
 
@@ -269,6 +271,7 @@ public class BlockLogic : MonoBehaviour
         {
             if(paused == false)
             {
+
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     Time.timeScale = 0f;
@@ -282,13 +285,34 @@ public class BlockLogic : MonoBehaviour
                 {
                     MoveBlock("left");
                 }
+                else if(Input.GetAxis("Mouse X") < 0)
+                {
+                    if(Input.mousePosition.x < cam.WorldToScreenPoint(transform.position).x)
+                    {
+                        if(cam.WorldToScreenPoint(transform.position).x - Input.mousePosition.x > 20)
+                        {
+                            MoveBlock("left");
+                        }
+                    }
+                }
                 //oikealle
                 else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
                 {
                     MoveBlock("right");
                 }
+                else if (Input.GetAxis("Mouse X") > 0)
+                {
+                    if (Input.mousePosition.x > cam.WorldToScreenPoint(transform.position).x)
+                    {
+                        if (Input.mousePosition.x - cam.WorldToScreenPoint(transform.position).x > 20)
+                        {
+                            MoveBlock("right");
+                        }
+                    }
+                }
+
                 //Pyöritä
-                else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetMouseButtonDown(1))
                 {
                     RotateBlock();
                 }
@@ -298,7 +322,11 @@ public class BlockLogic : MonoBehaviour
                 {
                     MoveBlockDown(false);
                 }
-                else if (Input.GetKeyDown(KeyCode.Space) || Time.time - Fall >= GameLogic.gamespeed)
+                if (Input.GetKeyDown(KeyCode.Space) || Time.time - Fall >= GameLogic.gamespeed)
+                {
+                    MoveBlockDown(true);
+                }
+                if (Input.GetMouseButtonDown(0) || Time.time - Fall >= GameLogic.gamespeed)
                 {
                     MoveBlockDown(true);
                 }
@@ -315,6 +343,7 @@ public class BlockLogic : MonoBehaviour
                     paused = false;
                 }
             }
+
         }
     }
 }
