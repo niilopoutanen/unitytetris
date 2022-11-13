@@ -13,7 +13,7 @@ public class SplashScreen : MonoBehaviour
     {
         splashVideoPlayer.loopPointReached += EndReached;
         int performanceOn = PlayerPrefs.GetInt("PerformanceOn");
-        int audioOn = PlayerPrefs.GetInt("AudioOn");
+        int audioOn = PlayerPrefs.GetInt("AudioOn", 1);
         if (performanceOn == 1)
         {
             QualitySettings.SetQualityLevel(0);
@@ -33,7 +33,11 @@ public class SplashScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.anyKeyDown)
+        {
+            splashVideoPlayer.Stop();
+            menuButtons.ToMainMenu(false);
+        }
     }
     void EndReached(UnityEngine.Video.VideoPlayer vp)
     {

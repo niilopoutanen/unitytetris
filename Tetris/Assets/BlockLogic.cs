@@ -6,8 +6,7 @@ public class BlockLogic : MonoBehaviour
     public bool gameover = false;
     public static bool paused = false;
     public Player player;
-    [SerializeField] private AudioSource interact;
-
+    public AudioSystem audioSystem; 
     private Camera cam;
     private bool prefersMouseControls = false;
     bool ValidPos()
@@ -29,13 +28,6 @@ public class BlockLogic : MonoBehaviour
             }
         }
         return true;
-    }
-    void PlaySound(string sound)
-    {
-        if (sound == "interact")
-        {
-            interact.Play();
-        }
     }
     void UpdateGrid()
     {
@@ -74,7 +66,6 @@ public class BlockLogic : MonoBehaviour
 
                 if (ValidPos())
                 {
-                    PlaySound("interact");
                     UpdateGrid();
                 }
 
@@ -86,7 +77,6 @@ public class BlockLogic : MonoBehaviour
 
                 if (ValidPos())
                 {
-                    PlaySound("interact");
                     UpdateGrid();
                 }
 
@@ -99,7 +89,6 @@ public class BlockLogic : MonoBehaviour
 
             if (ValidPos())
             {
-                PlaySound("interact");
                 UpdateGrid();
             }
 
@@ -116,7 +105,6 @@ public class BlockLogic : MonoBehaviour
 
                 if (ValidPos())
                 {
-                    PlaySound("interact");
                     UpdateGrid();
                 }
                 else
@@ -128,7 +116,6 @@ public class BlockLogic : MonoBehaviour
 
                 if (ValidPos())
                 {
-                    PlaySound("interact");
                     UpdateGrid();
                 }
                 else
@@ -141,7 +128,6 @@ public class BlockLogic : MonoBehaviour
 
             if (ValidPos())
             {
-                PlaySound("interact");
                 UpdateGrid();
             }
             else
@@ -157,7 +143,6 @@ public class BlockLogic : MonoBehaviour
 
         if (ValidPos())
         {
-            PlaySound("interact");
             UpdateGrid();
         }
         else
@@ -211,7 +196,6 @@ public class BlockLogic : MonoBehaviour
 
                 if (ValidPos())
                 {
-                    PlaySound("interact");
                     UpdateGrid();
                 }
 
@@ -254,6 +238,7 @@ public class BlockLogic : MonoBehaviour
     void Start()
     {
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
+        audioSystem = cam.GetComponent<AudioSystem>();
         player = GameObject.Find("Player").GetComponent<Player>();
         FindObjectOfType<UIClass>().PauseMenu(false);
         prefersMouseControls = PlayerPrefs.GetInt("MouseControls") != 0;
@@ -290,12 +275,14 @@ public class BlockLogic : MonoBehaviour
 
                 else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
                 {
+                    audioSystem.PlayKeyPressed();
                     MoveBlock("left");
                 }
 
                 //oikealle
                 else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
                 {
+                    audioSystem.PlayKeyPressed();
                     MoveBlock("right");
                 }
 
@@ -338,6 +325,7 @@ public class BlockLogic : MonoBehaviour
                 //Pyöritä
                 if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
                 {
+                    audioSystem.PlayKeyPressed();
                     RotateBlock();
                 }
 
@@ -353,7 +341,7 @@ public class BlockLogic : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
                 {
-                    PlaySound("interact");
+                    audioSystem.PlayKeyPressed();
                 }
             }
             else if (paused == true)
