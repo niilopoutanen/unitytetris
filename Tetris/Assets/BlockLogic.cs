@@ -275,14 +275,14 @@ public class BlockLogic : MonoBehaviour
 
                 else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
                 {
-                    audioSystem.PlayKeyPressed();
+                    audioSystem.PlayKeyPressed(KeyCode.A);
                     MoveBlock("left");
                 }
 
                 //oikealle
                 else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
                 {
-                    audioSystem.PlayKeyPressed();
+                    audioSystem.PlayKeyPressed(KeyCode.D);
                     MoveBlock("right");
                 }
 
@@ -311,10 +311,12 @@ public class BlockLogic : MonoBehaviour
                     }
                     if (Input.GetMouseButtonDown(1))
                     {
+                        audioSystem.PlayKeyPressed(KeyCode.Mouse0);
                         RotateBlock();
                     }
                     if (Input.GetMouseButtonDown(0))
                     {
+                        audioSystem.PlayKeyPressed(KeyCode.Mouse0);
                         MoveBlockDown(true);
                     }
                     if (Input.GetAxis("Mouse ScrollWheel") < 0f)
@@ -325,7 +327,7 @@ public class BlockLogic : MonoBehaviour
                 //Pyöritä
                 if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
                 {
-                    audioSystem.PlayKeyPressed();
+                    audioSystem.PlayKeyPressed(KeyCode.W);
                     RotateBlock();
                 }
 
@@ -341,7 +343,7 @@ public class BlockLogic : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
                 {
-                    audioSystem.PlayKeyPressed();
+                    audioSystem.PlayKeyPressed(KeyCode.Space);
                 }
             }
             else if (paused == true)

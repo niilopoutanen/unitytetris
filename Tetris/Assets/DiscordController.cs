@@ -12,32 +12,39 @@ public class DiscordController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string stat = "";
-        if (playerlocation == "Menu")
+        try
         {
-            stat = "In main menu";
-        }
-        else if (playerlocation == "Game")
-        {
-            stat = "Playing Tetris";
-        }
-        discord = new Discord.Discord(1014431358833152010, (System.UInt64)Discord.CreateFlags.NoRequireDiscord);
-        var activityManager = discord.GetActivityManager();
-        var activity = new Discord.Activity
-        {
-            State = stat,
-            Assets =
+            string stat = "";
+            if (playerlocation == "Menu")
+            {
+                stat = "In main menu";
+            }
+            else if (playerlocation == "Game")
+            {
+                stat = "Playing Tetris";
+            }
+            discord = new Discord.Discord(1014431358833152010, (System.UInt64)Discord.CreateFlags.NoRequireDiscord);
+            var activityManager = discord.GetActivityManager();
+            var activity = new Discord.Activity
+            {
+                State = stat,
+                Assets =
             {
                 LargeImage = "logo"
             }
-        };
-        activityManager.UpdateActivity(activity, (res) =>
-        {
-            if (res == Discord.Result.Ok)
+            };
+            activityManager.UpdateActivity(activity, (res) =>
             {
-                Debug.Log("Discord initialize successful.");
-            }
-        });
+                if (res == Discord.Result.Ok)
+                {
+                    Debug.Log("Discord initialize successful.");
+                }
+            });
+        }
+        catch (ResultException)
+        {
+            Debug.Log("Discord not running");
+        }
     }
     public void LogProblemsFunction(Discord.LogLevel level, string message)
     {

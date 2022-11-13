@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 30203
+  controlID: 3900
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -53,8 +53,10 @@ MonoBehaviour:
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
-  m_SerializedViewNames: []
-  m_SerializedViewValues: []
+  m_SerializedViewNames:
+  - UnityEditor.DeviceSimulation.SimulatorWindow
+  m_SerializedViewValues:
+  - C:\Ohjelmointi\UnityTetris\Tetris\Library\PlayModeViewStates\844cb330722743949ad9e760eee44737
   m_PlayModeViewName: GameView
   m_ShowGizmos: 0
   m_TargetDisplay: 0
@@ -141,7 +143,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 30204
+  controlID: 3870
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +168,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 30205
+  controlID: 3871
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -226,7 +228,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 1c06feffe638feff0e7bfeff7a7efeff227ffeff1082feff5884feff7e84feffa484feff2485feff4685feff30f4feff5ef4feff66f4feff10f7feff3af8ffff20fbffffca62000086bb000096bb00001eeb00002eeb0000f0f8000016f90000
+      m_ExpandedIDs: 04c5ffffa6f6ffff1efbffff04860000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -321,9 +323,9 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: -141, y: 149}
+      snapOffset: {x: 101, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 1
+      snapCorner: 0
       id: unity-grid-and-snap-toolbar
       index: 1
       layout: 1
@@ -406,12 +408,12 @@ MonoBehaviour:
       layout: 4
     - dockPosition: 1
       containerId: overlay-container--right
-      floating: 0
+      floating: 1
       collapsed: 0
-      displayed: 1
-      snapOffset: {x: 0, y: 0}
+      displayed: 0
+      snapOffset: {x: 44, y: -189}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
+      snapCorner: 2
       id: Scene View/Camera
       index: 1
       layout: 4
@@ -524,9 +526,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.84716713, y: 4.0949893, z: 115.07927}
+    m_Target: {x: 6.424009, y: -3.2034807, z: 18.220102}
     speed: 2
-    m_Value: {x: -0.84716713, y: 4.0949893, z: 115.07927}
+    m_Value: {x: 6.424009, y: -3.2034807, z: 18.220102}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -577,9 +579,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 18.73895
+    m_Target: 14.245681
     speed: 2
-    m_Value: 18.73895
+    m_Value: 14.245681
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -623,8 +625,8 @@ MonoBehaviour:
     y: 658
     width: 1367
     height: 289
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
   m_ActualView: {fileID: 10}
   m_Panes:
   - {fileID: 10}
@@ -673,22 +675,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sounds
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sounds
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Ohjelmointi\UnityTetris\Tetris
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 24}
-    m_SelectedIDs: 0a620000
-    m_LastClickedID: 25098
-    m_ExpandedIDs: 00000000746000007660000000ca9a3bffffff7f
+    m_SelectedIDs: f6610000
+    m_LastClickedID: 25078
+    m_ExpandedIDs: 00000000706000007260000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -716,7 +718,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000746000007660000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000706000007260000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -741,8 +743,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: b0030100
-    m_LastClickedInstanceID: 66480
+    m_SelectedInstanceIDs: cc84ffff
+    m_LastClickedInstanceID: -31540
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300009a550000e860000054ad0000000000009c5f0000
     m_RenameOverlay:
@@ -830,7 +832,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 66480
+  m_LastSelectedObjectID: -16160
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -891,7 +893,7 @@ MonoBehaviour:
     m_CachedPref: -160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 66480
+  m_LastInspectedObjectInstanceID: -31540
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0

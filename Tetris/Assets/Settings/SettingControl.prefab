@@ -497,6 +497,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5332058605172110184}
     m_Modifications:
+    - target: {fileID: 129353196748624354, guid: 7d744ccb02c3b5c489a786de166ab537, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 129353196748624354, guid: 7d744ccb02c3b5c489a786de166ab537, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 129353196748624354, guid: 7d744ccb02c3b5c489a786de166ab537, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 129353196748624354, guid: 7d744ccb02c3b5c489a786de166ab537, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 129353196748624354, guid: 7d744ccb02c3b5c489a786de166ab537, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySwitchToggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 129353196748624354, guid: 7d744ccb02c3b5c489a786de166ab537, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 129353196748624354, guid: 7d744ccb02c3b5c489a786de166ab537, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 129353196748624355, guid: 7d744ccb02c3b5c489a786de166ab537, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

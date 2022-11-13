@@ -589,6 +589,7 @@ MonoBehaviour:
   keyPress1: {fileID: 8300000, guid: 67026115f24709341a1f5d5a0d01f1e7, type: 3}
   keyPress2: {fileID: 8300000, guid: 71b38bb3743a3cf4d9b71a53ea91376e, type: 3}
   keyPress3: {fileID: 8300000, guid: f2e14a544c8d23b43863c4cd10e68bff, type: 3}
+  keyPressSpace: {fileID: 8300000, guid: 2a48363ecea60074db5ae56ec110f961, type: 3}
 --- !u!82 &519420037
 AudioSource:
   m_ObjectHideFlags: 0
