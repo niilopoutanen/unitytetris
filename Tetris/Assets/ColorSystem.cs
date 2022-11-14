@@ -10,6 +10,8 @@ public class ColorSystem : MonoBehaviour
 {
     public new ParticleSystem particleSystem;
     public GameObject grid;
+    public Text[] textElements;
+    public GameObject scoreBg;
 
     public GameObject menuBg;
     public GameObject[] menuButtons;
@@ -56,21 +58,44 @@ public class ColorSystem : MonoBehaviour
             case "Purple":
                 main.startColor = purple;
                 grid.GetComponent<SpriteRenderer>().color = purple;
+                scoreBg.GetComponent<SpriteRenderer>().color = purple;
+                foreach (Text textElement in textElements)
+                {
+                    textElement.color = purple;
+                }
                 break;
 
             case "Blue":
                 main.startColor = blue;
                 grid.GetComponent<SpriteRenderer>().color = blue;
+                scoreBg.GetComponent<SpriteRenderer>().color = blue;
+
+                foreach (Text textElement in textElements)
+                {
+                    textElement.color = blue;
+                }
                 break;
 
             case "Red":
                 main.startColor = red;
                 grid.GetComponent<SpriteRenderer>().color = red;
+                scoreBg.GetComponent<SpriteRenderer>().color = red;
+
+                foreach (Text textElement in textElements)
+                {
+                    textElement.color = red;
+                }
                 break;
 
             case "Green":
                 main.startColor = green;
                 grid.GetComponent<SpriteRenderer>().color = green;
+                scoreBg.GetComponent<SpriteRenderer>().color = green;
+
+                foreach (Text textElement in textElements)
+                {
+                    textElement.color = green;
+                }
                 break;
         }
     }
