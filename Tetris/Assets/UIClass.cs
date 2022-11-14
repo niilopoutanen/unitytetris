@@ -46,14 +46,34 @@ public class UIClass : MonoBehaviour
         }
         SurvivedTime.text = splitted[0];
     }
-    public static void HideGuide()
+    public static void SetVisibility(bool isVisible, string elementName)
     {
-        try
+        GameObject keyGuide = GameObject.Find("KeyGuide");
+        switch (elementName)
         {
-            GameObject.Find("KeyGuide").SetActive(false);
+            case "KeyBoardGuide":
+                switch (isVisible)
+                {
+                    case true:
+                        keyGuide.transform.Find("KeyBoardGuide").gameObject.SetActive(true);
+                        break;
+                    case false:
+                        keyGuide.transform.Find("KeyBoardGuide").gameObject.SetActive(false);
+                        break;
+                }
+                break;
+            case "MouseGuideColorLayer":
+                switch (isVisible)
+                {
+                    case true:
+                        keyGuide.transform.Find("MouseGuideColorLayer").gameObject.SetActive(true);
+                        break;
+                    case false:
+                        keyGuide.transform.Find("MouseGuideColorLayer").gameObject.SetActive(false);
+                        break;
+                }
+                break;
         }
-        catch
-        {}
     }
     public void UpdateBlocksPlaced()
     {

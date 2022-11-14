@@ -151,9 +151,20 @@ public class GameLogic : MonoBehaviour
         {
         }
         int guideVisible = PlayerPrefs.GetInt("GuideVisible", 1);
-        if(guideVisible == 0)
+        int mouseControls = PlayerPrefs.GetInt("MouseControls");
+        if(guideVisible == 1)
         {
-            UIClass.HideGuide();
+            if(mouseControls == 0)
+            {
+                UIClass.SetVisibility(true, "KeyBoardGuide");
+            }
+        }
+        if(mouseControls == 1)
+        {
+            if(guideVisible == 1)
+            {
+                UIClass.SetVisibility(true, "MouseGuideColorLayer");
+            }
         }
     }
 
