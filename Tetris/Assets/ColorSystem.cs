@@ -47,8 +47,29 @@ public class ColorSystem : MonoBehaviour
     public void SetGameColors()
     {
         var main = particleSystem.main;
-        main.startColor = new Color(0, 200, 0);
-        grid.GetComponent<SpriteRenderer>().color = new Color(0, 200, 0);
+
+        switch (theme)
+        {
+            case "Purple":
+                main.startColor = purple;
+                grid.GetComponent<SpriteRenderer>().color = purple;
+                break;
+
+            case "Blue":
+                main.startColor = blue;
+                grid.GetComponent<SpriteRenderer>().color = blue;
+                break;
+
+            case "Red":
+                main.startColor = red;
+                grid.GetComponent<SpriteRenderer>().color = red;
+                break;
+
+            case "Green":
+                main.startColor = green;
+                grid.GetComponent<SpriteRenderer>().color = green;
+                break;
+        }
     }
     public void SetMenuColors()
     {

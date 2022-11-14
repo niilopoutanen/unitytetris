@@ -30,22 +30,27 @@ public class SettingsLogic : MonoBehaviour
         MouseControlsSwitch.value = PlayerPrefs.GetInt("MouseControls");
         AudioListener.volume = 1;
 
+        purpleActive.SetActive(false);
         switch (PlayerPrefs.GetString("PreferredColorTheme", "Purple"))
         {
             case "Purple":
                 colorSystem.SetSettingsColors();
+                purpleActive.SetActive(true);
                 break;
 
             case "Blue":
                 colorSystem.SetSettingsColors();
+                blueActive.SetActive(true);
                 break;
 
             case "Red":
                 colorSystem.SetSettingsColors();
+                redActive.SetActive(true);
                 break;
 
             case "Green":
                 colorSystem.SetSettingsColors();
+                greenActive.SetActive(true);
                 break;
         }
     }

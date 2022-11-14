@@ -18,9 +18,7 @@ public static class SaveSystem
     public static void ClearData()
     {
         string path = Application.persistentDataPath + "/save.NPgame";
-        FileStream datastream = new FileStream(path, FileMode.Create);
-        datastream.SetLength(0);
-        datastream.Close();
+        File.Delete(path);
     }
     public static PlayerData LoadData()
     {
