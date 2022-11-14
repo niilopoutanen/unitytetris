@@ -9,10 +9,8 @@ using UnityEditor;
 public class ColorSystem : MonoBehaviour
 {
     public new ParticleSystem particleSystem;
-    public GameObject grid;
     public Text[] textElements;
-    public GameObject scoreBg;
-
+    public GameObject[] gameImages;
     public GameObject menuBg;
     public GameObject[] menuButtons;
 
@@ -57,8 +55,10 @@ public class ColorSystem : MonoBehaviour
         {
             case "Purple":
                 main.startColor = purple;
-                grid.GetComponent<SpriteRenderer>().color = purple;
-                scoreBg.GetComponent<SpriteRenderer>().color = purple;
+                foreach (GameObject gameObject in gameImages)
+                {
+                    gameObject.GetComponent<SpriteRenderer>().color = purple;
+                }
                 foreach (Text textElement in textElements)
                 {
                     textElement.color = purple;
@@ -67,9 +67,10 @@ public class ColorSystem : MonoBehaviour
 
             case "Blue":
                 main.startColor = blue;
-                grid.GetComponent<SpriteRenderer>().color = blue;
-                scoreBg.GetComponent<SpriteRenderer>().color = blue;
-
+                foreach (GameObject gameObject in gameImages)
+                {
+                    gameObject.GetComponent<SpriteRenderer>().color = blue;
+                }
                 foreach (Text textElement in textElements)
                 {
                     textElement.color = blue;
@@ -78,8 +79,10 @@ public class ColorSystem : MonoBehaviour
 
             case "Red":
                 main.startColor = red;
-                grid.GetComponent<SpriteRenderer>().color = red;
-                scoreBg.GetComponent<SpriteRenderer>().color = red;
+                foreach (GameObject gameObject in gameImages)
+                {
+                    gameObject.GetComponent<SpriteRenderer>().color = red;
+                }
 
                 foreach (Text textElement in textElements)
                 {
@@ -89,8 +92,10 @@ public class ColorSystem : MonoBehaviour
 
             case "Green":
                 main.startColor = green;
-                grid.GetComponent<SpriteRenderer>().color = green;
-                scoreBg.GetComponent<SpriteRenderer>().color = green;
+                foreach (GameObject gameObject in gameImages)
+                {
+                    gameObject.GetComponent<SpriteRenderer>().color = green;
+                }
 
                 foreach (Text textElement in textElements)
                 {

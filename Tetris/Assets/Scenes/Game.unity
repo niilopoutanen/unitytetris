@@ -220,12 +220,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleSystem: {fileID: 1545797724}
-  grid: {fileID: 883935259}
   textElements:
   - {fileID: 1396375457}
   - {fileID: 418580143}
   - {fileID: 1365299365}
-  scoreBg: {fileID: 2090545748}
+  gameImages:
+  - {fileID: 883935259}
+  - {fileID: 2090545748}
+  - {fileID: 1736678398}
   menuBg: {fileID: 0}
   menuButtons: []
   settingsBg: {fileID: 0}
