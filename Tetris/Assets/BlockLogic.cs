@@ -166,6 +166,10 @@ public class BlockLogic : MonoBehaviour
             //Tarkistaa onko rivi täynnä ja spawnaa uuden palan
             else
             {
+                foreach (Transform child in transform)
+                {
+                    child.GetComponent<SpriteRenderer>().material.SetFloat("_Strength", 1.2f);
+                }
                 transform.position += new Vector3(0, 1, 0);
 
                 logic.ClearRows();
@@ -203,6 +207,10 @@ public class BlockLogic : MonoBehaviour
                 //Tarkistaa onko rivi täynnä ja spawnaa uuden palan
                 else
                 {
+                    foreach (Transform child in transform)
+                    {
+                        child.GetComponent<SpriteRenderer>().material.SetFloat("_Strength", 1.2f);
+                    }
                     transform.position += new Vector3(0, 1, 0);
                     logic.ClearRows();
                     if (logic.HasBlock(17))

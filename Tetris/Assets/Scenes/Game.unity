@@ -222,6 +222,7 @@ MonoBehaviour:
   particleSystem: {fileID: 1545797724}
   grid: {fileID: 883935259}
   menuBG: {fileID: 0}
+  settingsBg: {fileID: 0}
 --- !u!1 &216197515
 GameObject:
   m_ObjectHideFlags: 0

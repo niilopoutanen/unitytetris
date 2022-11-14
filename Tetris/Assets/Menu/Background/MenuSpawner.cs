@@ -22,6 +22,10 @@ public class MenuSpawner : MonoBehaviour
 
         todelete  = Instantiate(objects[rand], randomTransform.position, Quaternion.identity);
         todelete.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        foreach (Transform child in todelete.transform)
+        {
+            child.GetComponent<SpriteRenderer>().color = ColorSystem.GetColor();
+        }
         todelete.GetComponent<PolygonCollider2D>().enabled = true;
         todelete.AddComponent<Rigidbody2D>();
         todelete.GetComponent<Rigidbody2D>().collisionDetectionMode = CollisionDetectionMode2D.Continuous;

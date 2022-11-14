@@ -4,20 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class ColorSystem : MonoBehaviour
 {
     public new ParticleSystem particleSystem;
     public GameObject grid;
 
-    public GameObject menuBG;
+    public GameObject menuBg;
+    public GameObject[] menuButtons;
+
 
     public GameObject settingsBg;
 
-    private Color purple = new(219, 0, 255);
-    private Color blue = new(0, 0, 255);
-    private Color red = new(255, 0, 0);
-    private Color green = new(0, 255, 0);
+    private static Color purple = new(219, 0, 255);
+    private static Color blue = new(0, 0, 255);
+    private static Color red = new(255, 0, 0);
+    private static Color green = new(0, 255, 0);
 
     private string theme;
     // Start is called before the first frame update
@@ -73,24 +76,60 @@ public class ColorSystem : MonoBehaviour
     }
     public void SetMenuColors()
     {
+        
         switch (theme)
         {
             case "Purple":
-                menuBG.GetComponent<SpriteRenderer>().color = purple;
+                menuBg.GetComponent<SpriteRenderer>().color = purple;
+                foreach (GameObject button in menuButtons)
+                {
+                    button.GetComponent<Image>().color = purple;
+                }
                 break;
 
             case "Blue":
-                menuBG.GetComponent<SpriteRenderer>().color = blue;
+                menuBg.GetComponent<SpriteRenderer>().color = blue;
+                foreach (GameObject button in menuButtons)
+                {
+                    button.GetComponent<Image>().color = blue;
+                }
                 break;
 
             case "Red":
-                menuBG.GetComponent<SpriteRenderer>().color = red;
+                menuBg.GetComponent<SpriteRenderer>().color = red;
+                foreach (GameObject button in menuButtons)
+                {
+                    button.GetComponent<Image>().color = red;
+                }
                 break;
 
             case "Green":
-                menuBG.GetComponent<SpriteRenderer>().color = green;
+                menuBg.GetComponent<SpriteRenderer>().color = green;
+                foreach (GameObject button in menuButtons)
+                {
+                    button.GetComponent<Image>().color = green;
+                }
                 break;
         }
+    }
+    public static Color GetColor()
+    {
+        var theme = PlayerPrefs.GetString("PreferredColorTheme", "Purple");
+        switch (theme)
+        {
+            case "Purple":
+                return purple;
+
+            case "Blue":
+                return blue;
+
+            case "Red":
+                return red;
+
+            case "Green":
+                return green;
+        }
+        return purple;
     }
     public void SetSettingsColors()
     {

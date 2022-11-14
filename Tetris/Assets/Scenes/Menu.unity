@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &3230845 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7067376519629959210, guid: d6ff91815d3e92a49b43cae7e45e6e7e, type: 3}
+  m_PrefabInstance: {fileID: 1269906560}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &158771536 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7272411437479016544, guid: ed657ba8a0a3c4341afbeb913737eff1, type: 3}
@@ -142,7 +147,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleSystem: {fileID: 0}
   grid: {fileID: 0}
-  menuBG: {fileID: 1133583737}
+  menuBg: {fileID: 1133583737}
+  menuButtons:
+  - {fileID: 548759092}
+  - {fileID: 3230845}
+  - {fileID: 1103604126}
+  - {fileID: 2021251441}
   settingsBg: {fileID: 0}
 --- !u!224 &253695602 stripped
 RectTransform:
@@ -352,7 +362,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 5f14e889bf3befe42b5434b4d68476a1, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 2e7dcc440285fd8478d4428255af2c0d, type: 2}
 --- !u!4 &526003814
 Transform:
   m_ObjectHideFlags: 0
@@ -448,10 +458,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531678525}
   m_CullTransparentMesh: 1
+--- !u!1 &548759092 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7067376519629959210, guid: d6ff91815d3e92a49b43cae7e45e6e7e, type: 3}
+  m_PrefabInstance: {fileID: 4062886261126581382}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &553356809 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8670884964278993427, guid: d6ff91815d3e92a49b43cae7e45e6e7e, type: 3}
   m_PrefabInstance: {fileID: 1269906560}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1103604126 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7067376519629959210, guid: d6ff91815d3e92a49b43cae7e45e6e7e, type: 3}
+  m_PrefabInstance: {fileID: 426615689}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1133583737
 GameObject:
@@ -464,7 +484,7 @@ GameObject:
   - component: {fileID: 1133583738}
   - component: {fileID: 1133583739}
   m_Layer: 0
-  m_Name: bloomDouble
+  m_Name: menuBg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1133,6 +1153,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &2021251441 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7067376519629959210, guid: d6ff91815d3e92a49b43cae7e45e6e7e, type: 3}
+  m_PrefabInstance: {fileID: 1974862566}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1047726431618258455
 PrefabInstance:
   m_ObjectHideFlags: 0
