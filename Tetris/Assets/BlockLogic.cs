@@ -160,6 +160,7 @@ public class BlockLogic : MonoBehaviour
             if (ValidPosition())
             {
                 UpdateGrid();
+                
             }
 
             //Tarkistaa onko rivi täynnä ja spawnaa uuden palan
@@ -240,6 +241,7 @@ public class BlockLogic : MonoBehaviour
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
         audioSystem = cam.GetComponent<AudioSystem>();
         player = GameObject.Find("Player").GetComponent<Player>();
+
         FindObjectOfType<UIClass>().PauseMenu(false);
         prefersMouseControls = PlayerPrefs.GetInt("MouseControls") != 0;
         if (!ValidPosition())
