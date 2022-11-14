@@ -179,7 +179,7 @@ VideoPlayer:
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
-  - 1
+  - 0.718
   m_Url: 
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
