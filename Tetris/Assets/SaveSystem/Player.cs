@@ -13,6 +13,10 @@ public class Player : MonoBehaviour
         SaveSystem.SaveData(this);
         Debug.Log("Saved" + this);
     }
+    public static void ClearPlayer()
+    {
+        SaveSystem.ClearData();
+    }
     public void LoadPlayer()
     {
         try

@@ -10,14 +10,44 @@ public class SettingsLogic : MonoBehaviour
     public Slider AudioSwitch;
     public Slider MouseControlsSwitch;
     public MenuButtons menuButtons;
+    public ColorSystem colorSystem;
+    GameObject greenActive;
+    GameObject redActive;
+    GameObject blueActive;
+    GameObject purpleActive;
     void Start()
     {
+        purpleActive = GameObject.Find("ColorSwitchBgPurple").transform.GetChild(0).gameObject;
+        blueActive = GameObject.Find("ColorSwitchBgBlue").transform.GetChild(0).gameObject;
+        redActive = GameObject.Find("ColorSwitchBgRed").transform.GetChild(0).gameObject;
+        greenActive = GameObject.Find("ColorSwitchBgGreen").transform.GetChild(0).gameObject;
+
+
         AudioListener.volume = 0;
         GuideSwitch.value = PlayerPrefs.GetInt("GuideVisible", 1);
         PerformanceSwitch.value = PlayerPrefs.GetInt("PerformanceOn");
         AudioSwitch.value = PlayerPrefs.GetInt("AudioOn", 1);
         MouseControlsSwitch.value = PlayerPrefs.GetInt("MouseControls");
         AudioListener.volume = 1;
+
+        switch (PlayerPrefs.GetString("PreferredColorTheme", "Purple"))
+        {
+            case "Purple":
+                colorSystem.SetSettingsColors();
+                break;
+
+            case "Blue":
+                colorSystem.SetSettingsColors();
+                break;
+
+            case "Red":
+                colorSystem.SetSettingsColors();
+                break;
+
+            case "Green":
+                colorSystem.SetSettingsColors();
+                break;
+        }
     }
     void Update()
     {
@@ -71,8 +101,7 @@ public class SettingsLogic : MonoBehaviour
     }
     public void ResetAchievementsClick()
     {
-        Player player = new();
-        player.SavePlayer();
+        Player.ClearPlayer();
     }
 
     public void MouseControlsValueChanged(float value)
@@ -87,5 +116,35 @@ public class SettingsLogic : MonoBehaviour
             PlayerPrefs.SetInt("MouseControls", 1);
             MouseControlsSwitch.gameObject.transform.Find("Active").GetComponent<Image>().enabled = true;
         }
+    }
+    public void ColorSwitchChanged(GameObject buttonPressed)
+    {
+        purpleActive.SetActive(false);
+        blueActive.SetActive(false);
+        redActive.SetActive(false);
+        greenActive.SetActive(false);
+
+
+        switch (buttonPressed.name)
+        {
+            case "ColorSwitchBgPurple":
+                PlayerPrefs.SetString("PreferredColorTheme", "Purple");
+                purpleActive.SetActive(true);
+                break;
+
+            case "ColorSwitchBgBlue":
+                PlayerPrefs.SetString("PreferredColorTheme", "Blue");
+                blueActive.SetActive(true);
+                break;
+            case "ColorSwitchBgRed":
+                PlayerPrefs.SetString("PreferredColorTheme", "Red");
+                redActive.SetActive(true);
+                break;
+            case "ColorSwitchBgGreen":
+                PlayerPrefs.SetString("PreferredColorTheme", "Green");
+                greenActive.SetActive(true);
+                break;
+        }
+        colorSystem.SetSettingsColors();
     }
 }

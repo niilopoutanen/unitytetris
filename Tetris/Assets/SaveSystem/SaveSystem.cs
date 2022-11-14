@@ -15,6 +15,13 @@ public static class SaveSystem
         formatter.Serialize(datastream, data);
         datastream.Close();
     }
+    public static void ClearData()
+    {
+        string path = Application.persistentDataPath + "/save.NPgame";
+        FileStream datastream = new FileStream(path, FileMode.Create);
+        datastream.SetLength(0);
+        datastream.Close();
+    }
     public static PlayerData LoadData()
     {
         string path = Application.persistentDataPath + "/save.NPgame";
