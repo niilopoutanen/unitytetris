@@ -42,6 +42,11 @@ public class Spawner : MonoBehaviour
         {
             Current = Next;
             Next = Random.Range(0, objects.Length);
+            if (todelete == objects[Next])
+            {
+                Next = Random.Range(0, objects.Length);
+                Debug.Log("Duplicate prevented");
+            }
         }
         Instantiate(objects[Current], transform.position, Quaternion.identity);
         todelete = Instantiate(visualObjects[Next], pos.transform.position, Quaternion.identity);

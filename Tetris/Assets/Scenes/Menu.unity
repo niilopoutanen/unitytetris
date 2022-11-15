@@ -451,6 +451,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Logo
       objectReference: {fileID: 0}
+    - target: {fileID: 5784972252866107858, guid: 378868c9c18702a4db24510ea25e83e3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 5888494677659404111, guid: 378868c9c18702a4db24510ea25e83e3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 378868c9c18702a4db24510ea25e83e3, type: 3}
 --- !u!212 &836910215 stripped
@@ -733,7 +741,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1584051022
 GameObject:
@@ -897,7 +905,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1841529501
 MonoBehaviour:

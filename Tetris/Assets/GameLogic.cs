@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameLogic : MonoBehaviour
@@ -7,6 +8,7 @@ public class GameLogic : MonoBehaviour
     private static int width = 10;
     private static int height = 20;
     private static Transform[,] grid = new Transform[Width, Height];
+
     private static int scoreValue;
     private static int blocksPlaced;
     public static float gamespeed = 1.0f;
@@ -142,30 +144,34 @@ public class GameLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        try
+        if(SceneManager.GetActiveScene().name == "Game")
         {
-            player = GameObject.Find("Player").GetComponent<Player>();
-            particleSystem = GameObject.Find("Particle System").GetComponent<ParticleSystem>();
-        }
-        catch (System.Exception)
-        {
-        }
-        int guideVisible = PlayerPrefs.GetInt("GuideVisible", 1);
-        int mouseControls = PlayerPrefs.GetInt("MouseControls");
-        if(guideVisible == 1)
-        {
-            if(mouseControls == 0)
+            try
             {
-                UIClass.SetVisibility(true, "KeyBoardGuide");
+                player = GameObject.Find("Player").GetComponent<Player>();
+                particleSystem = GameObject.Find("Particle System").GetComponent<ParticleSystem>();
+            }
+            catch (System.Exception)
+            {
+            }
+            int guideVisible = PlayerPrefs.GetInt("GuideVisible", 1);
+            int mouseControls = PlayerPrefs.GetInt("MouseControls");
+            if (guideVisible == 1)
+            {
+                if (mouseControls == 0)
+                {
+                    UIClass.SetVisibility(true, "KeyBoardGuide");
+                }
+            }
+            if (mouseControls == 1)
+            {
+                if (guideVisible == 1)
+                {
+                    UIClass.SetVisibility(true, "MouseGuideColorLayer");
+                }
             }
         }
-        if(mouseControls == 1)
-        {
-            if(guideVisible == 1)
-            {
-                UIClass.SetVisibility(true, "MouseGuideColorLayer");
-            }
-        }
+
     }
 
     // Update is called once per frame
