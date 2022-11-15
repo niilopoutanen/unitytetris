@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioSystem : MonoBehaviour
 {
@@ -14,10 +15,15 @@ public class AudioSystem : MonoBehaviour
     public AudioClip switchToggle;
     public AudioClip buttonClick;
 
+    public AudioSource musicStage1;
+    public AudioSource musicStage1v2;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(SceneManager.GetActiveScene().name == "Game")
+        {
+            PlayGameMusic();
+        }
     }
     public void PlayKeyPressed(KeyCode keyPressed)
     {
@@ -49,6 +55,22 @@ public class AudioSystem : MonoBehaviour
             return false;
         }
     }
+    public void PlayGameMusic()
+    {
+        if (!musicStage1.isPlaying)
+        {
+            musicStage1.Play();
+            musicStage1.volume = 0.3f;
+            Invoke(nameof(PlayGameMusic), 41.5f);
+        }
+        else if(!musicStage1v2.isPlaying)
+        {
+            musicStage1v2.Play();
+            musicStage1v2.volume = 0.3f;
+            Invoke(nameof(PlayGameMusic), 40.5f);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
