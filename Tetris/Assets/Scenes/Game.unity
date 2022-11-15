@@ -705,6 +705,7 @@ MonoBehaviour:
   keyPressSpace: {fileID: 8300000, guid: 2a48363ecea60074db5ae56ec110f961, type: 3}
   switchToggle: {fileID: 0}
   buttonClick: {fileID: 8300000, guid: 56d0e186323a9d348a1996468d6b7330, type: 3}
+  pauseMenuUI: {fileID: 8300000, guid: 4fb75fa62d38292468192286d420f2bc, type: 3}
   musicStage1: {fileID: 519420039}
   musicStage1v2: {fileID: 519420040}
 --- !u!82 &519420037
