@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: Niilo Poutanen
   productName: Tetris
-  defaultCursor: {fileID: 0}
+  defaultCursor: {fileID: 2800000, guid: 5beb3d041e750554892413b50918e737, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_ShowUnitySplashScreen: 1

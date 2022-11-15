@@ -17,6 +17,9 @@ public class ColorSystem : MonoBehaviour
 
     public GameObject settingsBg;
 
+    public GameObject achievementsBg;
+    public Image[] achievementImages;
+
     private static Color purple = new(219, 0, 255);
     private static Color blue = new(0, 0, 255);
     private static Color red = new(255, 0, 0);
@@ -37,6 +40,9 @@ public class ColorSystem : MonoBehaviour
                 break;
             case "Settings":
                 SetSettingsColors();
+                break;
+            case "Achievements":
+                SetAchievementsColors();
                 break;
         }
 
@@ -142,25 +148,6 @@ public class ColorSystem : MonoBehaviour
                 break;
         }
     }
-    public static Color GetColor()
-    {
-        var theme = PlayerPrefs.GetString("PreferredColorTheme", "Purple");
-        switch (theme)
-        {
-            case "Purple":
-                return purple;
-
-            case "Blue":
-                return blue;
-
-            case "Red":
-                return red;
-
-            case "Green":
-                return green;
-        }
-        return purple;
-    }
     public void SetSettingsColors()
     {
         theme = PlayerPrefs.GetString("PreferredColorTheme", "Purple");
@@ -182,5 +169,62 @@ public class ColorSystem : MonoBehaviour
                 settingsBg.GetComponent<SpriteRenderer>().color = green;
                 break;
         }
+    }
+
+    public void SetAchievementsColors()
+    {
+        switch (theme)
+        {
+            case "Purple":
+                achievementsBg.GetComponent<SpriteRenderer>().color = purple;
+                foreach (Image achievementImage in achievementImages)
+                {
+                    achievementImage.color = purple;
+                }
+                break;
+
+            case "Blue":
+                achievementsBg.GetComponent<SpriteRenderer>().color = blue;
+                foreach (Image achievementImage in achievementImages)
+                {
+                    achievementImage.color = blue;
+                }
+                break;
+
+            case "Red":
+                achievementsBg.GetComponent<SpriteRenderer>().color = red;
+                foreach (Image achievementImage in achievementImages)
+                {
+                    achievementImage.color = red;
+                }
+                break;
+
+            case "Green":
+                achievementsBg.GetComponent<SpriteRenderer>().color = green;
+                foreach (Image achievementImage in achievementImages)
+                {
+                    achievementImage.color = green;
+                }
+                break;
+        }
+    }
+    public static Color GetColor()
+    {
+        var theme = PlayerPrefs.GetString("PreferredColorTheme", "Purple");
+        switch (theme)
+        {
+            case "Purple":
+                return purple;
+
+            case "Blue":
+                return blue;
+
+            case "Red":
+                return red;
+
+            case "Green":
+                return green;
+        }
+        return purple;
     }
 }
