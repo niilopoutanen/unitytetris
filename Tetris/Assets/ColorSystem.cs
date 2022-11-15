@@ -11,7 +11,10 @@ public class ColorSystem : MonoBehaviour
     public new ParticleSystem particleSystem;
     public Text[] textElements;
     public GameObject[] gameImages;
+
+
     public GameObject menuBg;
+    public SpriteRenderer menuLogo;
     public GameObject[] menuButtons;
 
 
@@ -63,7 +66,14 @@ public class ColorSystem : MonoBehaviour
                 main.startColor = purple;
                 foreach (GameObject gameObject in gameImages)
                 {
-                    gameObject.GetComponent<SpriteRenderer>().color = purple;
+                    try
+                    {
+                        gameObject.GetComponent<SpriteRenderer>().color = purple;
+                    }
+                    catch
+                    {
+                        gameObject.GetComponent<Image>().color = purple;
+                    }
                 }
                 foreach (Text textElement in textElements)
                 {
@@ -75,7 +85,14 @@ public class ColorSystem : MonoBehaviour
                 main.startColor = blue;
                 foreach (GameObject gameObject in gameImages)
                 {
-                    gameObject.GetComponent<SpriteRenderer>().color = blue;
+                    try
+                    {
+                        gameObject.GetComponent<SpriteRenderer>().color = blue;
+                    }
+                    catch
+                    {
+                        gameObject.GetComponent<Image>().color = blue;
+                    }
                 }
                 foreach (Text textElement in textElements)
                 {
@@ -87,7 +104,14 @@ public class ColorSystem : MonoBehaviour
                 main.startColor = red;
                 foreach (GameObject gameObject in gameImages)
                 {
-                    gameObject.GetComponent<SpriteRenderer>().color = red;
+                    try
+                    {
+                        gameObject.GetComponent<SpriteRenderer>().color = red;
+                    }
+                    catch
+                    {
+                        gameObject.GetComponent<Image>().color = red;
+                    }
                 }
 
                 foreach (Text textElement in textElements)
@@ -100,7 +124,14 @@ public class ColorSystem : MonoBehaviour
                 main.startColor = green;
                 foreach (GameObject gameObject in gameImages)
                 {
-                    gameObject.GetComponent<SpriteRenderer>().color = green;
+                    try
+                    {
+                        gameObject.GetComponent<SpriteRenderer>().color = green;
+                    }
+                    catch
+                    {
+                        gameObject.GetComponent<Image>().color = green;
+                    }
                 }
 
                 foreach (Text textElement in textElements)
@@ -117,6 +148,7 @@ public class ColorSystem : MonoBehaviour
         {
             case "Purple":
                 menuBg.GetComponent<SpriteRenderer>().color = purple;
+                menuLogo.color = purple;
                 foreach (GameObject button in menuButtons)
                 {
                     button.GetComponent<Image>().color = purple;
@@ -125,6 +157,7 @@ public class ColorSystem : MonoBehaviour
 
             case "Blue":
                 menuBg.GetComponent<SpriteRenderer>().color = blue;
+                menuLogo.color = blue;
                 foreach (GameObject button in menuButtons)
                 {
                     button.GetComponent<Image>().color = blue;
@@ -133,6 +166,7 @@ public class ColorSystem : MonoBehaviour
 
             case "Red":
                 menuBg.GetComponent<SpriteRenderer>().color = red;
+                menuLogo.color = red;
                 foreach (GameObject button in menuButtons)
                 {
                     button.GetComponent<Image>().color = red;
@@ -141,6 +175,7 @@ public class ColorSystem : MonoBehaviour
 
             case "Green":
                 menuBg.GetComponent<SpriteRenderer>().color = green;
+                menuLogo.color = green;
                 foreach (GameObject button in menuButtons)
                 {
                     button.GetComponent<Image>().color = green;

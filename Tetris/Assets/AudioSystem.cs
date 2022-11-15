@@ -12,6 +12,7 @@ public class AudioSystem : MonoBehaviour
     public AudioClip keyPressSpace;
 
     public AudioClip switchToggle;
+    public AudioClip buttonClick;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +34,10 @@ public class AudioSystem : MonoBehaviour
     {
         player.PlayOneShot(switchToggle);
     }
-
+    public void PlayButtonClick()
+    {
+        player.PlayOneShot(buttonClick);
+    }
     public bool IsAudioRunning()
     {
         if (player.isPlaying)
