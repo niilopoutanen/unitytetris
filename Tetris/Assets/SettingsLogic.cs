@@ -9,6 +9,7 @@ public class SettingsLogic : MonoBehaviour
     public Slider PerformanceSwitch;
     public Slider AudioSwitch;
     public Slider MouseControlsSwitch;
+    public Slider ThemedBlocksSwitch;
     public MenuButtons menuButtons;
     public ColorSystem colorSystem;
     GameObject greenActive;
@@ -28,6 +29,7 @@ public class SettingsLogic : MonoBehaviour
         PerformanceSwitch.value = PlayerPrefs.GetInt("PerformanceOn");
         AudioSwitch.value = PlayerPrefs.GetInt("AudioOn", 1);
         MouseControlsSwitch.value = PlayerPrefs.GetInt("MouseControls");
+        ThemedBlocksSwitch.value = PlayerPrefs.GetInt("ThemedBlocks");
         AudioListener.volume = 1;
 
         purpleActive.SetActive(false);
@@ -108,7 +110,6 @@ public class SettingsLogic : MonoBehaviour
     {
         Player.ClearPlayer();
     }
-
     public void MouseControlsValueChanged(float value)
     {
         if (value == 0)
@@ -122,6 +123,20 @@ public class SettingsLogic : MonoBehaviour
             MouseControlsSwitch.gameObject.transform.Find("Active").GetComponent<Image>().enabled = true;
         }
     }
+    public void ThemedBlocksValueChanged(float value)
+    {
+        if (value == 0)
+        {
+            PlayerPrefs.SetInt("ThemedBlocks", 0);
+            ThemedBlocksSwitch.gameObject.transform.Find("Active").GetComponent<Image>().enabled = false;
+        }
+        else
+        {
+            PlayerPrefs.SetInt("ThemedBlocks", 1);
+            ThemedBlocksSwitch.gameObject.transform.Find("Active").GetComponent<Image>().enabled = true;
+        }
+    }
+
     public void ColorSwitchChanged(GameObject buttonPressed)
     {
         purpleActive.SetActive(false);
