@@ -28,6 +28,7 @@ public class DiscordController : MonoBehaviour
             var activity = new Discord.Activity
             {
                 State = stat,
+                Details = "",
                 Assets =
             {
                 LargeImage = "logo"
@@ -54,15 +55,8 @@ public class DiscordController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        try
-        {
-            discord.RunCallbacks();
-            discord.SetLogHook(Discord.LogLevel.Debug, LogProblemsFunction);
-        }
-        catch (NullReferenceException)
-        {
-            //Discord not started
-        }
+        discord.RunCallbacks();
+
 
     }
 }
