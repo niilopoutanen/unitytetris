@@ -15,10 +15,10 @@ public class AudioSystem : MonoBehaviour
     public AudioClip switchToggle;
     public AudioClip buttonClick;
 
+    public AudioSource gameMusic;
+
     public AudioClip pauseMenuUI;
 
-    public AudioSource musicStage1;
-    public AudioSource musicStage1v2;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,18 +59,7 @@ public class AudioSystem : MonoBehaviour
     }
     public void PlayGameMusic()
     {
-        if (!musicStage1.isPlaying)
-        {
-            musicStage1.Play();
-            musicStage1.volume = 0.3f;
-            Invoke(nameof(PlayGameMusic), 41.5f);
-        }
-        else if(!musicStage1v2.isPlaying)
-        {
-            musicStage1v2.Play();
-            musicStage1v2.volume = 0.3f;
-            Invoke(nameof(PlayGameMusic), 39.5f);
-        }
+
     }
     public void PlayPauseMenu()
     {
@@ -79,8 +68,7 @@ public class AudioSystem : MonoBehaviour
     }
     public void SetGameMusicVolume(float volume)
     {
-        musicStage1.volume = volume;
-        musicStage1v2.volume = volume;
+        gameMusic.volume = volume;
     }
     // Update is called once per frame
     void Update()

@@ -970,7 +970,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1565789026}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.4220793
+  m_Size: 0.500061
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2431,6 +2431,7 @@ MonoBehaviour:
   textElements: []
   gameImages: []
   menuBg: {fileID: 0}
+  menuLogo: {fileID: 0}
   menuButtons: []
   settingsBg: {fileID: 0}
   achievementsBg: {fileID: 1497206619}
@@ -2542,8 +2543,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -66}
-  m_SizeDelta: {x: 1700, y: 692.21}
+  m_AnchoredPosition: {x: 0, y: -129.95}
+  m_SizeDelta: {x: 1700, y: 820.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1741243930
 MonoBehaviour:
@@ -2934,11 +2935,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 787802076819548848, guid: f91121118e611074ba5f6e54a74034a3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -844.15
+      value: -793
       objectReference: {fileID: 0}
     - target: {fileID: 787802076819548848, guid: f91121118e611074ba5f6e54a74034a3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -496.42
+      value: 442.74
       objectReference: {fileID: 0}
     - target: {fileID: 787802076819548848, guid: f91121118e611074ba5f6e54a74034a3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

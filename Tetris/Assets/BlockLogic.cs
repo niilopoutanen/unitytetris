@@ -352,7 +352,7 @@ public class BlockLogic : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     audioSystem.PlayPauseMenu();
-                    audioSystem.SetGameMusicVolume(0.3f);
+                    audioSystem.SetGameMusicVolume(0.2f);
                     FindObjectOfType<UIClass>().PauseMenu(false);
                     paused = false;
                 }

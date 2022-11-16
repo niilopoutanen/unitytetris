@@ -21,7 +21,7 @@ public class DiscordController : MonoBehaviour
             }
             else if (playerlocation == "Game")
             {
-                stat = "Playing Tetris";
+                stat = "Playing Unity Tetris";
             }
             discord = new Discord.Discord(1014431358833152010, (System.UInt64)Discord.CreateFlags.NoRequireDiscord);
             var activityManager = discord.GetActivityManager();
