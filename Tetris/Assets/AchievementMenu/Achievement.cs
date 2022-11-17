@@ -21,21 +21,12 @@ public class Achievement : MonoBehaviour
             return false;
         }
     }
-    public void ChangeVisibility(bool isSilver,string componentName)
+    public void ChangeVisibility(string componentName)
     {
         GameObject tochange = GameObject.Find(componentName);
 
-        if (isSilver == true)
-        {
-            tochange.transform.Find("Silver").gameObject.SetActive(true);
-            tochange.transform.Find("Locked").gameObject.SetActive(false);
-        }
-        if(isSilver == false)
-        {
-            tochange.transform.Find("Gold").gameObject.SetActive(true);
-            tochange.transform.Find("Locked").gameObject.SetActive(false);
-
-        }
+        tochange.transform.Find("Unlocked").gameObject.SetActive(true);
+        tochange.transform.Find("Locked").gameObject.SetActive(false);
         tochange.tag = "Unlocked";
 
         Transform icon = tochange.transform.Find("Icon");
@@ -51,45 +42,45 @@ public class Achievement : MonoBehaviour
 
         if (CheckIfDone(500, player.blocksPlaced) == true)
         {
-            ChangeVisibility(false, "500Blocks");
+            ChangeVisibility("500Blocks");
         }
 
         if (CheckIfDone(10, player.scoreOver20Times) == true)
         {
-            ChangeVisibility(false, "20Score10Times");
+            ChangeVisibility("20Score10Times");
 
         }
         if(player.timesPlayed >= 1)
         {
-            ChangeVisibility(true, "FirstGame");
+            ChangeVisibility("FirstGame");
         }
         if(player.timesPlayed >= 10)
         {
-            ChangeVisibility(true, "10Games");
+            ChangeVisibility("10Games");
         }
         if(player.highScore >= 20)
         {
-            ChangeVisibility(false, "ScoreOver20");
+            ChangeVisibility("ScoreOver20");
         }
         if(player.timesPlayed >= 5)
         {
-            ChangeVisibility(true, "5Games");
+            ChangeVisibility("5Games");
         }
         if(player.blocksPlaced >= 100)
         {
-            ChangeVisibility(true, "100Blocks");
+            ChangeVisibility("100Blocks");
         }
         if(player.highScore >= 10)
         {
-            ChangeVisibility(true, "ScoreOver10");
+            ChangeVisibility("ScoreOver10");
         }
         if (player.blocksPlaced >= 1000)
         {
-            ChangeVisibility(false, "1000Blocks");
+            ChangeVisibility("1000Blocks");
         }
         if (player.timesPlayed >= 20)
         {
-            ChangeVisibility(false, "20Games");
+            ChangeVisibility("20Games");
         }
         foreach (Transform child in content.transform)
         {
@@ -98,15 +89,8 @@ public class Achievement : MonoBehaviour
                 child.SetAsFirstSibling();
             }
         }
-        foreach (Transform child in content.transform)
-        {
-            if (child.transform.Find("Gold").gameObject.activeSelf == true)
-            {
-                child.SetAsFirstSibling();
-            }
-            statsPanel.transform.SetAsFirstSibling(); ;
+        statsPanel.transform.SetAsFirstSibling();
 
-        }
         highScoreText.text = player.highScore.ToString();
         blocksPlacedText.text = player.blocksPlaced.ToString();
         gamesPlayedText.text = player.timesPlayed.ToString();

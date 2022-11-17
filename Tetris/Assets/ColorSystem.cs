@@ -22,6 +22,7 @@ public class ColorSystem : MonoBehaviour
 
     public GameObject achievementsBg;
     public Image[] achievementImages;
+    public GameObject[] achievementCards;
 
     private static Color purple = new(219, 0, 255);
     private static Color blue = new(0, 0, 255);
@@ -58,189 +59,129 @@ public class ColorSystem : MonoBehaviour
     }
     public void SetGameColors()
     {
-        var main = particleSystem.main;
-
+        Color selectedColor = purple;
         switch (theme)
         {
             case "Purple":
-                main.startColor = purple;
-                foreach (GameObject gameObject in gameImages)
-                {
-                    try
-                    {
-                        gameObject.GetComponent<SpriteRenderer>().color = purple;
-                    }
-                    catch
-                    {
-                        gameObject.GetComponent<Image>().color = purple;
-                    }
-                }
-                foreach (Text textElement in textElements)
-                {
-                    textElement.color = purple;
-                }
+                selectedColor = purple;
                 break;
 
             case "Blue":
-                main.startColor = blue;
-                foreach (GameObject gameObject in gameImages)
-                {
-                    try
-                    {
-                        gameObject.GetComponent<SpriteRenderer>().color = blue;
-                    }
-                    catch
-                    {
-                        gameObject.GetComponent<Image>().color = blue;
-                    }
-                }
-                foreach (Text textElement in textElements)
-                {
-                    textElement.color = blue;
-                }
+                selectedColor = blue;
                 break;
 
             case "Red":
-                main.startColor = red;
-                foreach (GameObject gameObject in gameImages)
-                {
-                    try
-                    {
-                        gameObject.GetComponent<SpriteRenderer>().color = red;
-                    }
-                    catch
-                    {
-                        gameObject.GetComponent<Image>().color = red;
-                    }
-                }
-
-                foreach (Text textElement in textElements)
-                {
-                    textElement.color = red;
-                }
+                selectedColor = red;
                 break;
 
             case "Green":
-                main.startColor = green;
-                foreach (GameObject gameObject in gameImages)
-                {
-                    try
-                    {
-                        gameObject.GetComponent<SpriteRenderer>().color = green;
-                    }
-                    catch
-                    {
-                        gameObject.GetComponent<Image>().color = green;
-                    }
-                }
-
-                foreach (Text textElement in textElements)
-                {
-                    textElement.color = green;
-                }
+                selectedColor = green;
                 break;
+        }
+        var main = particleSystem.main;
+
+        main.startColor = selectedColor;
+        foreach (GameObject gameObject in gameImages)
+        {
+            try
+            {
+                gameObject.GetComponent<SpriteRenderer>().color = selectedColor;
+            }
+            catch
+            {
+                gameObject.GetComponent<Image>().color = selectedColor;
+            }
+        }
+        foreach (Text textElement in textElements)
+        {
+            textElement.color = selectedColor;
         }
     }
     public void SetMenuColors()
     {
-        
+        Color selectedColor = purple;
         switch (theme)
         {
             case "Purple":
-                menuBg.GetComponent<SpriteRenderer>().color = purple;
-                menuLogo.color = purple;
-                foreach (GameObject button in menuButtons)
-                {
-                    button.GetComponent<Image>().color = purple;
-                }
+                selectedColor = purple;
                 break;
 
             case "Blue":
-                menuBg.GetComponent<SpriteRenderer>().color = blue;
-                menuLogo.color = blue;
-                foreach (GameObject button in menuButtons)
-                {
-                    button.GetComponent<Image>().color = blue;
-                }
+                selectedColor = blue;
                 break;
 
             case "Red":
-                menuBg.GetComponent<SpriteRenderer>().color = red;
-                menuLogo.color = red;
-                foreach (GameObject button in menuButtons)
-                {
-                    button.GetComponent<Image>().color = red;
-                }
+                selectedColor = red;
                 break;
 
             case "Green":
-                menuBg.GetComponent<SpriteRenderer>().color = green;
-                menuLogo.color = green;
-                foreach (GameObject button in menuButtons)
-                {
-                    button.GetComponent<Image>().color = green;
-                }
+                selectedColor = green;
                 break;
+        }
+        menuBg.GetComponent<SpriteRenderer>().color = selectedColor;
+        menuLogo.color = selectedColor;
+        foreach (GameObject button in menuButtons)
+        {
+            button.GetComponent<Image>().color = selectedColor;
         }
     }
     public void SetSettingsColors()
     {
         theme = PlayerPrefs.GetString("PreferredColorTheme", "Purple");
+        Color selectedColor = purple;
         switch (theme)
         {
             case "Purple":
-                settingsBg.GetComponent<SpriteRenderer>().color = purple;
+                selectedColor = purple;
                 break;
 
             case "Blue":
-                settingsBg.GetComponent<SpriteRenderer>().color = blue;
+                selectedColor = blue;
                 break;
 
             case "Red":
-                settingsBg.GetComponent<SpriteRenderer>().color = red;
+                selectedColor = red;
                 break;
 
             case "Green":
-                settingsBg.GetComponent<SpriteRenderer>().color = green;
+                selectedColor = green;
                 break;
         }
+        settingsBg.GetComponent<SpriteRenderer>().color = selectedColor;
+
     }
 
     public void SetAchievementsColors()
     {
+        Color selectedColor = purple;
         switch (theme)
         {
             case "Purple":
-                achievementsBg.GetComponent<SpriteRenderer>().color = purple;
-                foreach (Image achievementImage in achievementImages)
-                {
-                    achievementImage.color = purple;
-                }
+                selectedColor = purple;
                 break;
 
             case "Blue":
-                achievementsBg.GetComponent<SpriteRenderer>().color = blue;
-                foreach (Image achievementImage in achievementImages)
-                {
-                    achievementImage.color = blue;
-                }
+                selectedColor = blue;
                 break;
 
             case "Red":
-                achievementsBg.GetComponent<SpriteRenderer>().color = red;
-                foreach (Image achievementImage in achievementImages)
-                {
-                    achievementImage.color = red;
-                }
+                selectedColor = red;
                 break;
 
             case "Green":
-                achievementsBg.GetComponent<SpriteRenderer>().color = green;
-                foreach (Image achievementImage in achievementImages)
-                {
-                    achievementImage.color = green;
-                }
+                selectedColor = green;
                 break;
+        }
+        achievementsBg.GetComponent<SpriteRenderer>().color = selectedColor;
+        foreach (Image achievementImage in achievementImages)
+        {
+            achievementImage.color = selectedColor;
+        }
+        foreach (GameObject achievementCard in achievementCards)
+        {
+            achievementCard.transform.Find("Unlocked").gameObject.GetComponent<Image>().color = selectedColor;
+            achievementCard.transform.Find("Locked").gameObject.GetComponent<Image>().color = selectedColor;
+            achievementCard.transform.Find("Icon").gameObject.GetComponent<Image>().color = selectedColor;
         }
     }
     public static Color GetColor()
