@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
@@ -16,7 +17,7 @@ public class UIClass : MonoBehaviour
     public Text SurvivedTime;
     public Text BlocksPlacedText;
     public Player player;
-    public VideoPlayer gameOverVideo;
+    public Animator gameOverController;
     public MenuButtons menuButtons;
     public void PauseMenu(bool isPaused)
     {
@@ -93,11 +94,12 @@ public class UIClass : MonoBehaviour
                 break;
 
             case "Game Over":
-                gameOverVideo.loopPointReached += VideoPlayerDone;
+                gameOverController.Play("GameOverFlash");
+                Invoke(nameof(GameOverDone), 6.0f);
                 break;
         }
     }
-    void VideoPlayerDone(UnityEngine.Video.VideoPlayer vp)
+    void GameOverDone()
     {
         menuButtons.ToMainMenu(false);
 

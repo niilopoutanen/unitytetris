@@ -24,6 +24,9 @@ public class ColorSystem : MonoBehaviour
     public Image[] achievementImages;
     public GameObject[] achievementCards;
 
+    public Text gameOverText;
+    public Image gameOverBg;
+
     private static Color purple = new(219, 0, 255);
     private static Color blue = new(0, 0, 255);
     private static Color red = new(255, 0, 0);
@@ -47,6 +50,9 @@ public class ColorSystem : MonoBehaviour
                 break;
             case "Achievements":
                 SetAchievementsColors();
+                break;
+            case "Game Over":
+                SetGameOverColors();
                 break;
         }
 
@@ -183,6 +189,30 @@ public class ColorSystem : MonoBehaviour
             achievementCard.transform.Find("Locked").gameObject.GetComponent<Image>().color = selectedColor;
             achievementCard.transform.Find("Icon").gameObject.GetComponent<Image>().color = selectedColor;
         }
+    }
+    public void SetGameOverColors()
+    {
+        Color selectedColor = purple;
+        switch (theme)
+        {
+            case "Purple":
+                selectedColor = purple;
+                break;
+
+            case "Blue":
+                selectedColor = blue;
+                break;
+
+            case "Red":
+                selectedColor = red;
+                break;
+
+            case "Green":
+                selectedColor = green;
+                break;
+        }
+        gameOverBg.color = selectedColor;
+        gameOverText.color = selectedColor;
     }
     public static Color GetColor()
     {
