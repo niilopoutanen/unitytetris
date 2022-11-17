@@ -24,13 +24,11 @@ public class SettingsLogic : MonoBehaviour
         greenActive = GameObject.Find("ColorSwitchBgGreen").transform.GetChild(0).gameObject;
 
 
-        AudioListener.volume = 0;
         GuideSwitch.value = PlayerPrefs.GetInt("GuideVisible", 1);
         PerformanceSwitch.value = PlayerPrefs.GetInt("PerformanceOn");
         AudioSwitch.value = PlayerPrefs.GetInt("AudioOn", 1);
         MouseControlsSwitch.value = PlayerPrefs.GetInt("MouseControls");
         ThemedBlocksSwitch.value = PlayerPrefs.GetInt("ThemedBlocks");
-        AudioListener.volume = 1;
 
         purpleActive.SetActive(false);
         switch (PlayerPrefs.GetString("PreferredColorTheme", "Purple"))

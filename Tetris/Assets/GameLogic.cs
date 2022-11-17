@@ -19,7 +19,7 @@ public class GameLogic : MonoBehaviour
     public static float PlayTime;
     public Player player;
 
-    public new ParticleSystem particleSystem;
+    public ParticleSystem particleSys;
     public static Transform[,] Grid { get => grid; set => grid = value; }
     public static int Height { get => height; set => height = value; }
     public static int Width { get => width; set => width = value; }
@@ -88,7 +88,7 @@ public class GameLogic : MonoBehaviour
         float speed = gamespeed;
         speed /= 1.1f;
         gamespeed = speed;
-        var main = particleSystem.main;
+        var main = particleSys.main;
         main.startSpeed = new ParticleSystem.MinMaxCurve(main.startSpeed.constantMin + 1, main.startSpeed.constantMax + 1);
         return speed;
     }
@@ -149,7 +149,7 @@ public class GameLogic : MonoBehaviour
             try
             {
                 player = GameObject.Find("Player").GetComponent<Player>();
-                particleSystem = GameObject.Find("Particle System").GetComponent<ParticleSystem>();
+                particleSys = GameObject.Find("Particle System").GetComponent<ParticleSystem>();
             }
             catch (System.Exception)
             {
