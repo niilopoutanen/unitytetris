@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e0a241cd21392f49a6d6f78c6d17df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleSystem: {fileID: 1545797724}
+  particleSys: {fileID: 1545797724}
   textElements:
   - {fileID: 1396375457}
   - {fileID: 418580143}
@@ -161,6 +161,9 @@ MonoBehaviour:
   settingsBg: {fileID: 0}
   achievementsBg: {fileID: 0}
   achievementImages: []
+  achievementCards: []
+  gameOverText: {fileID: 0}
+  gameOverBg: {fileID: 0}
 --- !u!1 &255420995
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,6 +1038,8 @@ MonoBehaviour:
   SurvivedTime: {fileID: 418580143}
   BlocksPlacedText: {fileID: 1365299365}
   player: {fileID: 0}
+  gameOverController: {fileID: 0}
+  menuButtons: {fileID: 0}
 --- !u!114 &603273805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2205,6 +2210,8 @@ MonoBehaviour:
   SurvivedTime: {fileID: 418580143}
   BlocksPlacedText: {fileID: 1365299365}
   player: {fileID: 0}
+  gameOverController: {fileID: 0}
+  menuButtons: {fileID: 0}
 --- !u!1 &1545797722
 GameObject:
   m_ObjectHideFlags: 0
@@ -7137,6 +7144,8 @@ MonoBehaviour:
   SurvivedTime: {fileID: 418580143}
   BlocksPlacedText: {fileID: 1365299365}
   player: {fileID: 0}
+  gameOverController: {fileID: 0}
+  menuButtons: {fileID: 0}
 --- !u!1 &1683446726
 GameObject:
   m_ObjectHideFlags: 0

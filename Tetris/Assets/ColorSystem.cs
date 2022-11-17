@@ -8,7 +8,7 @@ using UnityEditor;
 
 public class ColorSystem : MonoBehaviour
 {
-    public new ParticleSystem particleSystem;
+    public ParticleSystem particleSys;
     public Text[] textElements;
     public GameObject[] gameImages;
 
@@ -84,7 +84,7 @@ public class ColorSystem : MonoBehaviour
                 selectedColor = green;
                 break;
         }
-        var main = particleSystem.main;
+        var main = particleSys.main;
 
         main.startColor = selectedColor;
         foreach (GameObject gameObject in gameImages)
