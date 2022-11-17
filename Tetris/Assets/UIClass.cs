@@ -4,7 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Video;
+
 public class UIClass : MonoBehaviour
 {
 
@@ -13,6 +16,8 @@ public class UIClass : MonoBehaviour
     public Text SurvivedTime;
     public Text BlocksPlacedText;
     public Player player;
+    public VideoPlayer gameOverVideo;
+    public MenuButtons menuButtons;
     public void PauseMenu(bool isPaused)
     {
         if (isPaused == true)
@@ -81,17 +86,34 @@ public class UIClass : MonoBehaviour
     }
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Player>();
-    }
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "Game":
+                player = GameObject.Find("Player").GetComponent<Player>();
+                break;
 
+            case "Game Over":
+                gameOverVideo.loopPointReached += VideoPlayerDone;
+                break;
+        }
+    }
+    void VideoPlayerDone(UnityEngine.Video.VideoPlayer vp)
+    {
+        menuButtons.ToMainMenu(false);
+
+    }
     // Update is called once per frame
     void Update()
     {
-        if(pauseCanvas.activeSelf == false)
+        if(SceneManager.GetActiveScene().name == "Game")
         {
-            UpdatePlayTime();
-            UpdateBlocksPlaced();
+            if (pauseCanvas.activeSelf == false)
+            {
+                UpdatePlayTime();
+                UpdateBlocksPlaced();
+            }
         }
+
 
 
     }

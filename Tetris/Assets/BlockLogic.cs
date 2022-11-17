@@ -234,7 +234,6 @@ public class BlockLogic : MonoBehaviour
         logic.GetEndTime();
         LevelLoader levelloader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
         levelloader.LoadNextLevel("Game Over");
-        //SceneManager.LoadScene("Game Over");
 
         player.LoadPlayer();
         player.AddBlock(GameLogic.BlocksPlaced);

@@ -55,8 +55,11 @@ public class DiscordController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        discord.RunCallbacks();
-
+        try
+        {
+            discord.RunCallbacks();
+        }
+        catch { }
 
     }
 }
