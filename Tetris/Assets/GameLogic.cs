@@ -150,6 +150,10 @@ public class GameLogic : MonoBehaviour
             {
                 player = GameObject.Find("Player").GetComponent<Player>();
                 particleSys = GameObject.Find("Particle System").GetComponent<ParticleSystem>();
+                if(PlayerPrefs.GetInt("PerformanceOn") == 1)
+                {
+                    particleSys.Stop();
+                }
             }
             catch (System.Exception)
             {
